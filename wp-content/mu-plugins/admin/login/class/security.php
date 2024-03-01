@@ -11,7 +11,7 @@ if( ! class_exists( 'LoginSecurity' ) ) {
             add_filter( 'show_admin_bar', array( $this, 'remove_admin_bar' ) );
             add_action('init',  array( $this, 'is_admin_access' ) );
             // add_filter( 'comment_form_fields', array( $this, 'comment_form_defaults_massage' ) );
-            add_filter( 'comment_form_defaults', array( $this, 'comment_form_replay_defaults_massage' ) );
+            // add_filter( 'comment_form_defaults', array( $this, 'comment_form_replay_defaults_massage' ) );
             add_filter( 'comment_reply_link', array( $this, 'comment_reply_link_massage' ), 10 ,4);
             add_action('widgets_init', array( $this, 'unregister_default_widgets' ), 11);
             add_filter('wp_nav_menu_items', array( $this, 'add_login_logout_link' ), 10, 2);

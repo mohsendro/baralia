@@ -160,7 +160,7 @@
                 </div>
                 <div class="col-12 order-6">
                     <div class="footer-copy-right pt-3 d-flex justify-content-between align-items-center">
-                        <p class="font-16 my-4">کلی حقوق این سایت متعلق به <span class="fw-bold">راستچین</span> می باشد
+                        <p class="font-16 my-4">کلی حقوق این سایت متعلق به <span class="fw-bold">بارالیا</span> می باشد
                         </p>
                         <div class="footer-contact-link text-center">
                             <a href="#" role="button" class="btn main-color-one-bg rounded-0 shadow-none"

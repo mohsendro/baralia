@@ -6,10 +6,11 @@ function get_breadcrumb() {
 
 	// echo '<a href="'.home_url().'" rel="nofollow">صفحه اصلی</a>';
 
+    $post = get_queried_object();
     $current = $post->ID;
     $parent = $post->post_parent;
     $grandparent_get = get_post($parent);
-    $grandparent = $grandparent_get->post_parent;
+    // $grandparent = $grandparent_get->post_parent;
 
     if ( ! is_front_page() ) {
         echo '<a href="'.home_url().'" rel="nofollow">صفحه اصلی</a>';

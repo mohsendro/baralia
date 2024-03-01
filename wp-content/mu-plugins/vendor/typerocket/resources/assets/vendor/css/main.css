@@ -4693,8 +4693,10 @@ ul._child_collapzion {
 }
 
 .blog-single-title-thumbnail img {
+    width: 100%;
     height: 300px;
     object-fit: cover;
+    object-position: top;
 }
 
 .blog-content-meta-detail {

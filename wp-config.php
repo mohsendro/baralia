@@ -131,10 +131,10 @@ define( 'WP_MAX_MEMORY_LIMIT', '256M' );
 // define( 'WP_CRON_LOCK_TIMEOUT', 30 );
 
 /* Updates */
-define( 'WP_AUTO_UPDATE_CORE', false );
-define( 'DISALLOW_FILE_MODS', true );
-define( 'DISALLOW_FILE_EDIT', true );
-define( 'AUTOMATIC_UPDATER_DISABLED', true );
+// define( 'WP_AUTO_UPDATE_CORE', false );
+// define( 'DISALLOW_FILE_MODS', true );
+// define( 'DISALLOW_FILE_EDIT', true );
+// define( 'AUTOMATIC_UPDATER_DISABLED', true );
 
 /* CURL */
 // define( 'WP_HTTP_BLOCK_EXTERNAL', true );

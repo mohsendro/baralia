@@ -16,9 +16,12 @@ register_theme_directory( dirname( __FILE__ ) . '/resources/themes/' );
 
 // Snippets
 require_once plugin_dir_path(__FILE__) . 'functions/snippets/theme.php';
-require_once plugin_dir_path(__FILE__) . 'functions/snippets/wp-rewrite-rules.php';
+// require_once plugin_dir_path(__FILE__) . 'functions/snippets/wp-rewrite-rules.php';
 require_once plugin_dir_path(__FILE__) . 'functions/snippets/optimize.php';
 require_once plugin_dir_path(__FILE__) . 'functions/snippets/enqueue.php';
+require_once plugin_dir_path(__FILE__) . 'functions/snippets/image-size.php';
+require_once plugin_dir_path(__FILE__) . 'functions/snippets/comments.php';
+// require_once plugin_dir_path(__FILE__) . 'functions/snippets/functions.php';
 
 // Post Types
 require_once plugin_dir_path(__FILE__) . 'functions/posttype/page.php';

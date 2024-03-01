@@ -11,40 +11,33 @@ function normal_pagination($base_url, $current_page, $total_page, $prev_next = f
     if( $total_page == 1 ) return;
     ?>
     <!-- Pagination Start -->
-    <section id="pagination" class="container pagination">
-        <div class="row">
-            <div class="col-12">
-                
-                <ul>
+    <div class="col-12">
+        <div class="my-paginate my-4">
+            <nav aria-label="Page navigation example">
+                <ul class="pagination flex-wrap justify-content-center">
                     <?php
                         if( $prev_next && $current_page && 1 < $current_page ) {  //print previous button?
                             ?>
-                                <li class="prev">
-                                    <a href="<?php echo $base_url; ?>/<?php echo $current_page-1; ?>">&laquo; قبل</a>
+                                <li class="page-item">
+                                    <a href="<?php echo $base_url; ?>/<?php echo $current_page-1; ?>" class="page-link rounded-3">قبلی</a>
                                 </li>
                             <?php
                         }
                         for( $i = 1; $i <= $total_page; $i++ ) {
                             if( $i == $current_page ) {
                                 ?>
-                                    <li class="active">
-                                        <a><?php echo $i; ?></a>
-                                    </li>
+                                    <li class="page-item active"><a class="page-link rounded-3"><?php echo $i; ?></a></li>
                                 <?php
                                 $dots = true;
                             } else {
                                 if( $i <= $ends_count || ($current_page && $i >= $current_page - $middle_count && $i <= $current_page + $middle_count) || $i > $total_page - $ends_count ) { 
                                     ?>
-                                        <li>
-                                            <a href="<?php echo $base_url; ?>/<?php echo $i; ?>"><?php echo $i; ?></a>
-                                        </li>
+                                        <li class="page-item"><a href="<?php echo $base_url; ?>/<?php echo $i; ?>" class="page-link rounded-3"><?php echo $i; ?></a></li>
                                     <?php
                                     $dots = true;
                                 } elseif( $dots ) {
                                     ?>
-                                        <li>
-                                            <a>&hellip;</a>
-                                        </li>
+                                        <li class="page-item"><a class="page-link rounded-3">...</a></li>
                                     <?php
                                     $dots = false;
                                 }
@@ -52,17 +45,16 @@ function normal_pagination($base_url, $current_page, $total_page, $prev_next = f
                         }
                         if( $prev_next && $current_page && ($current_page < $total_page || -1 == $total_page) ) { //print next button?
                             ?>
-                                <li class="next">
-                                    <a href="<?php echo $base_url; ?>/<?php echo $current_page+1; ?>">بعد &raquo;</a>
+                                <li class="page-item">
+                                    <a href="<?php echo $base_url; ?>/<?php echo $current_page+1; ?>" class="page-link rounded-3">بعدی</a>
                                 </li>
                             <?php
                         }
                     ?>
                 </ul>
-
-            </div>
+            </nav>
         </div>
-    </section>
+    </div>
     <!-- Pagination End -->
     <?php
 

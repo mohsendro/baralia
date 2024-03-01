@@ -68,6 +68,7 @@ function wpplus_theme_features()  {
 
 	// Add theme support for HTML5 Semantic Markup
 	add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list', 'gallery', 'caption' ) );
+	add_post_type_support( 'post', 'comment' );
 
 	// Add theme support for document Title tag
 	add_theme_support( 'title-tag' );
@@ -79,4 +80,4 @@ function wpplus_theme_features()  {
 	load_theme_textdomain( 'wpplus', get_template_directory() . '/language' );
 
 }
-add_action('after_setup_theme', 'wpplus_theme_features') ;
+add_action('init', 'wpplus_theme_features') ;

@@ -17,6 +17,17 @@
 
 <?php get_header(); ?>
 
-<?php the_content(); ?>
+<!-- start content -->
+<div class="content">
+    <div class="container-fluid">
+        <div class="content-box">
+            <div class="container-fluid">
+                <h1>Front page</h1>
+                <?php the_content(); ?>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end content -->
 
 <?php get_footer(); ?>

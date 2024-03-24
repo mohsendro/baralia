@@ -23,7 +23,7 @@ function comments_list_callback($comment, $args, $depth) {
     </div>
 <?php }
 
-// Remove 'url' Field && Movement Fields From Comments
+// Movement Fields From Comments
 function move_comment_field_comment_callback( $fields ) {
 
     $comment_field = $fields['comment'];
@@ -34,7 +34,7 @@ function move_comment_field_comment_callback( $fields ) {
 }
 add_filter( 'comment_form_fields', 'move_comment_field_comment_callback' );
 
-// Remove 'url' Field && Movement Fields From Comments
+// Remove 'url' Field
 function remomve_url_field_comment_callback($fields) {
 
     if(isset($fields['url']))

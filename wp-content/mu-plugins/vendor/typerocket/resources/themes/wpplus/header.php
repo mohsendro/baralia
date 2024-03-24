@@ -16,10 +16,14 @@
 
     <title>
         <?php
-            if( get_bloginfo('description') ) {
-                echo get_bloginfo('name') . ' | ' . get_bloginfo('description');
+            if( is_front_page() ) {
+                if( get_bloginfo('description') ) {
+                    echo get_bloginfo('name') . ' | ' . get_bloginfo('description');
+                } else {
+                    echo get_bloginfo('name');
+                }
             } else {
-                echo get_bloginfo('name');
+                wp_title();
             }
         ?>
     </title>
@@ -137,7 +141,7 @@
                 <div class="col-lg-6 col-4 d-sm-block d-none order-lg-2 order-2">
                     <div class="header-top-menu">
                         <div class="header-logo">
-                            <a href="index.html">
+                            <a href="<?php echo home_url(); ?>">
                                 <img alt="" src="<?php echo TYPEROCKET_DIR_URL; ?>resources/assets/img/logo.png">
                             </a>
                         </div>
@@ -390,6 +394,6 @@
 
     <?php get_template_part( 'components/mega', 'menu' ); ?>
 
-    <?php get_template_part( 'components/breadcrumb' ); ?>
+    <?php // get_template_part( 'components/breadcrumb' ); ?>
 
     <?php // get_template_part( 'components/content' ); ?>

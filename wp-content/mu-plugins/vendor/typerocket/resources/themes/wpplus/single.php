@@ -132,7 +132,7 @@
         </div>
     </div>
 
-    <?php comments_template( '/comments.php' ); ?>
+    <?php comments_template( '/comments-post.php' ); ?>
 </div>
 <!-- end content -->
 

@@ -49,3 +49,32 @@ if ( $total <= 1 ) {
 	);
 	?>
 </nav>
+
+
+
+
+
+
+
+<div class="col-12">
+	<div class="my-paginate my-4">
+		<nav aria-label="Page navigation example">
+			<ul class="pagination flex-wrap justify-content-center">
+				<li class="page-item disabled">
+					<a class="page-link rounded-3" href="#">قبلی</a>
+				</li>
+				<li class="page-item"><a class="page-link rounded-3" href="#">1</a></li>
+				<li class="page-item"><a class="page-link rounded-3" href="#">2</a></li>
+				<li class="page-item active"><a class="page-link rounded-3" href="#">3</a>
+				</li>
+				<li class="page-item"><a class="page-link rounded-3" href="#">...</a></li>
+				<li class="page-item"><a class="page-link rounded-3" href="#">14</a></li>
+				<li class="page-item"><a class="page-link rounded-3" href="#">15</a></li>
+				<li class="page-item"><a class="page-link rounded-3" href="#">16</a></li>
+				<li class="page-item">
+					<a class="page-link rounded-3" href="#">بعدی</a>
+				</li>
+			</ul>
+		</nav>
+	</div>
+</div>

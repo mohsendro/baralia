@@ -16,3 +16,13 @@ function wpplus_wc_features_support()  {
 
 }
 add_action('init', 'wpplus_wc_features_support') ;
+
+
+// These are actions you can unhook/remove!
+function wpplus_woocommerce_loaded_action() {
+
+    // remove_action( 'woocommerce_before_shop_loop', 'woocommerce_output_all_notices', 10 );
+    remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20 );
+
+}
+add_action( 'woocommerce_loaded', 'wpplus_woocommerce_loaded_action' );

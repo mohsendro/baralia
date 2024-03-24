@@ -18,14 +18,40 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
-
 ?>
-<form class="woocommerce-ordering" method="get">
-	<select name="orderby" class="orderby" aria-label="<?php esc_attr_e( 'Shop order', 'woocommerce' ); ?>">
-		<?php foreach ( $catalog_orderby_options as $id => $name ) : ?>
-			<option value="<?php echo esc_attr( $id ); ?>" <?php selected( $orderby, $id ); ?>><?php echo esc_html( $name ); ?></option>
-		<?php endforeach; ?>
-	</select>
-	<input type="hidden" name="paged" value="1" />
-	<?php wc_query_string_form_fields( null, array( 'orderby', 'submit', 'paged', 'product-page' ) ); ?>
-</form>
+
+<div class="category-sort mb-3">
+	<div class="content-box">
+		<div class="container-fluid">
+			<div class="box_filter d-lg-block d-none">
+				<ul class="list-inline text-start mb-0">
+					<li class="list-inline-item title-font ms-0">مرتب سازی بر اساس :</li>
+					<?php foreach ( $catalog_orderby_options as $id => $name ) : ?>
+						<?php
+							if( isset($_GET['orderby']) && $id == $_GET['orderby'] ) {
+								$class_active = 'active_custom';
+							} else {
+								$class_active = '';
+							}
+						?>
+						<li class="list-inline-item"><a class="<?php echo $class_active; ?>" href="<?php echo esc_url( add_query_arg( 'orderby', $id ) ); ?>"><?php echo esc_html( $name ); ?></a></li>
+					<?php endforeach; ?>
+				</ul>
+			</div>
+			<div class="d-lg-none d-block">
+				<form class="woocommerce-ordering" method="get">
+					<h5 class="mb-3">مرتب سازی بر اساس</h5>
+					<select name="orderby" id="" class="form-select orderby" aria-label="<?php esc_attr_e( 'Shop order', 'woocommerce' ); ?>">
+						<?php foreach ( $catalog_orderby_options as $id => $name ) : ?>
+							<option value="<?php echo esc_attr( $id ); ?>" <?php selected( $orderby, $id ); ?>>
+								<a href="<?php echo esc_url( add_query_arg( 'orderby', $id ) ); ?>"><?php echo esc_html( $name ); ?></a>
+							</option>
+						<?php endforeach; ?>
+					</select>
+					<input type="hidden" name="paged" value="1" />
+					<?php wc_query_string_form_fields( null, array( 'orderby', 'submit', 'paged', 'product-page' ) ); ?>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

@@ -22,6 +22,71 @@ if ( ! defined( 'ABSPATH' ) ) {
 global $product;
 ?>
 
-<?php if ( $price_html = $product->get_price_html() ) : ?>
-	<span class="price"><?php echo $price_html; ?></span>
+<?php $product_type = $product->get_type(); ?>
+<?php if( $product_type == 'simple' ): ?>
+	<div class="product-box-price">
+		<?php if( $product->get_regular_price() ): ?>
+			<div class="product-box-price-price">
+				<h5 class="title-font main-color-one-color h2 mb-0"><?php echo $product->get_regular_price(); ?> 
+					<span class="mb-0 text-muted-two"><?php echo get_woocommerce_currency_symbol(); ?></span>
+				</h5>
+			</div>
+		<?php elseif( $product->get_regular_price() == 0 ): ?>
+			<div class="product-box-price-price">
+				<h5 class="title-font main-color-one-color h2 mb-0">رایگان</h5>
+			</div>
+		<?php else: ?>
+			<div class="product-box-price-price">
+				<h5 class="title-font main-color-one-color h2 mb-0">تماس بگیرید</h5>
+			</div>
+		<?php endif; ?>
+		<?php if( $product->is_on_sale() ): ?>
+			<div class="product-box-offer-discount">
+				<del><?php echo $product->get_sale_price(); ?></del>
+			</div>
+		<?php endif; ?>	
+	</div>
+<?php elseif( $product_type == 'variable' ): ?>
+	<?php
+		$min_variation_price = $product->get_variation_price( 'min', true ) ? $product->get_variation_price( 'min', true ) : 0;
+		$max_variation_price = $product->get_variation_price( 'max', true ) ? $product->get_variation_price( 'max', true ) : 0;
+	?>
+	<?php if( $min_variation_price && $max_variation_price ): ?>
+		<div class="product-box-price-price">
+			<h5 class="title-font main-color-one-color h2 mb-0">
+				<?php echo $min_variation_price; ?> 
+				<span class="mb-0 text-muted-two">الی</span> 
+				<?php echo $max_variation_price; ?>
+				<span class="mb-0 text-muted-two"><?php echo get_woocommerce_currency_symbol(); ?></span>
+			</h5>
+		</div>
+	<?php else: ?>	
+		<div class="product-box-price-price">
+			<h5 class="title-font main-color-one-color h2 mb-0">تماس بگیرید</h5>
+		</div>
+	<?php endif; ?>	
+<?php elseif( $product_type == 'grouped' ): ?>
+	<?php if( $product->get_price_html() ): ?>
+		<div class="product-box-price-price">
+			<h5 class="title-font main-color-one-color h2 mb-0"><?php echo $product->get_price_html(); ?> 
+				<!-- <span class="mb-0 text-muted-two"><?php //echo get_woocommerce_currency_symbol(); ?></span> -->
+			</h5>
+		</div>
+	<?php else: ?>
+		<div class="product-box-price-price">
+			<h5 class="title-font main-color-one-color h2 mb-0">تماس بگیرید</h5>
+		</div>
+	<?php endif; ?>
+<?php elseif( $product_type == 'external' ): ?>
+	<?php if( $product->get_price_html() ): ?>
+		<div class="product-box-price-price">
+			<h5 class="title-font main-color-one-color h2 mb-0"><?php echo $product->get_price_html(); ?> 
+				<!-- <span class="mb-0 text-muted-two"><?php //echo get_woocommerce_currency_symbol(); ?></span> -->
+			</h5>
+		</div>
+	<?php else: ?>
+		<div class="product-box-price-price">
+			<h5 class="title-font main-color-one-color h2 mb-0">تماس بگیرید</h5>
+		</div>
+	<?php endif; ?>
 <?php endif; ?>

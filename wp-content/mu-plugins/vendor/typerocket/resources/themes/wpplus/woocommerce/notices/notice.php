@@ -22,11 +22,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 if ( ! $notices ) {
 	return;
 }
-
 ?>
 
+<!-- start notices -->
 <?php foreach ( $notices as $notice ) : ?>
-	<div class="woocommerce-info"<?php echo wc_get_notice_data_attr( $notice ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
-		<?php echo wc_kses_notice( $notice['notice'] ); ?>
+	<div class="container-fluid">
+		<div class="alert alert-info text-center rounded-0 woocommerce-info">
+			<?php echo wc_kses_notice( $notice['notice'] ); ?>
+		</div>
 	</div>
 <?php endforeach; ?>
+<!-- end notices -->

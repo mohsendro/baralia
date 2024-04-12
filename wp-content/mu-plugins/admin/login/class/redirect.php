@@ -18,8 +18,8 @@ if( ! class_exists( 'LoginRedirect' ) ) {
             $this->managment_loginout_urls();
             add_filter( 'login_redirect', array( $this, 'login_redirect_function' ), 10, 3 );
             add_filter( 'logout_redirect', array( $this, 'logout_redirect_function' ) );
-            add_action( 'init', array( $this, 'account_redirect_if_user_not_logged_in' ) );
-            add_action( 'init', array( $this, 'account_redirect_if_user_logged_in' ) );
+            // add_action( 'init', array( $this, 'account_redirect_if_user_not_logged_in' ) );
+            // add_action( 'init', array( $this, 'account_redirect_if_user_logged_in' ) );
 
         }
     

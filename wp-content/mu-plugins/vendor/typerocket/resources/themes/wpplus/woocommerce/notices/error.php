@@ -26,8 +26,8 @@ if ( ! $notices ) {
 
 <!-- start notices -->
 <div class="container-fluid">
-	<div class="alert alert-danger text-center rounded-0 woocommerce-error">
-		<ul>
+	<div class="alert alert-danger text-right rounded-0 woocommerce-error">
+		<ul class="m-0">
 			<?php foreach ( $notices as $notice ) : ?>
 				<li>
 					<?php echo wc_kses_notice( $notice['notice'] ); ?>

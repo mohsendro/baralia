@@ -20,13 +20,95 @@
 defined( 'ABSPATH' ) || exit;
 ?>
 
+
+<!-- start content -->
+<div class="content">
+    <div class="container-fluid">
+        <div class="content-box">
+            <div class="container-fluid">
+                <div class="row justify-content-center">
+                    <div class="col-xl-6">
+                        <div class="payment">
+                            <div class="payment-icon">
+                                <i class="bi bi-check-circle-fill"></i>
+                            </div>
+                            <div class="payment-title">
+                                <h5 class="title-font">پرداخت با موفقیت انجام شد</h5>
+                                <p class="text-muted font-18 my-3">جزییات تراکنش</p>
+                            </div>
+                            <div class="payment-detail">
+                                <div class="payment-detail-item">
+                                    <h6 class="text-muted h5 fw-light">تاریخ و زمان</h6>
+                                    <h5>20 آذر 1402 ساعت 21:28</h5>
+                                </div>
+                                <div class="payment-detail-item">
+                                    <h6 class="text-muted h5 fw-light">وضعیت</h6>
+                                    <h5 class="success-label">پرداخت موفق</h5>
+                                </div>
+                                <div class="payment-detail-item">
+                                    <h6 class="text-muted h5 fw-light">شماره پیگیری</h6>
+                                    <h5>5269531</h5>
+                                </div>
+                                <div class="payment-detail-item">
+                                    <h6 class="text-muted h5 fw-light">نوع عملیات</h6>
+                                    <h5>پرداخت اعتباری</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end content -->
+
+
+<!-- start content -->
+<div class="content">
+    <div class="container-fluid">
+        <div class="content-box">
+            <div class="container-fluid">
+                <div class="row justify-content-center">
+                    <div class="col-xl-6">
+                        <div class="payment">
+                            <div class="payment-icon">
+                                <i class="bi bi-x-circle-fill text-danger"></i>
+                            </div>
+                            <div class="payment-title">
+                                <h5 class="title-font text-danger">پرداخت شما ناموفق بود</h5>
+                                <p class="text-muted font-18 my-3">جزییات تراکنش</p>
+                            </div>
+                            <div class="payment-detail">
+                                <div class="payment-detail-item">
+                                    <h6 class="text-muted h5 fw-light">تاریخ و زمان</h6>
+                                    <h5>20 آذر 1402 ساعت 21:28</h5>
+                                </div>
+                                <div class="payment-detail-item">
+                                    <h6 class="text-muted h5 fw-light">وضعیت</h6>
+                                    <h5 class="danger-label">پرداخت ناموفق</h5>
+                                </div>
+                                <div class="payment-detail-item">
+                                    <h6 class="text-muted h5 fw-light">شماره پیگیری</h6>
+                                    <h5>5269531</h5>
+                                </div>
+                                <div class="payment-detail-item">
+                                    <h6 class="text-muted h5 fw-light">نوع عملیات</h6>
+                                    <h5>پرداخت اعتباری</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end content -->
+
 <div class="woocommerce-order">
-
-	<?php
-	if ( $order ) :
-
-		do_action( 'woocommerce_before_thankyou', $order->get_id() );
-		?>
+	<?php if ( $order ) : ?>
+		<?php do_action( 'woocommerce_before_thankyou', $order->get_id() ); ?>
 
 		<?php if ( $order->has_status( 'failed' ) ) : ?>
 
@@ -82,9 +164,6 @@ defined( 'ABSPATH' ) || exit;
 		<?php do_action( 'woocommerce_thankyou', $order->get_id() ); ?>
 
 	<?php else : ?>
-
 		<?php wc_get_template( 'checkout/order-received.php', array( 'order' => false ) ); ?>
-
 	<?php endif; ?>
-
 </div>

@@ -47,4 +47,4 @@ if( ! class_exists( 'GutenbergSettings' ) ) {
 	}
 
 }
-// $gutenberg_settins = new GutenbergSettings;       
+$gutenberg_settins = new GutenbergSettings;       

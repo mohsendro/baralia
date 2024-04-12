@@ -25,11 +25,15 @@ if ( ! $notices ) {
 ?>
 
 <!-- start notices -->
-<?php foreach ( $notices as $notice ) : ?>
-	<div class="container-fluid">
-		<div class="alert alert-info text-center rounded-0 woocommerce-info">
-			<?php echo wc_kses_notice( $notice['notice'] ); ?>
-		</div>
+<div class="container-fluid">
+	<div class="alert alert-info text-right rounded-0 woocommerce-info">
+		<ul class="m-0">
+			<?php foreach ( $notices as $notice ) : ?>
+				<li>
+					<?php echo wc_kses_notice( $notice['notice'] ); ?>
+				</li>
+			<?php endforeach; ?>
+		</ul>
 	</div>
-<?php endforeach; ?>
+</div>
 <!-- end notices -->

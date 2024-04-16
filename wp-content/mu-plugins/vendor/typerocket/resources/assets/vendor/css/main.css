@@ -3012,7 +3012,7 @@ header {
 
 .comment-item label.label-float {
     position: absolute;
-    top: -14px;
+    top: 0; /* -14px */
     background-color: #fff;
     right: 25px;
     padding: 5px;
@@ -3733,7 +3733,7 @@ a.underlined:after {
 
 .comment-item label.label-float {
     position: absolute;
-    top: -14px;
+    top: 0; /* -14px */
     background-color: #fff;
     right: 25px;
     padding: 5px;

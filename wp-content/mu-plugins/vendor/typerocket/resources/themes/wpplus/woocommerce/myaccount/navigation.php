@@ -18,18 +18,62 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
-
-do_action( 'woocommerce_before_account_navigation' );
 ?>
 
-<nav class="woocommerce-MyAccount-navigation">
-	<ul>
-		<?php foreach ( wc_get_account_menu_items() as $endpoint => $label ) : ?>
-			<li class="<?php echo wc_get_account_menu_item_classes( $endpoint ); ?>">
-				<a href="<?php echo esc_url( wc_get_account_endpoint_url( $endpoint ) ); ?>"><?php echo esc_html( $label ); ?></a>
-			</li>
-		<?php endforeach; ?>
-	</ul>
-</nav>
+<?php do_action( 'woocommerce_before_account_navigation' ); ?>
+
+<!-- start dashboard menu desktop  -->
+<div class="content-box d-xl-block d-none">
+	<div class="container-fluid">
+		<div class="panel-menu">
+			<nav class="navbar navbar-expand justify-content-center">
+				<ul class="navbar-nav">
+					<?php foreach ( wc_get_account_menu_items() as $endpoint => $label ) : ?>
+						<li class="nav-item <?php echo wc_get_account_menu_item_classes( $endpoint ); ?>">
+							<a href="<?php echo esc_url( wc_get_account_endpoint_url( $endpoint ) ); ?>" class="nav-link">
+								<i class="bi bi-link-45deg"></i>
+								<?php echo esc_html( $label ); ?>
+							</a>
+						</li>
+					<?php endforeach; ?>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<!-- end dashboard menu desktop  -->
+
+<!--   start dashboard menu mobile  -->
+<div class="custom-filter d-xl-none d-block">
+	<button class="btn btn-filter-float border-0 main-color-one-bg shadow-box px-4 rounded-3 position-fixed"
+			style="z-index: 999;bottom:80px;" type="button" data-bs-toggle="offcanvas"
+			data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+		<i class="bi bi-funnel font-20 fw-bold text-white"></i>
+		<span class="d-block font-14 text-white">منو</span>
+	</button>
+
+	<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasRight"
+			aria-labelledby="offcanvasRightLabel">
+		<div class="offcanvas-header">
+			<h5 class="offcanvas-title" id="offcanvasRightLabel1">منو</h5>
+			<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+		</div>
+		<div class="offcanvas-body">
+			<div class="panel-nav-nav ">
+				<ul class="rm-item-menu navbar-nav">
+					<?php foreach ( wc_get_account_menu_items() as $endpoint => $label ) : ?>
+						<li class="nav-item <?php echo wc_get_account_menu_item_classes( $endpoint ); ?>">
+							<a href="<?php echo esc_url( wc_get_account_endpoint_url( $endpoint ) ); ?>" class="nav-link">
+								<i class="bi bi-link-45deg"></i>
+								<?php echo esc_html( $label ); ?>
+							</a>
+						</li>
+					<?php endforeach; ?>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<!--   end dashboard menu mobile   -->
 
 <?php do_action( 'woocommerce_after_account_navigation' ); ?>

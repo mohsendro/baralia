@@ -35,8 +35,8 @@ defined( 'ABSPATH' ) || exit;
 </p>
 
 <?php if ( $notes ) : ?>
-	<h2><?php esc_html_e( 'Order updates', 'woocommerce' ); ?></h2>
-	<ol class="woocommerce-OrderUpdates commentlist notes">
+	<h4 class="mt-4"><?php esc_html_e( 'Order updates', 'woocommerce' ); ?></h4>
+	<ol class="woocommerce-OrderUpdates commentlist notes p-0">
 		<?php foreach ( $notes as $note ) : ?>
 		<li class="woocommerce-OrderUpdate comment note">
 			<div class="woocommerce-OrderUpdate-inner comment_container">

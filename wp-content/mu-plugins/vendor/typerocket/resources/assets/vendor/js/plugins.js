@@ -25,8 +25,10 @@
 
 //========= start home slider =========///
 var swiperSlide = new Swiper(".homeSlider", {
+  slidesPerView: "auto",
   spaceBetween: 30,
   centeredSlides: true,
+  freeMode: true,
   loop: true,
   autoplay: {
     delay: 5500,
@@ -41,7 +43,6 @@ var swiperSlide = new Swiper(".homeSlider", {
     clickable: true,
   },
 });
-
 
 
 ///=============end home slider ============/

@@ -3,7 +3,11 @@
 <?php /* Template Name: قالب صفحه تماس با ما */ ?>
 
 <?php
+    $queried = get_queried_object(); // OR get_the_ID()
     $queried_id = get_queried_object_id();
+
+    $template_slug = get_page_template_slug( $queried_id );
+    $template_meta = get_post_meta( $queried_id, '_wp_page_template', true );
 
     $option = new \App\Models\Option;
     $where_option = [

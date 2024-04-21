@@ -8,17 +8,17 @@
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
                         <a href="">
-                            <img alt="" class="img-fluid" loading="lazy" src="resources/assets/img/advert-1.jpg" width="800px">
+                            <img alt="" class="img-fluid" loading="lazy" src="<?php echo TYPEROCKET_DIR_URL; ?>resources/assets/img/slide-1.jpg">
                         </a>
                     </div>
                     <div class="swiper-slide">
                         <a href="">
-                            <img alt="" class="img-fluid" loading="lazy" src="resources/assets/img/slide-2.jpg">
+                            <img alt="" class="img-fluid" loading="lazy" src="<?php echo TYPEROCKET_DIR_URL; ?>resources/assets/img/slide-2.jpg">
                         </a>
                     </div>
                     <div class="swiper-slide">
                         <a href="">
-                            <img alt="" class="img-fluid" loading="lazy" src="resources/assets/img/slide-3.jpg">
+                            <img alt="" class="img-fluid" loading="lazy" src="<?php echo TYPEROCKET_DIR_URL; ?>resources/assets/img/slide-3.jpg">
                         </a>
                     </div>
                 </div>

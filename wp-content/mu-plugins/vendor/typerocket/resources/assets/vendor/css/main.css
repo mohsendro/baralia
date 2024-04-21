@@ -115,6 +115,7 @@ body {
     background: var(--bg-site);
     color: var(--color-site);
     position: relative;
+    overflow-x: hidden;
 }
 
 img {

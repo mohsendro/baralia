@@ -182,7 +182,6 @@ $(function () {
 /**
  * delivery item form check
  */
-
 $(document).ready(function () {
 
     $(".delivery-item").click(function () {
@@ -199,7 +198,6 @@ $(document).ready(function () {
 /*
 * فرم چند مرحله ای ورود / ثبت نام
 */
-
 $(document).ready(function (){
     ///disable fild password in load form
     $(".step-passwd").hide();

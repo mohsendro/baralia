@@ -6,11 +6,9 @@
         <div class="header-mega-menu">
             <div class="top-menu-menu">
                 <ul class="navbar-nav align-items-center">
-                    <li class="position-relative m-0"></li>
+                    <!-- <li class="position-relative m-0"></li> -->
                     <li class="nav-item main-menu-head">
-                        <a class="nav-link header-top-menu-link-a fw-bold-hover nav-active" href="">
-                            مگا تب منو
-                        </a>
+                        <a class="nav-link header-top-menu-link-a fw-bold-hover nav-active" href="">مگا تب منو</a>
                         <ul class="main-menu mega-container">
                             <li class="main-menu-sub-active-li">
                                 <a href=""> <i class="bi bi-phone"></i> موبایل</a>
@@ -184,8 +182,7 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link header-top-menu-link-a fw-bold-hover" href="">مگا
-                            لیست منو</a>
+                        <a class="nav-link header-top-menu-link-a fw-bold-hover" href="">مگالیست منو</a>
                         <ul class="list-unstyled shadow-lg back-menu sub-menu mega-container"
                             style="background: #fff url('<?php echo TYPEROCKET_DIR_URL; ?>resources/assets/img/mega-img-1.jpg') no-repeat;background-size: 300px !important;">
                             <li><a class="title" href="">بـرند</a></li>
@@ -225,27 +222,49 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link  header-top-menu-link-a fw-bold-hover" href="">منو ساده</a>
+                        <a class="nav-link header-top-menu-link-a fw-bold-hover" href="">منو ساده</a>
                         <ul class="level-one">
-                            <li><a href="">منو شماره 1</a></li>
-                            <li><a href="">منو شماره 2</a></li>
-                            <li class="position-relative"><a href="">منو شماره 3 <i
-                                        class="bi bi-chevron-left"></i></a>
+                            <li>
+                                <a href="">منو شماره 1</a>
+                            </li>
+                            <li>
+                                <a href="">منو شماره 2</a>
+                            </li>
+                            <li class="position-relative">
+                                <a href="">منو شماره 3 <i class="bi bi-chevron-left"></i>
+                                </a>
                                 <ul class="level-two">
-                                    <li><a href="">زیر منو شماره 1</a></li>
-                                    <li><a href="">2 زیر منو شماره </a></li>
-                                    <li><a href="">3 زیر منو شماره </a></li>
+                                    <li>
+                                        <a href="">زیر منو شماره 1</a>
+                                    </li>
+                                    <li>
+                                        <a href="">2 زیر منو شماره </a>
+                                    </li>
+                                    <li>
+                                        <a href="">3 زیر منو شماره </a>
+                                    </li>
                                 </ul>
                             </li>
-                            <li><a href="">منو شماره 4</a></li>
-                            <li><a href="">منو شماره 5</a></li>
-                            <li><a href="">منو شماره 6</a></li>
+                            <li>
+                                <a href="">منو شماره 4</a>
+                            </li>
+                            <li>
+                                <a href="">منو شماره 5</a>
+                            </li>
+                            <li>
+                                <a href="">منو شماره 6</a>
+                            </li>
                         </ul>
                     </li>
-                    <li class="nav-item"><a class="nav-link header-top-menu-link-a fw-bold-hover " href="">
-                            تخفیف ها و پیشنهاد ها </a></li>
-                    <li class="nav-item"><a class="nav-link header-top-menu-link-a fw-bold-hover " href="">سوالی
-                            دارید</a>
+                    <li class="nav-item">
+                        <a class="nav-link header-top-menu-link-a fw-bold-hover " href="">
+                            تخفیف ها و پیشنهاد ها
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link header-top-menu-link-a fw-bold-hover " href="">سوالی
+                            دارید
+                        </a>
                     </li>
                 </ul>
             </div>

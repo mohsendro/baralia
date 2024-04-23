@@ -41,8 +41,8 @@
                         </p>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 order-3">
-                    <div class="footer-calls d-md-block d-none">
+                <div class="col-12 col-lg-3 col-md-6 order-3">
+                    <div class="footer-calls">
                         <div class="d-flex footer-call justify-content-end">
                             <div class="footer-contact-right">
                                 <a href="">
@@ -71,74 +71,6 @@
                             <div class="panel-meta-item-icon main-color-three-bg ms-3 footer-contact-left">
                                 <i class="bi bi-telephone"></i>
                             </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 order-4">
-                    <div class="footer-rss-notifi pt-md-5">
-                        <div class="footer-rss">
-
-                            <div class="footer-rss-title-parent">
-                                <div class="footer-rss-icon">
-                                    <i class="bi bi-envelope-at"></i>
-                                </div>
-                                <div class="footer-rss-title">
-                                    <h4 class="title-font">خبرنامه</h4>
-                                    <p class="mb-0">دریافت اطلاع رسانی جدیدترین محصولات</p>
-                                </div>
-                            </div>
-                            <div class="footer-calls d-md-none d-flex">
-                                <div class="d-flex footer-call justify-content-end">
-                                    <div class="footer-contact-right">
-                                        <a href="">
-                                            <h4 style="line-height: 1"
-                                                class="text-end pb-3 fw-lighter mb-0 text-muted-two">021</h4>
-                                            <h4 style="line-height: 0" class="title-font mt-0 text-end">12345678</h4>
-                                        </a>
-                                        <div class="text-end">
-                                            <span class="badge main-color-two-bg mt-3 rounded-0">تهران</span>
-                                        </div>
-                                    </div>
-                                    <div class="panel-meta-item-icon main-color-three-bg ms-3 footer-contact-left">
-                                        <i class="bi bi-telephone"></i>
-                                    </div>
-                                </div>
-                                <div class="d-flex footer-call mt-2 justify-content-end">
-                                    <div class="footer-contact-right">
-                                        <a href="">
-                                            <h4 style="line-height: 2" class="text-end fw-lighter mb-0 text-muted-two">
-                                                021</h4>
-                                            <h4 style="line-height: 0" class="title-font mt-0 text-end">12345678</h4>
-                                        </a>
-                                        <div class="text-end">
-                                            <span class="badge main-color-two-bg mt-3 rounded-0">خرم آباد</span>
-                                        </div>
-                                    </div>
-                                    <div class="panel-meta-item-icon main-color-three-bg ms-3 footer-contact-left">
-                                        <i class="bi bi-telephone"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="footer-form">
-                            <form action="">
-                                <div class="form-group d-flex">
-                                    <input type="text" class="form-control rounded-0 py-3 footer-form-txt"
-                                        placeholder="شماره تماس خود را وارد کنید">
-                                    <button type="submit"
-                                        class="btn main-color-two-bg border-0 rounded-0">عضویت</button>
-                                </div>
-                            </form>
-                        </div>
-                        <div class="footer-form">
-                            <form action="">
-                                <div class="form-group d-flex">
-                                    <input type="text" class="form-control rounded-0 py-3 footer-form-txt"
-                                        placeholder="شماره تماس خود را وارد کنید">
-                                    <button type="submit"
-                                        class="btn main-color-two-bg rounded-0 border-0">عضویت</button>
-                                </div>
-                            </form>
                         </div>
                     </div>
                 </div>
@@ -241,7 +173,7 @@
     <!-- end login modal -->
 
     <!-- start mobile bottom menu -->
-    <div class="mobile-footer d-lg-none d-table justify-content-center shadow-box bg-white position-fixed bottom-0 p-2 w-100"
+    <!-- <div class="mobile-footer d-lg-none d-table justify-content-center shadow-box bg-white position-fixed bottom-0 p-2 w-100"
         style="z-index: 100;table-layout: fixed;">
         <ul class="d-table-row">
             <li class="d-table-cell pointer" onclick="topFunction()">
@@ -280,7 +212,7 @@
                 </a>
             </li>
         </ul>
-    </div>
+    </div> -->
     <!-- end mobile bottom menu -->
 
     <div class="float-btn">

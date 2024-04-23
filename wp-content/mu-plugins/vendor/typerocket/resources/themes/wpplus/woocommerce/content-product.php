@@ -60,7 +60,7 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 		?>
 		<div class="product-box-image">
 			<?php echo $product->get_image(); ?>
-			<img src="assets/img/product/product-image-1.jpg" loading="lazy" alt="" class="img-fluid one-image">
+			<!-- <img src="assets/img/product/product-image-1.jpg" loading="lazy" alt="" class="img-fluid one-image"> -->
 			<!-- <img src="assets/img/product/product-image-6.jpg" loading="lazy" alt="" class="img-fluid two-image"> -->
 
 			<?php 
@@ -69,7 +69,7 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 				if( $product->is_on_sale() && $product->is_type( 'simple' ) ):
 			?>
 				<div class="product-box-price-discount">
-					<span class="d-block badge main-color-three-bg text-white font-14 rounded-0"><?php echo ceil((($regular - $sale) / $regular) * 100); ?></span>
+					<span class="d-block badge main-color-three-bg text-white font-14 rounded-0">% <?php echo ceil((($regular - $sale) / $regular) * 100); ?></span>
 				</div>
 			<?php endif; ?>
 			<span class="product-box-image-overlay"></span>

@@ -73,15 +73,6 @@
             'status' => 'publish',
         ]
     );
-
-    // $product_query = new WC_Product_Query( array(
-    //     'limit' => 10,
-    //     'orderby' => 'total_sales',
-    //     'order' => 'DESC',
-    //     'meta_key' => 'total_sales',
-    //     'meta_value_func' => 'SUM',
-    // ) );
-    // $best_products = $product_query->get_products();
     
     $best_products = wc_get_products(
         [
@@ -113,25 +104,7 @@
     <div class="container-fluid">
         <div class="row gx-4 gy-4">
             <?php foreach( $main_terms as $term ): ?>
-                <?php // get_template_part( 'components/category', 'card', $term ); ?>
-                <div class="col-lg-4">
-                    <div class="advert-item">
-                        <a href="<?php echo get_term_link( $term->term_id )?>">
-                            <?php
-                                $term_thumbnail_id = get_term_meta( $term->term_id, 'thumbnail_id', true ); // Get the ID of the term thumbnail
-                                $term_thumbnail = wp_get_attachment_image( $term_thumbnail_id, 'full' ); // Get the HTML markup for the term thumbnail                                
-                            ?>
-                            <?php if( $term_thumbnail ): ?>
-                                <?php echo $term_thumbnail; ?>
-                            <?php else: ?>
-                                <img src="<?php echo TYPEROCKET_DIR_URL; ?>/resources/assets/img/placeholder.webp" class="thumbnail">
-                            <?php endif; ?>
-                        <div class="advert-item-title">
-                            <h4><?php echo $term->name; ?></h4>
-                        </div>
-                        </a>
-                    </div>
-                </div>
+                <?php get_template_part( 'components/category', 'card', $term ); ?>
             <?php endforeach; ?>
         </div>
     </div>
@@ -162,27 +135,7 @@
             <div class="swiper free-mode">
                 <div class="swiper-wrapper">
                     <?php foreach( $second_terms as $term ): ?>
-                        <?php // get_template_part( 'components/category' ); ?>
-                        <div class="swiper-slide">
-                            <div class="main-category-item">
-                                <div class="main-category-item-image">
-                                    <a href="<?php echo get_term_link( $term->term_id )?>">
-                                        <?php
-                                            $term_thumbnail_id = get_term_meta( $term->term_id, 'thumbnail_id', true ); // Get the ID of the term thumbnail
-                                            $term_thumbnail = wp_get_attachment_image( $term_thumbnail_id, 'thumbnail' ); // Get the HTML markup for the term thumbnail                                
-                                        ?>
-                                        <?php if( $term_thumbnail ): ?>
-                                            <?php echo $term_thumbnail; ?>
-                                        <?php else: ?>
-                                            <img src="<?php echo TYPEROCKET_DIR_URL; ?>/resources/assets/img/placeholder.webp" class="thumbnail">
-                                        <?php endif; ?>
-                                    </a>
-                                </div>
-                                <div class="main-category-item-title">
-                                    <h6 class="title-font"><?php echo $term->name; ?></h6>
-                                </div>
-                            </div>
-                        </div>
+                        <?php get_template_part( 'components/category', '', $term ); ?>
                     <?php endforeach; ?>
                 </div>
             </div>
@@ -214,7 +167,9 @@
         <div class="slider-parent">
             <div class="swiper product-slider-swiper">
                 <div class="swiper-wrapper ">
-                    <?php get_template_part( 'components/product', 'card' ); ?>
+                    <?php foreach ($new_products as $product): ?>
+                        <?php get_template_part( 'components/product', 'card' ); ?>
+                    <?php endforeach; ?>
                 </div>
 
                 <div class="swiper-button-next"></div>
@@ -266,7 +221,9 @@
 
         <div class="swiper mt-4 product-slider-swiper">
             <div class="swiper-wrapper ">
-                <?php get_template_part( 'components/product', 'card' ); ?>
+                <?php foreach ($best_products as $product): ?>
+                    <?php get_template_part( 'components/product', 'card' ); ?>
+                <?php endforeach ?>
             </div>
 
             <div class="swiper-button-next"></div>
@@ -291,7 +248,9 @@
                 <div class="col-lg-9">
                     <div class="swiper amazing-slider-sw">
                         <div class="swiper-wrapper">
-                            <?php get_template_part( 'components/featured', 'card' ); ?>
+                            <?php foreach ($new_products as $product): ?>
+                                <?php get_template_part( 'components/featured', 'card' ); ?>
+                            <?php endforeach; ?>
                         </div>
                         <div class="swiper-button-next d-lg-flex d-none"></div>
                         <div class="swiper-button-prev d-lg-flex d-none"></div>

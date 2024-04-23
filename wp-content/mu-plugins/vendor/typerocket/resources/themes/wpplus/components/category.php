@@ -1,5 +1,7 @@
 <?php if ( ! defined( 'ABSPATH' ) ) { die; } // Cannot access directly. ?>
 
+<?php global $term; ?>
+
 <div class="swiper-slide">
     <div class="main-category-item">
         <div class="main-category-item-image">

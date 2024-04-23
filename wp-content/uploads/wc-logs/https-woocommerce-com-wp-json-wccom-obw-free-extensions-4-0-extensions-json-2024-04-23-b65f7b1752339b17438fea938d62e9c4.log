@@ -1,11 +1,11 @@
-2024-03-24T15:02:45+00:00 ERROR Error getting data feed
-2024-03-24T15:02:45+00:00 ERROR WP_Error Object
+2024-04-23T11:04:49+00:00 ERROR Error getting data feed
+2024-04-23T11:04:49+00:00 ERROR WP_Error Object
 (
     [errors] => Array
         (
             [http_request_failed] => Array
                 (
-                    [0] => cURL error 28: Operation timed out after 5015 milliseconds with 0 bytes received
+                    [0] => cURL error 6: Could not resolve host: woocommerce.com
                 )
 
         )

@@ -1,5 +1,23 @@
 <?php if ( ! defined( 'ABSPATH' ) ) { die; } // Cannot access directly. ?>
 
+<?php
+    $user = wp_get_current_user();
+
+    $count_posts = wp_count_posts( 'product' );
+	$product_count = $count_posts->publish;
+
+    $popular_terms = get_terms(
+        [
+            'taxonomy' => 'product_tag',
+            'parent' => 0,
+            'hide_empty' => false,
+            'number' => 15,
+			'order' => 'ASC',
+        ]
+
+    );
+?>
+
 <!DOCTYPE html>
 <html lang="<?php echo get_bloginfo('language'); ?>" 
       dir="<?php if( is_rtl() ) { echo 'rtl'; } else { echo 'ltr'; } ?>"
@@ -102,38 +120,50 @@
                             </div>
                             <!-- end mini cart -->
                         </div>
+
                         <div class="header-auth ms-3">
-                            <div class="dropdown">
-                                <a href="#register" data-bs-toggle="dropdown" aria-expanded="true" role="button"
-                                    class="btn btn-white header-register border-0 rounded-pill show">
-                                    <span class="fw-bold d-lg-inline-block d-none">امیر رضایی خوش آمدید</span>
+                            <?php if( is_user_logged_in() ): ?>
+                                <div class="dropdown">
+                                    <a href="#register" data-bs-toggle="dropdown" aria-expanded="true" role="button"
+                                        class="btn btn-white header-register border-0 rounded-pill show">
+                                        <span class="fw-bold d-lg-inline-block d-none"><?php echo $user->display_name; ?> خوش آمدید</span>
+                                        <i class="bi bi-person-check fs-1 d-lg-none d-inline"></i>
+                                    </a>
+                                    <ul class="dropdown-menu flex-column"
+                                        style="position: absolute; inset: 0px 0px auto auto; margin: 0px; transform: translate3d(0px, 42px, 0px);"
+                                        data-popper-placement="bottom-end">
+                                        <li>
+                                            <a href="<?php echo wc_get_account_endpoint_url( 'dashboard' ); ?>" class="dropdown-item">
+                                                <i class="bi bi-house-door me-2"></i>
+                                                پروفایل
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="<?php echo wc_get_account_endpoint_url( 'orders' ); ?>" class="dropdown-item">
+                                                <i class="bi bi-cart-check me-2"></i>
+                                                سفارش های من
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="<?php echo wc_get_account_endpoint_url( 'edit-account' ); ?>" class="dropdown-item">
+                                                <i class="bi bi-pin-map me-2"></i>
+                                                آدرس های من
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="<?php echo wc_get_account_endpoint_url( 'customer-logout' ); ?>" class="dropdown-item mct-hover">
+                                                <i class="bi bi-arrow-right-square me-2"></i>
+                                                خروج از حساب کاربری
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            <?php else: ?>
+                                <a href="<?php echo get_permalink( wc_get_page_id( 'myaccount' ) ); ?>" class="btn btn-white header-register border-0 rounded-pill show">
+                                    <span class="fw-bold d-lg-inline-block d-none">ورود / ثبت نام</span>
                                     <i class="bi bi-person-check fs-1 d-lg-none d-inline"></i>
                                 </a>
-                                <ul class="dropdown-menu flex-column"
-                                    style="position: absolute; inset: 0px 0px auto auto; margin: 0px; transform: translate3d(0px, 42px, 0px);"
-                                    data-popper-placement="bottom-end">
-                                    <li><a href="" class="dropdown-item"><i
-                                                class="bi bi-house-door me-2"></i>پروفایل</a>
-                                    </li>
-                                    <li><a href="" class="dropdown-item"><i class="bi bi-cart-check me-2"></i>سفارش های
-                                            من</a></li>
-                                    <li><a href="" class="dropdown-item"><i class="bi bi-pin-map me-2"></i>آدرس های
-                                            من</a></li>
-                                    <li><a href="" class="dropdown-item"><i class="bi bi-bell me-2"></i>پیام ها و
-                                            اطلاعیه ها</a></li>
-                                    <li><a href="" class="dropdown-item"><i class="bi bi-chat-dots me-2"></i>نظرات
-                                            من</a></li>
-                                    <li><a href="" class="dropdown-item"><i
-                                                class="bi bi-question-circle me-2"></i>درخواست
-                                            پشتیبانی</a></li>
-                                    <li><a href="" class="dropdown-item"><i class="bi bi-heart me-2"></i>محصولات مورد
-                                            علاقه</a></li>
-                                    <li><a href="" class="dropdown-item"><i class="bi bi-gift me-2"></i>کد های تخفیف
-                                            من</a></li>
-                                    <li><a href="" class="dropdown-item mct-hover"><i
-                                                class="bi bi-arrow-right-square me-2"></i>خروج از حساب کاربری</a></li>
-                                </ul>
-                            </div>
+                            <?php endif; ?> 
                         </div>
                     </div>
                 </div>
@@ -142,7 +172,7 @@
                     <div class="header-top-menu">
                         <div class="header-logo">
                             <a href="<?php echo home_url(); ?>">
-                                <img alt="" src="<?php echo TYPEROCKET_DIR_URL; ?>resources/assets/img/logo.png">
+                                <img alt="<?php echo get_bloginfo('name'); ?>" src="<?php echo TYPEROCKET_DIR_URL; ?>resources/assets/img/logo.png">
                             </a>
                         </div>
                     </div>
@@ -150,46 +180,45 @@
 
                 <div class="col-lg-3 order-3 d-lg-block d-none">
                     <div class="header-search">
-                        <form action="">
-                            <input class="header-search-txt" placeholder="جستجوی محصولات از 2560 برند" type="text">
+                        <form action="<?php echo home_url(); ?>">
+                            <input class="header-search-txt" placeholder="جستجوی محصولات از <?php echo $product_count; ?> محصول" type="text">
                         </form>
                     </div>
                 </div>
 
                 <div class="col-sm-4 col-6 order-lg-5 order-1">
-
                     <div class="responsive-menu d-lg-none d-block">
                         <div class="d-flex align-items-center">
-
                             <button aria-controls="responsive menu" class="btn border-0 p-3 ps-0 btn-responsive-menu"
                                 data-bs-target="#responsiveMenu" data-bs-toggle="offcanvas" type="button">
                                 <svg class="bi bi-list" fill="currentColor" height="32" viewBox="0 0 16 16" width="32"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path
                                         d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
-                                        fill-rule="evenodd" />
+                                        fill-rule="evenodd"
+                                    />
                                 </svg>
                             </button>
                             <div class="header-logo d-sm-none d-flex">
-                                <a href="index.html">
-                                    <img alt="" src="<?php echo TYPEROCKET_DIR_URL; ?>resources/assets/img/logo.png">
+                                <a href="<?php echo home_url(); ?>">
+                                    <img alt="<?php echo get_bloginfo('name'); ?>" src="<?php echo TYPEROCKET_DIR_URL; ?>resources/assets/img/logo.png">
                                 </a>
                             </div>
                         </div>
                         <div aria-labelledby="responsive menu" class="offcanvas offcanvas-start" id="responsiveMenu"
                             tabindex="-1">
-                            <div class="offcanvas-header">
-                                <h5 class="offcanvas-title" id="offcanvasRightLabel">فروشگاه هناس</h5>
+                            <!-- <div class="offcanvas-header">
+                                <h5 class="offcanvas-title" id="offcanvasRightLabel"><?php // echo get_bloginfo('name'); ?></h5>
                                 <button aria-label="Close" class="btn-close" data-bs-dismiss="offcanvas"
                                     type="button"></button>
-                            </div>
+                            </div> -->
                             <div class="offcanvas-body d-flex flex-column">
-                                <a class="text-center d-block mb-3" href="">
-                                    <img alt="" class="img-fluid" src="<?php echo TYPEROCKET_DIR_URL; ?>resources/assets/img/logo.png" width="200">
+                                <a class="text-center d-block mb-3" href="<?php echo home_url(); ?>">
+                                    <img alt="<?php echo get_bloginfo('name'); ?>" class="img-fluid" src="<?php echo TYPEROCKET_DIR_URL; ?>resources/assets/img/logo.png" width="200">
                                 </a>
                                 <div class="header-search pb-4 w-100">
-                                    <form action="">
-                                        <input class="header-search-txt py-3" placeholder="جستجوی محصولات از 2560 برند"
+                                    <form action="<?php echo home_url(); ?>">
+                                        <input class="header-search-txt py-3" placeholder="جستجوی محصولات از <?php echo $product_count; ?> محصول"
                                             type="text">
                                     </form>
                                 </div>
@@ -354,6 +383,7 @@
                 </div>
             </div>
         </div>
+
         <!-- start serach float -->
         <div class="search-float">
             <div class="container-fluid">
@@ -361,8 +391,8 @@
                     <i class="bi bi-x fs-1"></i>
                 </div>
                 <div class="search-float-form">
-                    <form action="">
-                        <input class="header-search-txt" placeholder="جستجوی محصولات از 2560 برند" type="text">
+                    <form action="<?php echo home_url(); ?>">
+                        <input class="header-search-txt" name="s" placeholder="جستجوی محصولات از <?php echo $product_count; ?> محصول" type="text">
                     </form>
                 </div>
 
@@ -371,21 +401,16 @@
                         <i class="bi bi-tag me-3"></i>
                         <h6>بیشترین جستجو های اخیر:</h6>
                     </div>
-                    <div class="search-float-tag-items">
-                        <ul class="navbar-nav flex-row flex-wrap w-100">
-                            <li class="nav-item"><a class="btn" href="">#آویز ساعت طلا زنانه</a></li>
-                            <li class="nav-item"><a class="btn" href="">#پیراهن مردانه</a></li>
-                            <li class="nav-item"><a class="btn" href="">#کیف زنانه</a></li>
-                            <li class="nav-item"><a class="btn" href="">#کفش ورزشی مردانه</a></li>
-                            <li class="nav-item"><a class="btn" href="">#شلوار زنانه</a></li>
-                            <li class="nav-item"><a class="btn" href="">#ساعت مردانه</a></li>
-                            <li class="nav-item"><a class="btn" href="">#کرم مرطوب کننده</a></li>
-                            <li class="nav-item"><a class="btn" href="">#شامپو مو</a></li>
-                            <li class="nav-item"><a class="btn" href="">#اصلاح مو صورت</a></li>
-                        </ul>
-                    </div>
+                    <?php if( $popular_terms ): ?>
+                        <div class="search-float-tag-items">
+                            <ul class="navbar-nav flex-row flex-wrap w-100">
+                                <?php foreach( $popular_terms as $term ): ?>
+                                    <li class="nav-item"><a class="btn" href="<?php echo get_term_link( $term->term_id )?>"># <?php echo $term->name; ?></a></li>
+                                <?php endforeach; ?>
+                            </ul>
+                        </div>
+                    <?php endif; ?>
                 </div>
-
             </div>
         </div>
         <!-- end search float -->

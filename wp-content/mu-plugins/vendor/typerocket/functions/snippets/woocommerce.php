@@ -38,3 +38,13 @@ function wpplus_custom_price_html( $price, $product ) {
     return $price;
 }
 add_filter( 'woocommerce_get_price_html', 'wpplus_custom_price_html', 10, 2 );
+
+// Filter search result
+function wpplus_filter_search_to_products($query) {
+    if ($query->is_search && !is_admin()) {
+      $query->set('post_type', array('product'));
+    }
+    return $query;
+}
+add_filter('pre_get_posts', 'wpplus_filter_search_to_products');
+  

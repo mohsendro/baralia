@@ -1895,6 +1895,8 @@ header {
 
 .mini-cart-items {
     padding: 10px 0;
+    height: 200px;
+    overflow-y: scroll;
 }
 
 .mini-cart-item {

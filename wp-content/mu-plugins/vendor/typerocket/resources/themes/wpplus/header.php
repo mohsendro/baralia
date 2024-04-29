@@ -59,60 +59,34 @@
                         <div class="header-cart-icon">
                             <div class="header-cart-icon-toggle" href="">
                                 <i class="bi bi-basket fs-4"></i>
-                                <span class="header-cart-icon-counter">2</span>
+                                <span class="header-cart-icon-counter"><?php echo WC()->cart->get_cart_contents_count(); ?></span>
                             </div>
 
                             <!-- start mini cart -->
                             <div class="min-cart">
                                 <div class="mini-cart-title d-flex align-items-center justify-content-between">
-                                    <div class="mini-cart-counter"><span>1</span> کالا</div>
-                                    <div class="mini-cart-title-link"><a class="main-color-three-color fw-bold" href="">
-                                            مشاهده سبد خرید<i class="bi bi-chevron-left font-14 ms-2"></i> </a></div>
-                                </div>
-                                <div class="mini-cart-items">
-                                    <div class="mini-cart-item">
-                                        <div class="mini-cart-item-image">
-                                            <span class="mini-cart-item-image-overlay"></span>
-                                            <img alt="" src="<?php echo TYPEROCKET_DIR_URL; ?>resources/assets/img/cart-image.jpg">
-                                        </div>
-                                        <div class="mini-cart-item-desc">
-                                            <div
-                                                class="mini-cart-item-remove d-flex align-items-center justify-content-between">
-                                                <span class="font-10">دونابل</span>
-                                                <div><a href=""><i class="bi bi-x font-14 text-muted"></i></a></div>
-                                            </div>
-                                            <div class="mini-cart-item-title">
-                                                <h6 class="font-12">شال زنانه دونابل مدل 225334300MC99</h6>
-                                            </div>
-                                            <div class="mini-cart-item-price">
-                                                <div class="mini-cart-item-price-counter font-12">
-                                                    <span class="">1</span> عدد
-                                                </div>
-                                                <div class="mini-cart-item-price-desc">
-                                                    <div class="mini-cart-item-price-price">
-                                                        <span>74,000</span>
-                                                        <span class="text-muted-two">تومان</span>
-                                                    </div>
-                                                    <div class="mini-cart-item-price-discount ms-2">
-                                                        <span class="main-color-one-bg font-12 p-1">56%</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                    <div class="mini-cart-counter"><span><?php echo count(WC()->cart->get_cart()); ?></span> کالا</div>
+                                    <div class="mini-cart-title-link">
+                                        <a class="main-color-three-color fw-bold" href="<?php echo wc_get_cart_url(); ?>">
+                                            مشاهده سبد خرید<i class="bi bi-chevron-left font-14 ms-2"></i>
+                                        </a>
                                     </div>
                                 </div>
+                                <?php wc_get_template('cart/mini-cart.php'); ?>
                                 <div class="mini-cart-action">
                                     <div class="row">
                                         <div class="col-6">
                                             <div class="mini-cart-action-price">
                                                 <h6 class="font-14">مبلغ قابل پرداخت:</h6>
-                                                <h5 class="main-color-two-color font-14">74,000 <span
-                                                        class="font-14 main-color-two-color">تومان</span></h5>
+                                                <h5 class="main-color-two-color font-14">
+                                                    <?php echo WC()->cart->get_cart_subtotal(); ?>
+                                                    <!-- <span class="font-14 main-color-two-color">تومان</span> -->
+                                                </h5>
                                             </div>
                                         </div>
                                         <div class="col-6">
                                             <div class="text-end">
-                                                <a class="btn main-color-two-bg rounded-0" href="">ورود و ثبت سفارش</a>
+                                                <a class="btn main-color-two-bg rounded-0" href="<?php echo wc_get_cart_url(); ?>">ورود و ثبت سفارش</a>
                                             </div>
                                         </div>
                                     </div>
@@ -219,164 +193,29 @@
                                 <div class="header-search pb-4 w-100">
                                     <form action="<?php echo home_url(); ?>">
                                         <input class="header-search-txt py-3" placeholder="جستجوی محصولات از <?php echo $product_count; ?> محصول"
-                                            type="text">
+                                            type="text" name="s">
                                     </form>
                                 </div>
-                                <ul class="rm-item-menu navbar-nav">
-                                    <li class="nav-item bg-ul-f7"><a class="nav-link" href="index.html">صفحه
-                                            اصلی</a>
-                                    </li>
-                                    <li class="nav-item bg-ul-f7">
-                                        <a class="nav-link" href="">گوشی موبایل</a>
-                                        <span class="showSubMenu"><i class="bi bi-chevron-left"></i></span>
-                                        <ul class="navbar-nav h-0">
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="">برند</a>
-                                                <span class="showSubMenu"><i class="bi bi-chevron-left"></i></span>
-                                                <ul class="navbar-nav h-0 bg-ul-f7">
-                                                    <li class="nav-item"><a class="nav-link" href="">سامسونگ</a>
-                                                    </li>
-                                                    <li class="nav-item"><a class="nav-link" href="">هوآوی</a></li>
-                                                    <li class="nav-item"><a class="nav-link" href="">شیائومی</a>
-                                                    </li>
-                                                    <li class="nav-item"><a class="nav-link" href="">الجی</a></li>
-                                                    <li class="nav-item"><a class="nav-link" href="">سونی</a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="">بر اساس رده بندی</a>
-                                                <span class="showSubMenu"><i class="bi bi-chevron-left"></i></span>
-                                                <ul class="navbar-nav h-0 bg-ul-f7">
-                                                    <li class="nav-item"><a class="nav-link" href="">لمسی</a></li>
-                                                    <li class="nav-item"><a class="nav-link" href="">دکمه ای</a>
-                                                    </li>
-                                                    <li class="nav-item"><a class="nav-link" href="">نظامی</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li class="nav-item bg-ul-f7">
-                                        <a class="nav-link" href="">تبلت</a>
-                                        <span class="showSubMenu"><i class="bi bi-chevron-left"></i></span>
-                                        <ul class="navbar-nav h-0">
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="">کشور</a>
-                                                <span class="showSubMenu"><i class="bi bi-chevron-left"></i></span>
-                                                <ul class="navbar-nav h-0 bg-ul-f7">
-                                                    <li class="nav-item"><a class="nav-link" href="">ژاپن</a></li>
-                                                    <li class="nav-item"><a class="nav-link" href="">کره جنوبی</a>
-                                                    </li>
-                                                    <li class="nav-item"><a class="nav-link" href="">آمریکایی</a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="">بر اساس رده بندی</a>
-                                                <span class="showSubMenu"><i class="bi bi-chevron-left"></i></span>
-                                                <ul class="navbar-nav h-0 bg-ul-f7">
-                                                    <li class="nav-item"><a class="nav-link" href="">لمسی</a></li>
-                                                    <li class="nav-item"><a class="nav-link" href="">دانش آموزی</a>
-                                                    </li>
-                                                    <li class="nav-item"><a class="nav-link" href="">مخصوص بازی</a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li class="nav-item bg-ul-f7">
-                                        <a class="nav-link" href="">لپتاپ</a>
-                                        <span class="showSubMenu"><i class="bi bi-chevron-left"></i></span>
-                                        <ul class="navbar-nav h-0">
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="">برند</a>
-                                                <span class="showSubMenu"><i class="bi bi-chevron-left"></i></span>
-                                                <ul class="navbar-nav h-0 bg-ul-f7">
-                                                    <li class="nav-item"><a class="nav-link" href="">ایسر</a></li>
-                                                    <li class="nav-item"><a class="nav-link" href="">مایکروسافت</a>
-                                                    </li>
-                                                    <li class="nav-item"><a class="nav-link" href="">ایسوس</a></li>
-                                                    <li class="nav-item"><a class="nav-link" href="">اپل</a></li>
-                                                    <li class="nav-item"><a class="nav-link" href="">سونی</a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="">بر اساس قیمت</a>
-                                                <span class="showSubMenu"><i class="bi bi-chevron-left"></i></span>
-                                                <ul class="navbar-nav h-0 bg-ul-f7">
-                                                    <li class="nav-item"><a class="nav-link" href="">ارزان</a></li>
-                                                    <li class="nav-item"><a class="nav-link" href="">اقتصادی</a>
-                                                    </li>
-                                                    <li class="nav-item"><a class="nav-link" href="">گران</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li class="nav-item bg-ul-f7">
-                                        <a class="nav-link" href="">صفحات</a>
-                                        <span class="showSubMenu"><i class="bi bi-chevron-left"></i></span>
-                                        <ul class="navbar-nav h-0">
-                                            <li><a href="index.html">صفحه اصلی</a></li>
-                                            <li class="nav-item"><a class="nav-link" href="product.html">صفحه
-                                                    محصول</a>
-                                            </li>
-                                            <li class="nav-item"><a class="nav-link" href="category.html">صفحه دسته
-                                                    بندی</a></li>
-                                            <li class="nav-item"><a class="nav-link" href="cart.html">صفحه سبد
-                                                    خرید</a>
-                                            </li>
-                                            <li class="nav-item"><a class="nav-link" href="search.html">صفحه
-                                                    جستجو</a>
-                                            </li>
-                                            <li class="nav-item"><a class="nav-link"
-                                                    href="category-product-row.html">دسته
-                                                    بندی محصولات خطی</a></li>
-                                            <li class="nav-item"><a class="nav-link" href="404.html">صفحه 404</a>
-                                            </li>
-                                            <li class="nav-item"><a class="nav-link" href="login.html">صفحه ورود</a>
-                                            </li>
-                                            <li class="nav-item"><a class="nav-link" href="register.html">صفحه ثبت
-                                                    نام</a></li>
-                                            <li class="nav-item"><a class="nav-link" href="forget.html">صفحه فراموشی
-                                                    رمز
-                                                    عبور</a></li>
-                                            <li class="nav-item"><a class="nav-link" href="blog.html">صفحه وبلاگ</a>
-                                            </li>
-                                            <li class="nav-item"><a class="nav-link" href="blog-detail.html">صفحه
-                                                    جزییات
-                                                    وبلاگ</a></li>
-                                            <li class="nav-item"><a class="nav-link" href="compare.html">صفحه مقایسه
-                                                    محصول</a></li>
-                                            <li class="nav-item"><a class="nav-link" href="checkout.html">پرداخت
-                                                    مرحله
-                                                    ای</a></li>
-                                            <li class="nav-item"><a class="nav-link" href="payment-ok.html">پرداخت
-                                                    موفق</a></li>
-                                            <li class="nav-item"><a class="nav-link" href="payment-nok.html">پرداخت
-                                                    ناموفق</a></li>
-                                            <li class="nav-item"><a class="nav-link" href="product-not-found.html">محصول
-                                                    ناموجود</a></li>
-                                            <li class="nav-item"><a class="nav-link" href="empty-cart.html">سبد خرید
-                                                    خالی</a></li>
-                                            <li class="nav-item"><a class="nav-link" href="dashboard.html"> داشبورد
-                                                    کاربری</a></li>
-                                            <li class="nav-item"><a class="nav-link" href="order.html">سفارشات</a>
-                                            </li>
-                                            <li class="nav-item"><a class="nav-link" href="favorite.html">محصولات
-                                                    مورد
-                                                    علاقه</a></li>
-                                            <li class="nav-item"><a class="nav-link"
-                                                    href="notification.html">اطلاعیه</a>
-                                            </li>
-                                            <li class="nav-item"><a class="nav-link" href="comments.html">نظرات</a>
-                                            </li>
-                                            <li class="nav-item"><a class="nav-link" href="address.html">آدرس ها</a>
-                                            </li>
-                                            <li class="nav-item"><a class="nav-link" href="last-seen.html">آخرین
-                                                    بازدید
-                                                    ها</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
+                                <?php
+                                    wp_nav_menu( array(
+                                        'menu'				=> "mobile_menu", // (int|string|WP_Term) Desired menu. Accepts a menu ID, slug, name, or object.
+                                        'menu_class'		=> "rm-item-menu navbar-nav", // (string) CSS class to use for the ul element which forms the menu. Default 'menu'.
+                                        // 'menu_id'			=> "", // (string) The ID that is applied to the ul element which forms the menu. Default is the menu slug, incremented.
+                                        'container'			=> "", // (string) Whether to wrap the ul, and what to wrap it with. Default 'div'.
+                                        'container_class'	=> "", // (string) Class that is applied to the container. Default 'menu-{menu slug}-container'.
+                                        'container_id'		=> "", // (string) The ID that is applied to the container.
+                                        // 'fallback_cb'		=> "", // (callable|bool) If the menu doesn't exists, a callback function will fire. Default is 'wp_page_menu'. Set to false for no fallback.
+                                        // 'before'			=> "", // (string) Text before the link markup.
+                                        // 'after'				=> "", // (string) Text after the link markup.
+                                        // 'link_before'		=> "", // (string) Text before the link text.
+                                        // 'link_after'		=> "", // (string) Text after the link text.
+                                        // 'echo'				=> "", // (bool) Whether to echo the menu or return it. Default true.
+                                        'depth'				=> 3, // (int) How many levels of the hierarchy are to be included. 0 means all. Default 0.
+                                        'walker'			=> new Mobile_Menu_Walker_Nav_Menu(), // (object) Instance of a custom walker class.
+                                        'theme_location'	=> "", // (string) Theme location to be used. Must be registered with register_nav_menu() in order to be selectable by the user.
+                                        'item_spacing'		=> "", // (string) Whether to preserve whitespace within the menu's HTML. Accepts 'preserve' or 'discard'. Default 'preserve'.
+                                    ) );
+                                ?>
                             </div>
                         </div>
                     </div>

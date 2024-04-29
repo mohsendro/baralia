@@ -21,6 +21,7 @@ require_once plugin_dir_path(__FILE__) . 'functions/snippets/optimize.php';
 require_once plugin_dir_path(__FILE__) . 'functions/snippets/enqueue.php';
 require_once plugin_dir_path(__FILE__) . 'functions/snippets/image-size.php';
 require_once plugin_dir_path(__FILE__) . 'functions/snippets/comments.php';
+require_once plugin_dir_path(__FILE__) . 'functions/snippets/menu-walker.php';
 // require_once plugin_dir_path(__FILE__) . 'functions/snippets/functions.php';
 require_once plugin_dir_path(__FILE__) . 'functions/snippets/woocommerce.php';
 

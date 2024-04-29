@@ -81,3 +81,47 @@ function wpplus_theme_features()  {
 
 }
 add_action('init', 'wpplus_theme_features') ;
+
+
+// Register custom sidebars
+function wpplus_sidebars_callback() {
+
+	register_sidebar(
+		[
+			'name'          => __( 'سایدبار وبلاگ', 'textdomain' ),
+			'id'            => 'blog-sidebar',
+			'class'         => 'blog-sidebar',
+			'before_widget' => '<li id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</li>',
+			'before_title'  => '<h2 class="widgettitle">',
+			'after_title'   => '</h2>',
+		]
+	);
+
+	register_sidebar(
+		[
+			'name'          => __( 'سایدبار فروشگاه', 'textdomain' ),
+			'id'         	=> 'shop-sidebar',
+			'class'         => 'shop-sidebar',
+			'before_widget' => '<li id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</li>',
+			'before_title'  => '<h2 class="widgettitle">',
+			'after_title'   => '</h2>',
+		]
+	);
+
+}
+add_action( 'widgets_init', 'wpplus_sidebars_callback' );
+
+
+// Register custom navigation menus
+function wpplus_nav_menus() {
+
+	$locations = array(
+		'main_menu' => __( 'فهرست اصلی', 'textdomain' ),
+		'mobile_menu' => __( 'فهرست موبایل', 'textdomain' ),
+	);
+	register_nav_menus( $locations );
+
+}
+add_action( 'init', 'wpplus_nav_menus' );

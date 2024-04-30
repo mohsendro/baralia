@@ -72,7 +72,7 @@
                                         </a>
                                     </div>
                                 </div>
-                                <?php wc_get_template('cart/mini-cart.php'); ?>
+                                <?php woocommerce_mini_cart(); //wc_get_template('cart/mini-cart.php');?>
                                 <div class="mini-cart-action">
                                     <div class="row">
                                         <div class="col-6">
@@ -86,7 +86,7 @@
                                         </div>
                                         <div class="col-6">
                                             <div class="text-end">
-                                                <a class="btn main-color-two-bg rounded-0" href="<?php echo wc_get_cart_url(); ?>">ورود و ثبت سفارش</a>
+                                                <a class="btn main-color-two-bg rounded-0" href="<?php echo wc_get_cart_url(); ?>">ثبت سفارش</a>
                                             </div>
                                         </div>
                                     </div>

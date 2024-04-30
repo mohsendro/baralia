@@ -16,11 +16,13 @@
  */
 
 defined( 'ABSPATH' ) || exit;
+?>
 
-/*
- * @hooked wc_empty_cart_message - 10
- */
-// do_action( 'woocommerce_cart_is_empty' );
+<?php
+    /*
+    * @hooked wc_empty_cart_message - 10
+    */
+    // do_action( 'woocommerce_cart_is_empty' );
 ?>
 
 <?php woocommerce_breadcrumb(); ?>

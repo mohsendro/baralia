@@ -30,12 +30,6 @@ if( ! class_exists( 'WPPlus' ) ) {
                 'status'      => true
             ],
             [ 
-                'name'        => 'Acorn',
-                'description' => 'فریمورک بارگذاری امکانات و پکیج‌های Laravel با رعایت قوانین و سلسه مراتب درون وردپرس',
-                'direction'   => 'vendor/acorn/acorn.php',
-                'status'      => false
-            ],
-            [ 
                 'name'        => 'Codestar',
                 'description' => 'فریمورک پنل تنظیمات وردپرس',
                 'direction'   => 'vendor/codestar-framework/codestar-framework.php',

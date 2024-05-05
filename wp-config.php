@@ -80,14 +80,14 @@ $table_prefix = 'br_';
  * @link https://wordpress.org/documentation/article/debugging-in-wordpress/
  */
 define( 'WP_DEBUG', false );
-// define( 'WP_DEBUG_LOG',     false );
-// define( 'WP_DEBUG_DISPLAY', false );
-// define( 'SCRIPT_DEBUG',     false );
-// define( 'SAVEQUERIES',      false );
-// define( 'WP_DISABLE_FATAL_ERROR_HANDLER', false );   // 5.2 and later
-// @ini_set( 'log_errors', 'Off' );
-// @ini_set( 'display_errors', 'On' );
-// @ini_set( 'error_log', '/home/example.com/logs/php_error.log' );
+define( 'WP_DEBUG_LOG',     false );
+define( 'WP_DEBUG_DISPLAY', false );
+define( 'SCRIPT_DEBUG',     false );
+define( 'SAVEQUERIES',      false );
+define( 'WP_DISABLE_FATAL_ERROR_HANDLER', false );   // 5.2 and later
+@ini_set( 'log_errors', 'Off' );
+@ini_set( 'display_errors', 'Off' );
+@ini_set( 'error_log', '/home/example.com/logs/php_error.log' );
 
 /* Add any custom values between this line and the "stop editing" line. */
 /* Custom WordPress URL. */

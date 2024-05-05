@@ -913,7 +913,7 @@ textarea {
 .top-menu-menu ul li {
     margin-left: 20px;
     border-radius: 15px;
-    padding: 0 5px;
+    padding: 10px 5px;
 }
 
 
@@ -1719,6 +1719,7 @@ header {
 .header-logo {
     border-bottom: 1px solid var(--main-color-one);
     width: 100%;
+    padding-bottom: 5px;
     margin: auto;
 }
 

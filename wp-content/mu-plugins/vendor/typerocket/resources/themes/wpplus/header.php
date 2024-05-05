@@ -146,7 +146,7 @@
                     <div class="header-top-menu">
                         <div class="header-logo">
                             <a href="<?php echo home_url(); ?>">
-                                <img alt="<?php echo get_bloginfo('name'); ?>" src="<?php echo TYPEROCKET_DIR_URL; ?>resources/assets/img/logo.png">
+                                <img alt="<?php echo get_bloginfo('name'); ?>" src="<?php echo TYPEROCKET_DIR_URL; ?>resources/assets/img/logo/Baralia - Logo-05.png">
                             </a>
                         </div>
                     </div>
@@ -154,8 +154,8 @@
 
                 <div class="col-lg-3 order-3 d-lg-block d-none">
                     <div class="header-search">
-                        <form action="<?php echo home_url(); ?>">
-                            <input class="header-search-txt" placeholder="جستجوی محصولات از <?php echo $product_count; ?> محصول" type="text">
+                        <form action="<?php echo wc_get_page_permalink( 'shop' ); ?>">
+                            <input class="header-search-txt" placeholder="جستجو از بین <?php echo $product_count; ?> محصول" type="text">
                         </form>
                     </div>
                 </div>
@@ -175,7 +175,7 @@
                             </button>
                             <div class="header-logo d-sm-none d-flex">
                                 <a href="<?php echo home_url(); ?>">
-                                    <img alt="<?php echo get_bloginfo('name'); ?>" src="<?php echo TYPEROCKET_DIR_URL; ?>resources/assets/img/logo.png">
+                                    <img alt="<?php echo get_bloginfo('name'); ?>" src="<?php echo TYPEROCKET_DIR_URL; ?>resources/assets/img/logo/Baralia - Logo-05.png">
                                 </a>
                             </div>
                         </div>
@@ -188,11 +188,11 @@
                             </div> -->
                             <div class="offcanvas-body d-flex flex-column">
                                 <a class="text-center d-block mb-3" href="<?php echo home_url(); ?>">
-                                    <img alt="<?php echo get_bloginfo('name'); ?>" class="img-fluid" src="<?php echo TYPEROCKET_DIR_URL; ?>resources/assets/img/logo.png" width="200">
+                                    <img alt="<?php echo get_bloginfo('name'); ?>" class="img-fluid" src="<?php echo TYPEROCKET_DIR_URL; ?>resources/assets/img/logo/Baralia - Logo-05.png" width="200">
                                 </a>
                                 <div class="header-search pb-4 w-100">
-                                    <form action="<?php echo home_url(); ?>">
-                                        <input class="header-search-txt py-3" placeholder="جستجوی محصولات از <?php echo $product_count; ?> محصول"
+                                    <form action="<?php echo wc_get_page_permalink( 'shop' ); ?>">
+                                        <input class="header-search-txt py-3" placeholder="جستجو از بین <?php echo $product_count; ?> محصول"
                                             type="text" name="s">
                                     </form>
                                 </div>
@@ -230,8 +230,8 @@
                     <i class="bi bi-x fs-1"></i>
                 </div>
                 <div class="search-float-form">
-                    <form action="<?php echo home_url(); ?>">
-                        <input class="header-search-txt" name="s" placeholder="جستجوی محصولات از <?php echo $product_count; ?> محصول" type="text">
+                    <form action="<?php echo wc_get_page_permalink( 'shop' ); ?>">
+                        <input class="header-search-txt" name="s" placeholder="جستجو از بین <?php echo $product_count; ?> محصول" type="text">
                     </form>
                 </div>
 
@@ -257,7 +257,5 @@
     <!--end header-->
 
     <?php get_template_part( 'components/mega', 'menu' ); ?>
-
     <?php // get_template_part( 'components/breadcrumb' ); ?>
-
     <?php // get_template_part( 'components/content' ); ?>

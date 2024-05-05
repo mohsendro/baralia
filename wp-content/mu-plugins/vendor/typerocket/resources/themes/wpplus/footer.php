@@ -119,7 +119,7 @@
 
     <!-- start login modal -->
     <!-- Modal -->
-    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <!-- <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
@@ -169,7 +169,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- end login modal -->
 
     <!-- start mobile bottom menu -->

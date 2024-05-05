@@ -85,6 +85,18 @@
         ]
     );
 
+    $featured_products = wc_get_products(
+        [
+            'limit' => 10,
+            'orderby' => 'date',
+            'order' => 'DESC',
+            'status' => 'publish',
+            'type' => 'simple',
+            'featured' => true
+        ]
+    );
+    // var_dump( $featured_products);
+
     $contact_template = get_posts( 
         array(
             'post_type' => 'page',
@@ -248,7 +260,7 @@
                 <div class="col-lg-9">
                     <div class="swiper amazing-slider-sw">
                         <div class="swiper-wrapper">
-                            <?php foreach ($new_products as $product): ?>
+                            <?php foreach ($featured_products as $product): ?>
                                 <?php get_template_part( 'components/featured', 'card' ); ?>
                             <?php endforeach; ?>
                         </div>

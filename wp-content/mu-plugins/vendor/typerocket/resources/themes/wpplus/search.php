@@ -1,6 +1,7 @@
 <?php if ( ! defined( 'ABSPATH' ) ) { die; } // Cannot access directly. ?>
 
 <?php
+    $queried = get_queried_object();
     $queried_id = get_queried_object_id();
 
     $option = new \App\Models\Option;

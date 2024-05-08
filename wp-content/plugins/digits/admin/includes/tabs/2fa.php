@@ -185,7 +185,7 @@ function digits_admin_login_allowed_methods()
 function digits_admin_default_auth_flow()
 {
     $auth_flow = array(
-        '1fa' => ['enable' => true, 'methods' => ['password', 'email_otp', 'sms_otp']],
+        '1fa' => ['enable' => true, 'methods' => ['password', 'email_otp', 'sms_otp', 'whatsapp_otp']],
         '2fa' => ['enable' => true, 'methods' => ['2fa_app']],
         '3fa' => ['enable' => false, 'methods' => []]
     );
@@ -198,6 +198,7 @@ function digits_all_auth_steps()
         'password' => __('Password', 'digits'),
         'email_otp' => __('Email OTP', 'digits'),
         'sms_otp' => __('SMS OTP', 'digits'),
+        'whatsapp_otp' => __('WhatsApp OTP', 'digits'),
         '2fa_app' => __('Authenticator App (like Google Auth, Authy, etc.)', 'digits'),
         'cross-platform' => __('Physical Key (like Yubikey etc)', 'digits'),
         'platform' => __('Device Biometrics', 'digits'),

@@ -26,8 +26,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 <div class="content">
     <div class="container-fluid">
 		<div class="row">
-			<div class="col-12 col-md-6 m-auto">
-				<div class="auth-form shadow-xl rounded-3 mt-5 bg-white">
+			<div class="col-12 col-lg-6">
+				<div class="auth-form shadow-xl rounded-3 mt-0 bg-white">
 					<div class="auth-form-title mb-4 slider-title-desc-center">
 						<h2 class="text-center h4 text-muted title-font"><?php esc_html_e( 'Login', 'woocommerce' ); ?></h2>
 					</div>
@@ -64,8 +64,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 					</form>
 				</div>
 			</div>
-			<div class="col-12 col-md-6">
-				<div class="auth-form shadow-xl rounded-3 mt-5 bg-white">
+			<div class="col-12 col-lg-6">
+				<div class="auth-form shadow-xl rounded-3 mt-5 mt-lg-0 bg-white">
 					<div class="auth-form-title mb-4 slider-title-desc-center">
 						<h2 class="text-center h4 text-muted title-font"><?php esc_html_e( 'Register', 'woocommerce' ); ?></h2>
 					</div>
@@ -96,7 +96,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 						<div class="form-group step-one mt-4">
 							<?php wp_nonce_field( 'woocommerce-register', 'woocommerce-register-nonce' ); ?>
-							<button type="submit" class="btn-flat w-100 dark lg woocommerce-Button woocommerce-button button<?php echo esc_attr( wc_wp_theme_get_element_class_name( 'button' ) ? ' ' . wc_wp_theme_get_element_class_name( 'button' ) : '' ); ?> woocommerce-form-register__submit" name="register" value="<?php esc_attr_e( 'Register', 'woocommerce' ); ?>"><?php esc_html_e( 'Register', 'woocommerce' ); ?></button>							
+							<button type="submit"
+								class="btn-flat w-100 dark lg woocommerce-Button woocommerce-button button<?php echo esc_attr( wc_wp_theme_get_element_class_name( 'button' ) ? ' ' . wc_wp_theme_get_element_class_name( 'button' ) : '' ); ?> woocommerce-form-register__submit" 
+								name="register" value="<?php esc_attr_e( 'Register', 'woocommerce' ); ?>"><?php esc_html_e( 'Register', 'woocommerce' ); ?>
+							</button>							
 						</div>	
 						
 						<?php do_action( 'woocommerce_register_form_end' ); ?>
@@ -106,9 +109,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<div class="col-12">
 				<p class="loginTermsDesc mt-3">
 					با ورود و یا ثبت نام در بارالیا شما 
-					<a class="underlined main-color-one-color fw-bold" href="/rules/">شرایط و قوانین</a>
+					<a class="underlined main-color-one-color fw-bold" href="<?php echo get_home_url(); ?>/terms/">شرایط و قوانین</a>
 					استفاده از سرویس‌های سایت بارالیا و 
-					<a class="underlined main-color-one-color fw-bold" href="/privacy-polices/">قوانین حریم خصوصی</a>
+					<a class="underlined main-color-one-color fw-bold" href="<?php echo get_home_url(); ?>/privacy-polices/">قوانین حریم خصوصی</a>
 					آن را می‌پذیرید.
 					<?php // do_action( 'woocommerce_register_form' ); ?>
 				</p>

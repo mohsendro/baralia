@@ -331,6 +331,8 @@ function digits_forms($values = null, $form_data = '')
                          class=" <?php echo $themee; ?> <?php echo $bgtype; ?> button digits_login_via_otp loginviasms loginviasmsotp"><?php echo $button_texts['dig_login_via_mob']; ?></div>
 
                     <?php if (dig_isWhatsAppEnabled()) { ?>
+                        <div id="dig_login_va_whatsapp"
+                             class=" <?php echo $themee; ?> <?php echo $bgtype; ?> button loginviasms loginviawhatsapp dig_use_whatsapp"><?php _e('Login With WhatsApp', 'digits'); ?></div>
                         <?php
                     }
                     ?>
@@ -708,6 +710,10 @@ function digits_forms($values = null, $form_data = '')
                         <button class="<?php echo $themee . ' ' . $bgtype; ?> button dig-signup-otp registerbutton"
                                 value="<?php echo $subVal; ?>" type="submit"><?php echo $subVal; ?></button>
                         <?php if (dig_isWhatsAppEnabled()) { ?>
+                            <button class="<?php echo $themee . ' ' . $bgtype; ?> button dig-signup-otp registerbutton dig_use_whatsapp"
+                                    value="<?php echo $subVal; ?>" type="submit">
+                                <?php _e('Signup With WhatsApp', 'digits'); ?>
+                            </button>
                             <?php
                         }
                         ?>

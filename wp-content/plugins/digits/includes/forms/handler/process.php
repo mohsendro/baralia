@@ -48,6 +48,10 @@ final class Processor
                 'label' => __('SMS', 'digits'),
                 'placeholder' => __('SMS Passcode', 'digits')
             ),
+            'whatsapp_otp' => array(
+                'label' => __('WhatsApp', 'digits'),
+                'placeholder' => __('WhatsApp Passcode', 'digits')
+            ),
             'email_otp' => array(
                 'label' => __('Email', 'digits'),
                 'placeholder' => __('Email Passcode', 'digits')
@@ -152,6 +156,7 @@ final class Processor
             'password' => array('tab' => 'password'),
             'email_otp' => array('tab' => 'otp'),
             'sms_otp' => array('tab' => 'otp'),
+            'whatsapp_otp' => array('tab' => 'otp'),
             '2fa_app' => array('tab' => 'otp'),
             'cross-platform' => array('tab' => 'auth_device'),
             'platform' => array('tab' => 'auth_device'),
@@ -277,6 +282,7 @@ final class Processor
         if (empty($this->immediate_methods)) {
             $this->immediate_methods = get_digits_otp_immediately_methods();
         }
+
         return $this->immediate_methods;
     }
 
@@ -323,6 +329,9 @@ final class Processor
         if ($auto_check) {
             $inp_wrapper_class = 'digits_auto_check';
         }
+
+        $otp_field_name_step_no = 'otp_step_' . $step_no;
+
         ?>
         <div class="digits_secure_login_auth_wrapper" data-change="otp_token_verify_status">
             <div class="digits-form_input_row ">
@@ -340,6 +349,7 @@ final class Processor
                             <?php echo esc_attr(__('Resend OTP', 'digits')); ?>&nbsp;<span>00:00</span>
                         </div>
                     </div>
+                    <input type="hidden" name="<?php echo esc_attr($otp_field_name_step_no); ?>" value="1"/>
                     <?php
                     if ($auto_check) {
                         ?>

@@ -130,6 +130,7 @@ function digits_log_get_mode_label($mode)
     $mode = strtolower($mode);
     $modes = [
         'sms' => __('SMS', 'digits'),
+        'whatsapp' => __('WhatsApp', 'digits'),
         'email' => __('Email', 'digits'),
     ];
     return $modes[$mode];

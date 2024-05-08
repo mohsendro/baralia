@@ -24,7 +24,7 @@ if ( ! $notices ) {
 }
 ?>
 
-<!-- start notices -->
+<!-- start success notices -->
 <div class="container-fluid">
 	<div class="alert alert-success text-right rounded-0 woocommerce-message">
 		<ul class="m-0">
@@ -36,4 +36,4 @@ if ( ! $notices ) {
 		</ul>
 	</div>
 </div>
-<!-- end notices -->
+<!-- end success notices -->

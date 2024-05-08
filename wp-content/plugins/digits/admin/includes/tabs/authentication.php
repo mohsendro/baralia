@@ -86,7 +86,49 @@ function digits_settings_api_email()
 
 function digits_settings_api_whatsapp()
 {
+    $whatsapp_gateway = get_option('digit_whatsapp_gateway', -1);
+
     ?>
+    <div class="dig_admin_head"><span><?php _e('WhatsApp Gateway', 'digits'); ?></span></div>
+
+    <div class="dig_admin_tab_grid">
+        <div class="dig_admin_tab_grid_elem">
+            <div class="dig_whatsapp_api_box digits_gateway_api_box <?php if ($whatsapp_gateway == -1) echo 'digits_gateway-disabled'; ?>">
+                <table class="form-table digits_default_gateway_details">
+                    <?php digit_select_gateway('name="digit_whatsapp_gateway" id="digit_whatsapp_gateway"', $whatsapp_gateway,
+                        getWhatsAppGateWayArray(), 'whatsapp'); ?>
+
+                    <?php
+                    dig_show_gateway_api_fields(getWhatsAppGateWayArray(), $whatsapp_gateway, 'whatsapp');
+                    ?>
+                    <?php
+                    $dig_messagetemplate = get_option("dig_messagetemplate", digits_default_otp_template());
+                    $whatsapp_messagetemplate = get_option('dig_whatsapp_messagetemplate', $dig_messagetemplate);
+                    ?>
+                    <tr class="digits_whatsapp_template digits_gateway_template">
+                        <th scope="row" style="vertical-align:top;"><label
+                                    for="dig_whatsapp_messagetemplate"><?php _e('WhatsApp Message Template', 'digits'); ?></label>
+                        </th>
+                        <td>
+                    <textarea name="dig_whatsapp_messagetemplate" placeholder="Message Template" class="dig_inp_wid3"
+                              required><?php echo $whatsapp_messagetemplate; ?></textarea>
+                            <p class="dig_ecr_desc">
+                                <?php _e('Site Name', 'digits'); ?> - {NAME}<br/>
+                                <?php _e('Domain', 'digits'); ?> - {DOMAIN}<br/>
+                                <?php _e('OTP', 'digits'); ?> - {OTP}
+                            </p>
+
+                        </td>
+                    </tr>
+                </table>
+                <?php
+                digits_otp_resend_time('whatsapp');
+                digit_test_api_box();
+                ?>
+            </div>
+
+        </div>
+    </div>
     <?php
 }
 

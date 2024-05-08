@@ -1,392 +1,1179 @@
-<?php //00507
-// 12.0 81
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo("Site error: the ".(php_sapi_name()=='cli'?'ionCube':'<a href="http://www.ioncube.com">ionCube</a>')." PHP Loader needs to be installed. This is a widely used PHP extension for running ionCube protected PHP code, website security and malware blocking.\n\nPlease visit ".(php_sapi_name()=='cli'?'get-loader.ioncube.com':'<a href="http://get-loader.ioncube.com">get-loader.ioncube.com</a>')." for install assistance.\n\n");exit(199);
+<?php
+if (!defined('ABSPATH')) {
+    exit;
+}
 
-?>
-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
-upgHd28c9cPbVK9om8lUlQ8mJmbY
+
+if (!class_exists('Clockwork')) {
+    require_once plugin_dir_path(__DIR__) . 'gateways/clockwork/wordpress/class-clockwork-plugin.php';
+}
+
+if (!class_exists('Melipayamak\MelipayamakApi')) {
+    require_once plugin_dir_path(__DIR__) . 'gateways/melipayamak/autoload.php';
+}
+
+require_once plugin_dir_path(__DIR__) . 'Twilio/autoload.php';
+
+
+use Melipayamak\MelipayamakApi;
+use Twilio\Rest\Client;
+
+
+if (function_exists('digit_send_message')) {
+    return;
+}
+function digit_whatsapp_message($countrycode, $mobile, $otp, $dig_messagetemplate, $testCall)
+{
+    $option_slug = 'digit';
+    $messagetemplate = $dig_messagetemplate;
+
+    $whatsapp_gateway = get_option('digit_whatsapp_gateway', -1);
+    $prefix = 'whatsapp';
+    switch ($whatsapp_gateway) {
+        case 2:
+            $whatsapp = get_option('digit_' . $prefix . 'twilio');
+            $whatsappno = $whatsapp['whatsappnumber'];
+            $sid = $whatsapp['account_sid'];
+            $token = $whatsapp['auth_token'];
+
+            try {
+                $client = new Client($sid, $token);
+                $result = $client->messages->create(
+                    "whatsapp:" . $countrycode . $mobile,
+                    array(
+                        'From' => "whatsapp:" . $whatsappno,
+                        'Body' => $dig_messagetemplate
+                    )
+                );
+            } catch (Exception $e) {
+                if ($testCall) {
+                    return $e->getMessage();
+                }
+
+                return false;
+            }
+
+            if ($testCall) {
+                return $result;
+            }
+
+            return true;
+        default:
+            return apply_filters('unitedover_send_whatsapp_message', false, $option_slug, $whatsapp_gateway, $countrycode, $mobile, $messagetemplate, $testCall);
+    }
+}
+
+function digit_send_message($digit_gateway, $countrycode, $mobile, $otp, $dig_messagetemplate, $testCall = false, $whatsapp = false)
+{
+
+    if (!defined('DIGITS_OTP')) {
+        define('DIGITS_OTP', $otp);
+    }
+
+    $option_slug = 'digit';
+    $gateway_id = $digit_gateway;
+    $messagetemplate = $dig_messagetemplate;
+
+    if (!$testCall) {
+        $debug = apply_filters('digits_debug', false);
+        if ($debug) {
+            return true;
+        }
+    }
+
+    if (in_array(str_replace('+', '', $countrycode), array('242', '225'))) {
+        if (substr($mobile, 0, 1) != '0') {
+            $mobile = '0' . $mobile;
+        }
+    }
+
+
+    if ($whatsapp) {
+        return digit_whatsapp_message($countrycode, $mobile, $otp, $dig_messagetemplate, $testCall);
+    }
+
+    switch ($digit_gateway) {
+        case 2:
+
+
+            $tiwilioapicred = get_option('digit_twilio_api');
+
+
+            $twiliosenderid = $tiwilioapicred['twiliosenderid'];
+
+
+            $sid = $tiwilioapicred['twiliosid'];
+            $token = $tiwilioapicred['twiliotoken'];
+
+
+            try {
+                $client = new Client($sid, $token);
+                $result = $client->messages->create(
+                    $countrycode . $mobile,
+                    array(
+                        'From' => $twiliosenderid,
+                        'Body' => $dig_messagetemplate
+                    )
+                );
+            } catch (Exception $e) {
+                if ($testCall) {
+                    return $e->getMessage();
+                }
+
+                return false;
+            }
+
+            if ($testCall) {
+                return $result;
+            }
+
+            return true;
+        case 3:
+
+            $msg91apicred = get_option('digit_msg91_api');
+
+
+            $authKey = $msg91apicred['msg91authkey'];
+            $senderId = $msg91apicred['msg91senderid'];
+            $msg91route = $msg91apicred['msg91route'];
+            $msg91dlt_te_id = '';
+            if (isset($msg91apicred['msg91dlt_te_id'])) {
+                $msg91dlt_te_id = $msg91apicred['msg91dlt_te_id'];
+            }
+
+            if (empty($msg91route)) {
+                $msg91route = 2;
+            }
+            $message = urlencode($dig_messagetemplate);
+
+            if ($msg91route == 1) {
+
+
+                $postData = array(
+                    'authkey' => $authKey,
+                    'mobile' => str_replace("+", "", $countrycode) . $mobile,
+                    'message' => $message,
+                    'sender' => $senderId,
+                    'otp' => $otp,
+                    'otp_expiry' => 10,
+                    'unicode' => 1
+                );
+                if (!empty($msg91dlt_te_id)) {
+                    $postData['DLT_TE_ID'] = $msg91dlt_te_id;
+                }
+
+
+                $url = "https://control.msg91.com/api/sendotp.php?" . http_build_query($postData);
+                $ch = curl_init();
+                curl_setopt_array($ch, array(
+                    CURLOPT_URL => $url,
+                    CURLOPT_RETURNTRANSFER => true,
+                    CURLOPT_CUSTOMREQUEST => 'GET'
+
+                ));
+                curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
+                curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+
+                $result = curl_exec($ch);
+
+
+                if ($testCall) {
+                    return $result;
+                }
+
+                if (curl_errno($ch)) {
+
+                    if ($testCall) {
+                        return "curl error:" . curl_errno($ch);
+                    }
+
+                    return false;
+                }
+
+                curl_close($ch);
+
+            } else {
+
+
+                $postData = array(
+                    'authkey' => $authKey,
+                    'mobiles' => str_replace("+", "", $countrycode) . $mobile,
+                    'message' => $message,
+                    'sender' => $senderId,
+                    'route' => 4,
+                    'country' => 0,
+                    'unicode' => 1
+                );
+
+                if (!empty($msg91dlt_te_id)) {
+                    $postData['DLT_TE_ID'] = $msg91dlt_te_id;
+                }
+
+                $url = "https://control.msg91.com/api/sendhttp.php";
+                $ch = curl_init();
+                curl_setopt_array($ch, array(
+                    CURLOPT_URL => $url,
+                    CURLOPT_RETURNTRANSFER => true,
+                    CURLOPT_POST => true,
+                    CURLOPT_POSTFIELDS => $postData
+
+                ));
+                curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
+                curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+
+                $result = curl_exec($ch);
+
+
+                if (curl_errno($ch)) {
+                    if ($testCall) {
+                        return "curl error:" . curl_errno($ch);
+                    }
+
+                    return false;
+                }
+                curl_close($ch);
+
+                if ($testCall) {
+                    return $result;
+                }
+
+                return true;
+            }
+
+            return true;
+
+        case 4:
+            $apikey = get_option('digit_yunpianapi');
+
+            $data = array('text' => $dig_messagetemplate, 'apikey' => $apikey, 'mobile' => $countrycode . $mobile);
+
+
+            $ch = curl_init();
+
+            curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+                'Accept:text/plain;charset=utf-8',
+                'Content-Type:application/x-www-form-urlencoded',
+                'charset=utf-8'
+            ));
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            curl_setopt($ch, CURLOPT_TIMEOUT, 10);
+            curl_setopt($ch, CURLOPT_POST, 1);
+            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+
+            curl_setopt($ch, CURLOPT_URL, 'https://sms.yunpian.com/v2/sms/single_send.json');
+            curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data));
+            $result = curl_exec($ch);
+
+
+            if (curl_errno($ch)) {
+                if ($testCall) {
+                    return "curl error:" . curl_errno($ch);
+                }
+
+                return false;
+            }
+            curl_close($ch);
+
+            if ($testCall) {
+                return $result;
+            }
+
+            if ($result === false) {
+                return false;
+            }
+
+            return true;
+        case 5:
+
+            $clickatell = get_option('digit_clickatell');
+
+            $apikey = $clickatell['api_key'];
+            $from = $clickatell['from'];
+
+
+            $toarray = array();
+            $toarray[] = $countrycode . $mobile;
+
+            $cs_array = array();
+            $cs_array['content'] = $dig_messagetemplate;
+            if (!empty($from)) {
+                $cs_array['from'] = $from;
+            }
+            $data = $cs_array;
+            $data['to'] = $toarray;
+            $data_string = json_encode($data);
+
+
+            $ch = curl_init();
+
+
+            curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+                'Content-Type: application/json',
+                'Accept: application/json',
+                'Authorization: ' . $apikey,
+
+            ));
+
+
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            curl_setopt($ch, CURLOPT_TIMEOUT, 10);
+            curl_setopt($ch, CURLOPT_POST, 1);
+            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+            curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
+
+            curl_setopt($ch, CURLOPT_URL, 'https://platform.clickatell.com/messages');
+            curl_setopt($ch, CURLOPT_POSTFIELDS, $data_string);
+            $result = curl_exec($ch);
+
+
+            if (curl_errno($ch)) {
+                if ($testCall) {
+                    return "curl error:" . curl_errno($ch);
+                }
+
+                return false;
+            }
+            curl_close($ch);
+
+            if ($testCall) {
+                return $result;
+            }
+
+            if ($result === false) {
+                return false;
+            }
+
+
+            return true;
+        case 6:
+            $clicksend = get_option('digit_clicksend');
+            $username = $clicksend['apiusername'];
+            $apikey = $clicksend['apikey'];
+            $from = $clicksend['from'];
+
+
+            $data = array();
+            $message = array();
+            $message[0] = array(
+                'body' => $dig_messagetemplate,
+                'from' => $from,
+                'to' => $countrycode . $mobile
+            );
+            $data['messages'] = $message;
+
+            $ch = curl_init();
+
+            curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+                'Content-Type: application/json',
+                'Authorization: Basic ' . base64_encode("$username:$apikey")
+            ));
+
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            curl_setopt($ch, CURLOPT_TIMEOUT, 10);
+            curl_setopt($ch, CURLOPT_POST, 1);
+            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+
+            curl_setopt($ch, CURLOPT_URL, 'https://rest.clicksend.com/v3/sms/send');
+            curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
+            $result = curl_exec($ch);
+
+
+            if (curl_errno($ch)) {
+                if ($testCall) {
+                    return "curl error:" . curl_errno($ch);
+                }
+
+                return false;
+            }
+            curl_close($ch);
+
+            if ($result === false) {
+                return false;
+            }
+
+            if ($testCall) {
+                return $result;
+            }
+
+            return true;
+        case 7:
+
+            try {
+
+
+                $clockwork = get_option('digit_clockwork');
+
+
+                $clockworkapi = $clockwork['clockworkapi'];
+                $from = $clockwork['from'];
+
+
+                $clockwork = new WordPressClockwork($clockworkapi);
+
+                // Setup and send a message
+                $message = array(
+                    'from' => $from,
+                    'to' => str_replace("+", "", $countrycode) . $mobile,
+                    'message' => $dig_messagetemplate
+                );
+                $result = $clockwork->send($message);
+
+                // Check if the send was successful
+                if ($result['success']) {
+
+                    if ($testCall) {
+                        return $result;
+                    }
+
+                    return true;
+
+                } else {
+                    return false;
+                }
+            } catch (ClockworkException $e) {
+                if ($testCall) {
+                    return $e->getMessage();
+                }
+
+                return false;
+
+            }
+        case 8:
+
+            $messagebird = get_option('digit_messagebird');
+            $accesskey = $messagebird['accesskey'];
+            $originator = $messagebird['originator'];
+            $data = array(
+                'body' => $dig_messagetemplate,
+                'originator' => $originator,
+                'recipients' => str_replace("+", "", $countrycode) . $mobile
+            );
+
+
+            $ch = curl_init();
+
+            curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+                'Accept: application/json',
+                'Content-Type: application/json',
+                'Authorization: AccessKey ' . $accesskey
+            ));
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            curl_setopt($ch, CURLOPT_TIMEOUT, 10);
+            curl_setopt($ch, CURLOPT_POST, 1);
+            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+
+            curl_setopt($ch, CURLOPT_URL, 'https://rest.messagebird.com/messages?access_key=' . $accesskey);
+            curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
+            $result = curl_exec($ch);
+            curl_close($ch);
+
+            if (curl_errno($ch)) {
+                if ($testCall) {
+                    return "curl error:" . curl_errno($ch);
+                }
+
+                return false;
+            }
+
+            if ($testCall) {
+                return $result;
+            }
+
+            if ($result === false) {
+                return false;
+            }
+
+            return true;
+
+        case 10:
+            $nexmo = get_option('digit_nexmo');
+            $from = $nexmo['from'];
+            $apikey = $nexmo['api_key'];
+            $apisecret = $nexmo['api_secret'];
+
+            $data = array(
+                'text' => $dig_messagetemplate,
+                'to' => $countrycode . $mobile,
+                'from' => $from,
+                'type' => 'unicode',
+                'api_key' => $apikey,
+                'api_secret' => $apisecret
+            );
+
+
+            $ch = curl_init();
+
+
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            curl_setopt($ch, CURLOPT_TIMEOUT, 10);
+            curl_setopt($ch, CURLOPT_POST, 1);
+            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+
+            curl_setopt($ch, CURLOPT_URL, 'https://rest.nexmo.com/sms/json');
+            curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data));
+            $result = curl_exec($ch);
+
+
+            if (curl_errno($ch)) {
+                if ($testCall) {
+                    return "curl error:" . curl_errno($ch);
+                }
+
+                return false;
+            }
+            curl_close($ch);
+
+            if ($testCall) {
+                return $result;
+            }
+
+            if ($result === false) {
+                return false;
+            }
+
+            return true;
+        case 11:
+            $pilvo = get_option('digit_plivo');
+            if (empty($pilvo) || !$pilvo) {
+                $pilvo = get_option('digit_pilvo');
+            }
+            $authid = $pilvo['auth_id'];
+            $authtoken = $pilvo['auth_token'];
+            $sender_id = $pilvo['sender_id'];
+
+            $data = array(
+                'text' => $dig_messagetemplate,
+                'src' => $sender_id,
+                'dst' => $countrycode . $mobile,
+            );
+
+
+            $ch = curl_init();
+
+            curl_setopt($ch, CURLOPT_USERPWD, $authid . ":" . $authtoken);
+
+            curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            curl_setopt($ch, CURLOPT_TIMEOUT, 10);
+            curl_setopt($ch, CURLOPT_POST, 1);
+            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+
+            curl_setopt($ch, CURLOPT_URL, 'https://api.plivo.com/v1/Account/' . $authid . '/Message/');
+            curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
+            $result = curl_exec($ch);
+
+
+            if (curl_errno($ch)) {
+                if ($testCall) {
+                    return "curl error:" . curl_errno($ch);
+                }
+
+                return false;
+            }
+            curl_close($ch);
+
+            if ($testCall) {
+                return $result;
+            }
+
+            if ($result === false) {
+                return false;
+            }
+
+            return true;
+        case 12:
+
+            $smsapi = get_option('digit_smsapi');
+            $token = $smsapi['token'];
+            $from = $smsapi['from'];
+            $params = array(
+                'to' => str_replace("+", "", $countrycode) . $mobile,
+                'from' => $from,
+                'message' => $dig_messagetemplate,
+            );
+
+            $url = 'https://api.smsapi.com/sms.do';
+            $c = curl_init();
+            curl_setopt($c, CURLOPT_URL, $url);
+            curl_setopt($c, CURLOPT_POST, true);
+            curl_setopt($c, CURLOPT_POSTFIELDS, $params);
+            curl_setopt($c, CURLOPT_RETURNTRANSFER, true);
+            curl_setopt($c, CURLOPT_SSL_VERIFYPEER, false);
+            curl_setopt($c, CURLOPT_HTTPHEADER, array(
+                "Authorization: Bearer $token"
+            ));
+
+            $content = curl_exec($c);
+            $http_status = curl_getinfo($c, CURLINFO_HTTP_CODE);
+
+
+            if ($testCall) {
+                return $content;
+            }
+
+            if (curl_errno($c)) {
+                if ($testCall) {
+                    return "curl error:" . curl_errno($c);
+                }
+
+                return false;
+            }
+
+            curl_close($c);
+
+            if ($http_status != 200) {
+                return false;
+            }
+
+            return true;
+        case 33:
+            return apply_filters('unitedover_send_sms_with_otp', false, $option_slug, $gateway_id, $countrycode, $mobile, $messagetemplate, $otp, $testCall);
+        case 13:
+            return true;
+        case 14:
+            $unifonic = get_option('digit_unifonic');
+            $app_sid = $unifonic['appsid'];
+            $sender_id = $unifonic['senderid'];
+
+            $params = 'AppSid=' . $app_sid . '&Recipient=' . str_replace("+", "", $countrycode) . $mobile . '&Body=' . $dig_messagetemplate;
+            if (!empty($sender_id)) {
+                $params = $params . "&SenderID=" . $sender_id;
+            }
+
+
+            $c = curl_init();
+            curl_setopt($c, CURLOPT_URL, "https://basic.unifonic.com/rest/SMS/Messages/Send");
+            curl_setopt($c, CURLOPT_RETURNTRANSFER, true);
+            curl_setopt($c, CURLOPT_HEADER, false);
+            curl_setopt($c, CURLOPT_POST, true);
+            curl_setopt($c, CURLOPT_POSTFIELDS, $params);
+
+
+            curl_setopt($c, CURLOPT_HTTPHEADER, array("Content-Type: application/x-www-form-urlencoded"));
+            $result = curl_exec($c);
+
+
+            if ($testCall) {
+                return $result;
+            }
+            if (curl_errno($c)) {
+                if ($testCall) {
+                    return "curl error:" . curl_errno($c);
+                }
+
+                return false;
+            }
+
+            curl_close($c);
+
+            if ($result === false) {
+                return false;
+            }
+
+            return true;
+        case 15:
+
+            $kaleyra = get_option('digit_kaleyra');
+            $sid = $kaleyra['sid'];
+            $api_key = $kaleyra['api_key'];
+            $sender_id = $kaleyra['sender_id'];
+            $template_id = $kaleyra['template_id'];
+            $curl = curl_init();
+
+
+            $data = array(
+                'sender' => $sender_id,
+                'to' => $countrycode . $mobile,
+                'body' => $dig_messagetemplate,
+                'type' => 'OTP',
+                'template_id' => $template_id
+            );
+
+
+            $url = 'https://api.kaleyra.io/v1/' . $sid . '/messages';
+
+            curl_setopt_array($curl, array(
+                CURLOPT_URL => $url,
+                CURLOPT_RETURNTRANSFER => true,
+                CURLOPT_ENCODING => "",
+                CURLOPT_MAXREDIRS => 10,
+                CURLOPT_TIMEOUT => 30,
+                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                CURLOPT_CUSTOMREQUEST => "POST",
+                CURLOPT_POSTFIELDS => $data,
+                CURLOPT_HTTPHEADER => array(
+                    "api-key: " . $api_key,
+                )
+            ));
+            $result = curl_exec($curl);
+
+            if (curl_errno($curl)) {
+                $result = curl_error($curl);
+                if (!$testCall) {
+                    return false;
+                }
+            }
+            curl_close($curl);
+
+
+            if ($testCall) {
+                return $result;
+            }
+
+            return true;
+        case 16:
+            $melipayamak = get_option('digit_melipayamak');
+
+            $username = $melipayamak['username'];
+            $password = $melipayamak['password'];
+            $from = $melipayamak['from'];
+            $api = new MelipayamakApi($username, $password);
+            $sms = $api->sms();
+            $to = '0' . $mobile;
+            $result = $sms->send($to, $from, $dig_messagetemplate);
+            if ($testCall) {
+                return $result;
+            }
+
+            return true;
+
+        case 17:
+            $textlocal = get_option('digit_textlocal');
+            $apiKey = $textlocal['api_key'];
+            $sender = $textlocal['sender'];
+
+
+            $apiKey = urlencode($apiKey);
+            $sender = urlencode($sender);
+            $message = rawurlencode($dig_messagetemplate);
+            $numbers = str_replace("+", "", $countrycode) . $mobile;
+
+
+            $data = array('apikey' => $apiKey, 'numbers' => $numbers, "sender" => $sender, "message" => $message);
+
+
+            $ch = curl_init('https://api.textlocal.in/send/');
+            curl_setopt($ch, CURLOPT_POST, true);
+            curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            $result = curl_exec($ch);
+
+
+            if (curl_errno($ch)) {
+                $result = curl_error($ch);
+                if (!$testCall) {
+                    return false;
+                }
+            }
+
+
+            curl_close($ch);
+
+            if ($testCall) {
+                return $result;
+            }
+
+
+            return true;
+
+        case 20:
+            $netgsm = get_option('digit_netgsm');
+            $username = $netgsm['username'];
+            $password = $netgsm['password'];
+            $from = $netgsm['from'];
+            $phone = str_replace("+", "", $countrycode) . $mobile;
+            $request_url = 'https://api.netgsm.com.tr/sms/send/otp';
+            $xml = array(
+                'body' => '<?xml version="1.0"?>
+                                <mainbody>
+                                    <header>
+                                        <usercode>' . $username . '</usercode>
+                                        <password>' . $password . '</password>
+                                        <msgheader>' . $from . '</msgheader>
+                                    </header>
+                                    <body>
+                                        <msg><![CDATA[' . $dig_messagetemplate . ']]></msg>
+                                        <no>' . $phone . '</no>
+                                    </body>
+                                </mainbody>'
+            );
+            $result = wp_remote_post($request_url, $xml);
+            if ($testCall) {
+                return $result;
+            }
+
+            return true;
+        case 21:
+            $smsc = get_option('digit_smsc_ru');
+            $login = $smsc['login'];
+            $psw = $smsc['password'];
+            $sender = $smsc['sender'];
+            $phone = $countrycode . $mobile;
+
+            $data = array(
+                'mes' => $dig_messagetemplate,
+                'sender' => $sender,
+                'login' => $login,
+                'psw' => $psw,
+                'phones' => $phone
+            );
+
+
+            $ch = curl_init();
+
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+            curl_setopt($ch, CURLOPT_URL, 'https://smsc.ru/sys/send.php?' . http_build_query($data));
+            $result = curl_exec($ch);
+
+
+            curl_close($ch);
+
+            if ($result === false) {
+                return false;
+            }
+
+            if ($testCall) {
+                return $result;
+            }
+
+            return true;
+
+
+        case 26:
+            $africastalking = get_option('digit_africastalking');
+
+            $username = $africastalking['username'];
+            $api_key = $africastalking['api_key'];
+            $from = $africastalking['from'];
+
+            $headers = array(
+                'apikey:' . $api_key,
+                'Accept: application/json',
+                'Content-Type: application/x-www-form-urlencoded',
+                'Accept' => 'application/json'
+            );
+
+            $params = array(
+                "username" => $username,
+                "to" => $countrycode . $mobile,
+                "message" => $dig_messagetemplate,
+                "from" => $from,
+            );
+
+
+            $ch = curl_init();
+            curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            curl_setopt($ch, CURLOPT_CRLF, true);
+            curl_setopt($ch, CURLOPT_POST, true);
+            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+            curl_setopt($ch, CURLOPT_URL, 'https://api.africastalking.com/version1/messaging');
+            curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($params));
+
+            $result = curl_exec($ch);
+            curl_close($ch);
+
+            if ($result === false) {
+                return false;
+            }
+
+            if ($testCall) {
+                return $result;
+            }
+
+
+            return true;
+        case 27:
+            /*$cm      = get_option( 'digit_cm' );
+            $api_key = $cm['api_key'];
+            $from    = $cm['from'];
+
+
+            if ( $result === false ) {
+                return false;
+            }
+
+            if ( $testCall ) {
+                return $result;
+            }
+
+            return true;*/
+
+        case 31:
+            $sendinblue = get_option('digit_sendinblue');
+
+            $api_key = $sendinblue['api_key'];
+            $sender = $sendinblue['sender'];
+
+            $headers = array(
+                'api-key:' . $api_key,
+                'accept: application/json',
+                'Content-Type: application/json',
+                'charset: utf-8'
+            );
+
+            $params = array(
+                "sender" => $sender,
+                "recipient" => $countrycode . $mobile,
+                "content" => $dig_messagetemplate,
+                "type" => "transactional"
+            );
+
+
+            $ch = curl_init();
+            curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            curl_setopt($ch, CURLOPT_CRLF, true);
+            curl_setopt($ch, CURLOPT_POST, true);
+            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+            curl_setopt($ch, CURLOPT_URL, 'https://api.sendinblue.com/v3/transactionalSMS/sms');
+            curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($params));
+
+            $result = curl_exec($ch);
+            curl_close($ch);
+
+            if ($result === false) {
+                return false;
+            }
+
+            if ($testCall) {
+                return $result;
+            }
+
+
+            return true;
+        case 32:
+            $infobip = get_option('digit_infobip');
+
+            $api_key = $infobip['api_key'];
+            $base_url = $infobip['base_url'];
+            $from = $infobip['from'];
+
+            $curl = curl_init();
+
+            $fields = array(
+                'from' => $from,
+                'to' => str_replace("+", "", $countrycode) . $mobile,
+                'text' => $dig_messagetemplate,
+            );
+
+            curl_setopt_array($curl, array(
+                CURLOPT_URL => "https://" . $base_url . "/sms/2/text/single",
+                CURLOPT_RETURNTRANSFER => true,
+                CURLOPT_SSL_VERIFYPEER => false,
+                CURLOPT_ENCODING => "",
+                CURLOPT_MAXREDIRS => 10,
+                CURLOPT_TIMEOUT => 30,
+                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                CURLOPT_CUSTOMREQUEST => "POST",
+                CURLOPT_POSTFIELDS => json_encode($fields),
+                CURLOPT_HTTPHEADER => array(
+                    "accept: application/json",
+                    "authorization: App " . $api_key,
+                    "content-type: application/json"
+                ),
+            ));
+
+            $response = curl_exec($curl);
+            curl_close($curl);
+
+            if ($testCall) {
+                return $response;
+            }
+
+            if ($response === false) {
+                return false;
+            }
+
+            return true;
+        case 900:
+            $messagetemplate = $dig_messagetemplate;
+
+            $gateway = get_option('digit_custom_gateway');
+
+
+            $url = $gateway['gateway_url'];
+            $http_method = $gateway['http_method'];
+            $send_body_data = $gateway['send_body_data'];
+            $http_headers = $gateway['http_header'];
+
+            $attrs = stripslashes($gateway['gateway_attributes']);
+
+            $sender_id = $gateway['sender_id'];
+
+            $number_type = $gateway['phone_number'];
+
+            if (!empty($gateway['encode_message'])) {
+                $encode_message = $gateway['encode_message'];
+                if ($encode_message == 1) {
+                    $messagetemplate = urlencode($messagetemplate);
+                } else if ($encode_message == 2) {
+                    $messagetemplate = UnitedOver_convertToUnicode($messagetemplate);
+                } else if ($encode_message == 3) {
+                    $messagetemplate = rawurlencode($messagetemplate);
+                }
+            }
+
+            if ($number_type == 1) {
+                $to = $countrycode . $mobile;
+            } else if ($number_type == 2) {
+                $to = str_replace("+", "", $countrycode) . $mobile;
+            } else {
+                $to = $mobile;
+            }
+
+
+            $attrs = str_replace(array("\r", "\n"), '', $attrs);
+            $attrs = explode(',', $attrs);
+
+            $url = str_replace(array('{to}', '{sender_id}', '{message}', '{otp}', '{OTP}'), array($to, $sender_id, $messagetemplate, $otp, $otp), $url);
+
+            if (sizeof($attrs) == 1) {
+                $attrs = implode(",", $attrs);
+                $data = str_replace(array('{to}', '{sender_id}', '{message}', '{otp}', '{OTP}'), array($to, $sender_id, $messagetemplate, $otp, $otp), $attrs);
+            } else {
+                $data = array();
+                foreach ($attrs as $attr) {
+                    $params = explode(':', $attr);
+                    if (empty($params)) continue;
+
+                    $params = explode(':', $attr, 2);
+                    if (empty($params)) continue;
+                    $attr_value = '';
+                    if (isset($params[1]))
+                        $attr_value = str_replace(array('{to}', '{sender_id}', '{message}', '{otp}', '{OTP}'), array($to, $sender_id, $messagetemplate, $otp, $otp), $params[1]);
+
+                    $data[trim($params[0])] = trim($attr_value);
+                }
+            }
+
+            $ch = curl_init();
+
+            if (strtolower($http_method) == 'get') {
+                $url = $url . '?' . http_build_query($data);
+            } else {
+                if ($send_body_data == 1 && is_array($data)) {
+                    $data = json_encode($data);
+                }
+                curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+            }
+
+            if(!empty($data)) {
+                $str_data = $data;
+                if(is_array($str_data)){
+                    $str_data = implode(" ", $str_data);
+                }
+                if(is_string($str_data)) {
+                    $http_headers = str_replace('{content-length}', strlen($str_data), $http_headers);
+                }
+            }
+            $http_headers = explode(',', $http_headers);
+
+            if (!empty($http_headers)) {
+                curl_setopt($ch, CURLOPT_HTTPHEADER, $http_headers);
+            }
+
+
+            curl_setopt($ch, CURLOPT_URL, $url);
+            curl_setopt($ch, CURLOPT_CUSTOMREQUEST, $http_method);
+            curl_setopt($ch, CURLOPT_TIMEOUT, 30);
+            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+            $response = curl_exec($ch);
+
+            curl_close($ch);
+
+            if ($testCall) {
+                return $response;
+            }
+
+            if ($response === false) {
+                return false;
+            }
+
+            return true;
+
+        case 38:
+            $gateway_fields = get_option($option_slug . '_spryng');
+
+            require_once plugin_dir_path(__DIR__) . 'gateways/spryng.php';
+
+            return \SMSGateway\Spryng::sendSMS(
+                $gateway_fields, $countrycode . $mobile, $messagetemplate, $testCall
+            );
+
+        case 40:
+            $gateway_fields = get_option($option_slug . '_bandwidth');
+
+            require_once plugin_dir_path(__DIR__) . 'gateways/bandwidth.php';
+
+            return \SMSGateway\Bandwidth::sendSMS(
+                $gateway_fields, $countrycode . $mobile, $messagetemplate, $testCall
+            );
+        case 68:
+            $gateway_fields = get_option($option_slug . '_esendex');
+
+            require_once plugin_dir_path(__DIR__) . 'gateways/esendex.php';
+
+            return \SMSGateway\Esendex::sendSMS(
+                $gateway_fields, $countrycode . $mobile, $messagetemplate, $testCall
+            );
+        case 71:
+            $gateway_fields = get_option($option_slug . '_fortytwo');
+
+            require_once plugin_dir_path(__DIR__) . 'gateways/fortytwo.php';
+
+            return \SMSGateway\FortyTwo::sendSMS(
+                $gateway_fields, $countrycode . $mobile, $messagetemplate, $testCall
+            );
+        case 89:
+            $gateway_fields = get_option($option_slug . '_unisender');
+
+            require_once plugin_dir_path(__DIR__) . 'gateways/unisender.php';
+
+            return \SMSGateway\Unisender::sendSMS(
+                $gateway_fields, $countrycode . $mobile, $messagetemplate, $testCall
+            );
+        case 97:
+            $gateway_fields = get_option($option_slug . '_sinch');
+
+            require_once plugin_dir_path(__DIR__) . 'gateways/sinch.php';
+
+            return \SMSGateway\Sinch::sendSMS(
+                $gateway_fields, $countrycode . $mobile, $messagetemplate, $testCall
+            );
+        case 101:
+            $gateway_fields = get_option($option_slug . '_wavy');
+
+            require_once plugin_dir_path(__DIR__) . 'gateways/wavy.php';
+
+            return \SMSGateway\Wavy::sendSMS(
+                $gateway_fields, $countrycode . $mobile, $messagetemplate, $testCall
+            );
+        case 109:
+            $gateway_fields = get_option($option_slug . '_openmarket');
+
+            require_once plugin_dir_path(__DIR__) . 'gateways/openmarket.php';
+
+            return \SMSGateway\OpenMarket::sendSMS(
+                $gateway_fields, $countrycode . $mobile, $messagetemplate, $testCall
+            );
+        case 123:
+            $gateway_fields = get_option($option_slug . '_46elks');
+
+            require_once plugin_dir_path(__DIR__) . 'gateways/fortysixelks.php';
+
+            return \SMSGateway\FortySixElks::sendSMS(
+                $gateway_fields, $countrycode . $mobile, $messagetemplate, $testCall
+            );
+
+
+        default:
+            return apply_filters('unitedover_send_sms', false, $option_slug, $gateway_id, $countrycode, $mobile, $messagetemplate, $testCall);
+    }
+
+
+}
+

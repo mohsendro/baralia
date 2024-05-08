@@ -28,8 +28,8 @@ if( ! class_exists( 'LoginRedirect' ) ) {
             if ( is_multisite() ) return;
             if ( ! is_user_logged_in() && strpos( $_SERVER['REQUEST_URI'], 'wp-admin' ) && ( ! defined( 'DOING_AJAX' ) || ! DOING_AJAX ) ) 
                     wp_die( $this->die_massage, $this->die_title );
-            if ( strpos( $_SERVER['REQUEST_URI'], 'login') ||
-                 strpos( $_SERVER['REQUEST_URI'], 'wp-login') ||
+            if ( strpos( $_SERVER['REQUEST_URI'], 'wp-login') ||
+                // strpos( $_SERVER['REQUEST_URI'], 'login') ||
                  strpos( $_SERVER['REQUEST_URI'], 'wp-register') ||
                  strpos( $_SERVER['REQUEST_URI'], 'wp-signin') ||
                  strpos( $_SERVER['REQUEST_URI'], 'wp-signup') ||

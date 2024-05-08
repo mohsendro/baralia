@@ -28,8 +28,8 @@
                 </div>
                 <div class="col-lg-6 order-lg-2 order-1 footer-item">
                     <div class="footer-logo">
-                        <a href="">
-                            <img alt="" src="<?php echo TYPEROCKET_DIR_URL; ?>resources/assets/img/logo.png">
+                        <a href="<?php echo home_url(); ?>">
+                            <img alt="<?php echo get_bloginfo('name'); ?>" src="<?php echo TYPEROCKET_DIR_URL; ?>resources/assets/img/logo/Baralia - Logo-05.png">
                         </a>
                     </div>
                     <div class="footer-logo-desc">
@@ -127,7 +127,6 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-
                     <div class="auth-form rounded-3 bg-white">
                         <div class="auth-form-title mb-4 slider-title-desc-center">
                             <h2 class="text-center h4 text-muted title-font">ورود / ثبت نام</h2>
@@ -158,6 +157,7 @@
                             </div>
 
                         </form>
+                        <?php // echo do_shortcode('[df-form-login]'); ?>
                     </div>
 
                     <p class="loginTermsDesc">با ورود و یا ثبت نام در هناس کالا شما <a

@@ -408,7 +408,7 @@ if (!function_exists('wc_create_new_customer')) {
         $email = strtolower($email);
 
         if (email_exists($email)) {
-            return new WP_Error('registration-error-email-exists', apply_filters('woocommerce_registration_error_email_exists', __('An account is already registered with your email address. Please log in.', 'digits'), $email));
+            return new WP_Error('registration-error-email-exists', apply_filters('woocommerce_registration_error_email_exists', __('An account is already registered with your email address. Please log in.', 'woocommerce'), $email));
         }
 
         $validation_error = new WP_Error();
@@ -544,12 +544,12 @@ if (!function_exists('wc_create_new_customer')) {
                 return new WP_Error('error', __('Mobile Number already in use!', 'digits'));
             }
         } else if (empty($email)) {
-            return new WP_Error('registration-error-invalid-email', __('Please provide a valid email address.', 'digits'));
+            return new WP_Error('registration-error-invalid-email', __('Please provide a valid email address.', 'woocommerce'));
         }
 
 
         if (!is_numeric($phone_number) && !is_email($email)) {
-            return new WP_Error('registration-error-invalid-email', __('Please provide a valid email address.', 'digits'));
+            return new WP_Error('registration-error-invalid-email', __('Please provide a valid email address.', 'woocommerce'));
         }
 
 
@@ -733,7 +733,7 @@ if (!function_exists('wc_create_new_customer')) {
 
         if (is_wp_error($customer_id)) {
 
-            return new WP_Error('registration-error', '<strong>' . __('ERROR', 'digits') . '</strong>: ' . __('Couldn&#8217;t register you&hellip; please contact us if you continue to have problems.', 'digits'));
+            return new WP_Error('registration-error', '<strong>' . __('ERROR', 'woocommerce') . '</strong>: ' . __('Couldn&#8217;t register you&hellip; please contact us if you continue to have problems.', 'woocommerce'));
         }
 
 
@@ -1245,6 +1245,9 @@ function wooc_extra_login()
                 <button onclick="return false" class="woocommerce-Button button digits_login_via_otp dig_wc_mobileLogin"
                         name="loginviasms"><?php _e('Login With OTP', 'digits'); ?></button>
                 <?php if (dig_isWhatsAppEnabled()) { ?>
+                    <button onclick="return false"
+                            class="woocommerce-Button button dig_wc_mobileLogin dig_wc_mobileWhatsApp"
+                            name="loginviawhatsapp"><?php _e('Login With WhatsApp', 'digits'); ?></button>
                     <?php
                 }
                 ?>
@@ -1427,7 +1430,7 @@ function digits_checkout_create_account_text($checkout)
 
         <p class="form-row form-row-wide create-account">
         <h6 class="woocommerce-form__label woocommerce-form__label-for-checkbox checkbox">
-            <?php esc_html_e('Create an account', 'digits'); ?>
+            <?php esc_html_e('Create an account', 'woocommerce'); ?>
         </h6>
         </p>
 
@@ -1507,7 +1510,10 @@ function add_dig_otp_wc()
 
     ?>
     <?php if (dig_isWhatsAppEnabled()) {
+    echo '<input class="woocommerce-Button button otp_reg_dig_wc otp_reg_dig_whatsapp" name="register" value="' . __('Register with WhatsApp', 'digits') . '" type="submit" >';
 }
+
+
     echo "<div  class=\"dig_resendotp dig_wc_register_resend\" id=\"dig_man_resend_otp_btn\" dis='1'>" . __('Resend OTP', 'digits') . " <span>(00:<span>" . dig_getOtpTime() . "</span>)</span></div>";
 
 
@@ -1777,11 +1783,11 @@ function dig_sanitize_options($options)
 function dig_wc_create_new_customer($email, $username = '', $password = '', $args = array())
 {
     if (empty($email) || !is_email($email)) {
-        return new WP_Error('registration-error-invalid-email', __('Please provide a valid email address.', 'digits'));
+        return new WP_Error('registration-error-invalid-email', __('Please provide a valid email address.', 'woocommerce'));
     }
 
     if (email_exists($email)) {
-        return new WP_Error('registration-error-email-exists', apply_filters('woocommerce_registration_error_email_exists', __('An account is already registered with your email address. Please log in.', 'digits'), $email));
+        return new WP_Error('registration-error-email-exists', apply_filters('woocommerce_registration_error_email_exists', __('An account is already registered with your email address. Please log in.', 'woocommerce'), $email));
     }
 
     if ('yes' === get_option('woocommerce_registration_generate_username', 'yes') && empty($username)) {
@@ -1791,11 +1797,11 @@ function dig_wc_create_new_customer($email, $username = '', $password = '', $arg
     $username = sanitize_user($username);
 
     if (empty($username) || !validate_username($username)) {
-        return new WP_Error('registration-error-invalid-username', __('Please enter a valid account username.', 'digits'));
+        return new WP_Error('registration-error-invalid-username', __('Please enter a valid account username.', 'woocommerce'));
     }
 
     if (username_exists($username)) {
-        return new WP_Error('registration-error-username-exists', __('An account is already registered with that username. Please choose another.', 'digits'));
+        return new WP_Error('registration-error-username-exists', __('An account is already registered with that username. Please choose another.', 'woocommerce'));
     }
 
     // Handle password creation.
@@ -1806,7 +1812,7 @@ function dig_wc_create_new_customer($email, $username = '', $password = '', $arg
     }
 
     if (empty($password)) {
-        return new WP_Error('registration-error-missing-password', __('Please enter an account password.', 'digits'));
+        return new WP_Error('registration-error-missing-password', __('Please enter an account password.', 'woocommerce'));
     }
 
     // Use WP_Error to handle registration errors.

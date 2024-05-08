@@ -97,9 +97,11 @@ jQuery(function () {
                 } else {
                     var bp_wc_phone = bp_wc_val.replace('+', '');
                     var phone_obj;
-                    if (bp_wc.attr('billing_country_code')) {
-                        var billingCountryCode = bp_wc.attr('billing_country_code');
-                        phone_obj = libphonenumber.parsePhoneNumberFromString('+' + billingCountryCode + bp_wc_phone);
+                    if(!bp_wc_val.includes('+')) {
+                        if (bp_wc.attr('billing_country_code')) {
+                            var billingCountryCode = bp_wc.attr('billing_country_code');
+                            phone_obj = libphonenumber.parsePhoneNumberFromString('+' + billingCountryCode + bp_wc_phone);
+                        }
                     }
                     if (typeof phone_obj == "undefined") {
                         phone_obj = libphonenumber.parsePhoneNumberFromString('+' + bp_wc_phone);
@@ -2327,6 +2329,9 @@ jQuery(function () {
 
         jQuery(document).on('digits_process_wc_checkout', function () {
             var form = jQuery('form.checkout');
+            if(!form){
+                form = jQuery('#place_order').closest('form');
+            }
 
             var create_verify_inp = form.find('#digits_vcustomer_phone');
 

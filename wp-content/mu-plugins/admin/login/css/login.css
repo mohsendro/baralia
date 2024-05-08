@@ -9,7 +9,9 @@
         url('../fonts/dana.woff') format('woff'),
         /* Pretty Modern Browsers */
         url('../fonts/dana.ttf') format('truetype')
-        /* Safari, Android, iOS */
+        /* Safari,
+        Android,
+        iOS */
 }
 
 @font-face {
@@ -23,7 +25,9 @@
         url('../fonts/iransans.woff') format('woff'),
         /* Pretty Modern Browsers */
         url('../fonts/iransans.ttf') format('truetype')
-        /* Safari, Android, iOS */
+        /* Safari,
+        Android,
+        iOS */
 }
 
 @font-face {
@@ -37,7 +41,63 @@
         url('fonts/iransans-dn.woff') format('woff'),
         /* Pretty Modern Browsers */
         url('fonts/iransans-dn.ttf') format('truetype')
-        /* Safari, Android, iOS */
+        /* Safari,
+        Android,
+        iOS */
+}
+
+@font-face {
+    font-display: swap;
+    font-family: "yekan-bakh";
+    src: url("../fonts/YekanBakhFaNum-Fat.woff2") format('woff2');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-display: swap;
+    font-family: "yekan-bakh";
+    src: url("../fonts/YekanBakhFaNum-Medium.woff2") format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-display: swap;
+    font-family: "yekan-bakh";
+    src: url("../fonts/YekanBakhFaNum-Bold.woff2") format('woff2');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-display: swap;
+    font-family: "yekan-bakh";
+    src: url("../fonts/YekanBakhFaNum-Heavy.woff2") format('woff2');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+@font-face {
+    font-display: swap;
+    font-family: "yekan-bakh";
+    src: url("../fonts/YekanBakhFaNum-Light.woff2") format('woff2');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-display: swap;
+    font-family: "yekan-bakh";
+    src: url("../fonts/YekanBakhFaNum-Regular.woff2") format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
 }
 
 body.login {
@@ -80,3 +140,26 @@ body.login div#login p#nav a {}
 body.login div#login p#backtoblog {}
 
 body.login div#login p#backtoblog a {}
+
+
+/* Digits */
+body.dig_hideccode {
+    font-size: 14px !important;
+    font-family: 'yekan-bakh' !important;
+}
+
+.digits_secure_modal_box,
+.digits_ui,
+.digits_secure_modal_box *,
+.digits_ui *,
+.digits_font,
+.dig_ma-box,
+.dig_ma-box input,
+.dig_ma-box input::placeholder,
+.dig_ma-box ::placeholder,
+.dig_ma-box label,
+.dig_ma-box button,
+.dig_ma-box select,
+.dig_ma-box * {
+    font-family: 'yekan-bakh' !important;
+}

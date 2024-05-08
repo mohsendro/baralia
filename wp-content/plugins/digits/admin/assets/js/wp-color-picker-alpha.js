@@ -733,7 +733,7 @@
             </div>
             
             <div class="digits-select-color select-color">
-                تنظیمات
+                Select
             </div>
         `
 

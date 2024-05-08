@@ -91,8 +91,8 @@ function wpplus_sidebars_callback() {
 			'name'          => __( 'سایدبار وبلاگ', 'textdomain' ),
 			'id'            => 'blog-sidebar',
 			'class'         => 'blog-sidebar',
-			'before_widget' => '<li id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</li>',
+			'before_widget' => '<div id="%1$s" class="widget %2$s my-4">',
+			'after_widget'  => '</div>',
 			'before_title'  => '<h2 class="widgettitle">',
 			'after_title'   => '</h2>',
 		]
@@ -103,10 +103,10 @@ function wpplus_sidebars_callback() {
 			'name'          => __( 'سایدبار فروشگاه', 'textdomain' ),
 			'id'         	=> 'shop-sidebar',
 			'class'         => 'shop-sidebar',
-			'before_widget' => '<li id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</li>',
-			'before_title'  => '<h2 class="widgettitle">',
-			'after_title'   => '</h2>',
+			'before_widget' => '<div id="%1$s" class="widget %2$s filter-item my-4">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h5 class="widgettitle filter-item-title">',
+			'after_title'   => '</h5>',
 		]
 	);
 

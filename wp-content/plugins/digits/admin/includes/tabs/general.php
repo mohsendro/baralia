@@ -8,7 +8,7 @@ function digits_settings_basic()
 {
     $countryList = getCountryList();
 
-    $currentCountry = get_option("dig_default_ccode", 'Iran');
+    $currentCountry = get_option("dig_default_ccode", 'United States');
     $whiteListCountryCodes = get_option("whitelistcountrycodes");
     $blacklistcountrycodes = get_option("dig_blacklistcountrycodes");
     $dig_hide_countrycode = get_option('dig_hide_countrycode', 0);
@@ -30,6 +30,7 @@ function digits_settings_basic()
                     <td>
                         <?php
                         digits_input_checkbox('dig_send_otp_together', 'sms_otp', $dig_send_otp_together, __('SMS', 'digits'));
+                        digits_input_checkbox('dig_send_otp_together', 'whatsapp_otp', $dig_send_otp_together, __('WhatsApp', 'digits'));
                         digits_input_checkbox('dig_send_otp_together', 'email_otp', $dig_send_otp_together, __('Email', 'digits'));
                         ?>
                         <p class="dig_ecr_desc">

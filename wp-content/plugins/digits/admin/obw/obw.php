@@ -432,7 +432,18 @@ class Wizard
     public function welcome_screen()
     {
         ?>
-
+        <div class="untdor_wizard_center">
+            <div class="untdor_wizard_heading">
+                <?php
+                esc_attr_e('Welcome', 'digits');
+                ?>
+            </div>
+            <div class="untdor_wizard_heading_desc">
+                <?php
+                esc_attr_e('This wizard will guide you through the setup process of this plugin', 'digits');
+                ?>
+            </div>
+        </div>
         <?php
     }
 

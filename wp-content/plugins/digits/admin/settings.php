@@ -13,8 +13,8 @@ require_once dirname(__FILE__) . '/editor/editor.php';
 function add_digits_setting_page()
 {
     $m = add_menu_page(
-        'دیجیتس',
-        'Digits WPNovin',
+        'Digits',
+        'Digits',
         'manage_options',
         'digits_settings',
         'digits_plugin_settings',
@@ -23,8 +23,8 @@ function add_digits_setting_page()
     );
     add_submenu_page(
         'digits_settings',
-        'دیجیتس',
-        'تنظیمات',
+        'Digits',
+        'Settings',
         'manage_options',
         'digits_settings'
     );
@@ -162,6 +162,27 @@ function digits_plugin_settings()
     dig_add_gs_css();
     wp_print_request_filesystem_credentials_modal();
 
+
+    if (isset($_GET['show_survey'])) {
+        $link = 'https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAMAAASH_sdUNEZaSEFJN0c2NDlQNjVLT0JNQTJWQlhPVi4u';
+        ?>
+        <style>body {
+                overflow: hidden;
+            }</style>
+
+        <div class="dig-addon-box dig-modal-center_align dig_ma-box dig-box  dig-modal-con-reno">
+            <div class="dig-modal-center dig_addons_pop">
+                <a href="<?php echo $link; ?>" target="_blank">
+                    <img src="<?php echo get_digits_asset_uri('/assets/images/survey-popup.png'); ?>"/>
+                </a>
+            </div>
+            <div class="dig_hide_modal">
+            </div>
+        </div>
+
+        <?php
+    }
+
     $request_link = esc_attr(admin_url('admin.php?page=digits_settings&tab=dashboard'));
 
 
@@ -172,8 +193,11 @@ function digits_plugin_settings()
 
     if ($dig_hid_addon_domain_notice == -1) {
 
-        $notice_links = [
-        ];
+        //$notice_links = [
+            //['label' => __('Request', 'digits'), 'url' => $request_link, 'class' => 'digits_show_purchasecode'],
+        //];
+        //$notice_text = __('In case you are using same purchase code on your testing/production server, then make sure to request addon domain.', 'digits');
+        //digits_show_notice($notice_text, $notice_links, 'dig_hid_addon_domain_notice');
     }
 
     Wizard::instance()->init_ui();
@@ -512,7 +536,7 @@ function digits_add_admin_settings_scripts($hook)
             'bothPassAndOTPCannotBeDisabled' => __('Both Password and OTP cannot be disabled', 'digits'),
             'selectatype' => __('Field Type', 'digits'),
             "Invalidmsg91senderid" => __("Invalid msg91 sender id!", 'digits'),
-            "invalidpurchasecode" => __("Invalid Purchase Code", 'digits'),
+            //"invalidpurchasecode" => __("Invalid Purchase Code", 'digits'),
             "Error" => __("Error! Please try again later", "digits"),
             "PleasecompleteyourSettings" => __("Please complete your settings", 'digits'),
             "PleasecompleteyourAPISettings" => sprintf(__("Please complete your SMS Gateway settings by clicking here, without those plugin will not work. For documentation, click %s here %s", 'digits'), '<a href="' . $gateway_help . '" target="_blank">', '</a>'),
@@ -718,6 +742,7 @@ function digits_settings_tab_ui()
             'tabs' => array(
                 'apisettings' => array('label' => esc_attr__('SMS Gateway', 'digits'), 'sensitive' => true),
                 'email_gateway' => array('label' => esc_attr__('Email Gateway', 'digits'), 'function' => 'api_email', 'sensitive' => true),
+                'whatsapp_gateway' => array('label' => esc_attr__('WhatsApp Gateway', 'digits'), 'function' => 'api_whatsapp', 'sensitive' => true),
                 'security_keys' => array('label' => esc_attr__('Security Keys', 'digits'), 'function' => 'webauthn'),
                 /*'login_flow' => array('label' => esc_attr__('Authentication Flow', 'digits'), 'function' => 'login_flow'),*/
             )

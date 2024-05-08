@@ -137,6 +137,10 @@
                                     <span class="fw-bold d-lg-inline-block d-none">ورود / ثبت نام</span>
                                     <i class="bi bi-person-check fs-1 d-lg-none d-inline"></i>
                                 </a>
+                                <!-- <button data-bs-toggle="modal" data-bs-target="#loginModal" role="button" class="btn btn-white header-register border-0 rounded-pill show">
+                                    <span class="fw-bold d-lg-inline-block d-none">ورود / ثبت نام</span>
+                                    <i class="bi bi-person-check fs-1 d-lg-none d-inline"></i>
+                                </button> -->
                             <?php endif; ?> 
                         </div>
                     </div>

@@ -57,7 +57,7 @@ class Digits_Gateway
 
         $placeholder = 'to:{to}, message:{message}, sender:{sender_id}';
         $desc = '<i>' . __('Enter Parameters separated by "," and values by ":"') . '</i><br />';
-        $desc .= 'To : {to}<br /> Message : {message}<br /> Sender ID : {sender_id}';
+        $desc .= 'To Phone Number : {to}<br /> Message : {message}<br /> Sender ID : {sender_id}';
 
         $custom = array(
             'custom_gateway' => array(

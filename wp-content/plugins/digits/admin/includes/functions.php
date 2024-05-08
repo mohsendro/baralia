@@ -13,6 +13,7 @@ require_once dirname(__FILE__) . '/users.php';
 add_action('wp_ajax_digits_save_settings', 'digits_save_settings');
 function digits_save_settings()
 {
+    check_admin_referer('digits_setting_save');
     digits_update_data(false);
     wp_die();
 }
@@ -382,8 +383,8 @@ function digits_update_data($gs)
 
     if (isset($_POST['dig_otp_size']) && isset($_POST['dig_messagetemplate'])) {
         $dig_otp_size = sanitize_text_field($_POST['dig_otp_size']);
-        $dig_messagetemplate = sanitize_textarea_field($_POST['dig_messagetemplate']);
-        $dig_whatsapp_messagetemplate = sanitize_textarea_field($_POST['dig_whatsapp_messagetemplate']);
+        $dig_messagetemplate = sanitize_textarea_field(stripslashes($_POST['dig_messagetemplate']));
+        $dig_whatsapp_messagetemplate = sanitize_textarea_field(stripslashes($_POST['dig_whatsapp_messagetemplate']));
 
         if ($dig_otp_size > 3 && $dig_otp_size < 11 && !empty($dig_messagetemplate)) {
             if (get_option('dig_otp_size') !== false) {
@@ -847,330 +848,157 @@ function digit_addons($active_tab)
     <div class="dig_admin_head"><span><?php _e('All Addons', 'digits'); ?></span></div>
     <div class="digits-addons-container">
         <div class="dig_admin_tab_grid">
-            <div class="dig_admin_tab_grid_elem">
-                    <div class="dig-addon-item" data-plugin="digitsboundles/digitsboundles.php">
-                        <div class="dig-addon-par" style="background:#333;">
-                            <div class="dig_addon_img">
-                                <img src="https://wpnovin.com/wp-content/uploads/2021/09/DigitsBundleCover-1.jpg" draggable="false">
+            <?php
+            $purchased_addons = $data['purchased'];
 
-                            </div>
-                            <div class="dig_addon_details">
-                                <div class="dig_addon_name" style="color:#fff;">پکیج شگفت انگیز دیجیتس: بهمراه پلاگین دیجیتس + 9 افزودنی مهم</div>
-                                <div class="dig_addon_sep"></div>
-                                <div class="dig_addon_btm_pnl">
+            $new_addons = $data['rem'];
 
-                                    <div class="dig_addon_dsc">
-                                        <div class="c-message_kit__gutter">
-                                            <div class="c-message_kit__gutter__right" role="presentation" data-qa="message_content">
-                                                <div class="c-message_kit__blocks c-message_kit__blocks--rich_text">
-                                                    <div class="c-message__message_blocks c-message__message_blocks--rich_text" data-qa="message-text">
-                                                        <div class="p-block_kit_renderer" data-qa="block-kit-renderer">
-                                                            <div class="p-block_kit_renderer__block_wrapper p-block_kit_renderer__block_wrapper--first">
-                                                                <div class="p-rich_text_block" dir="auto">
-                                                                    <div class="p-rich_text_section">
-                                                                      خرید افزونه دیجیتس + ۹ افزودنی حرفه ای با 60% تخفیف ویژه و تکرار نشدنی...
-                                                                        </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+
+            if (!empty($new_addons)) {
+                echo '<div class="dig_admin_tab_grid_elem">';
+                foreach ($new_addons as $plugin) {
+
+                    if (is_plugin_active($plugin['plugin'])) {
+                        if (!$plugin['multi_site'] || empty($plugin['multi_site']) || $plugin['multi_site'] == 0)
+                            deactivate_plugins($plugin['plugin']);
+                    }
+                    ?>
+
+
+                    <a href="<?php echo $plugin['location']; ?>" target="_blank">
+
+                        <div class="dig-addon-item" data-plugin="<?php echo $plugin['plugin']; ?>">
+                            <div class="dig-addon-par">
+                                <div class="dig_addon_img">
+                                    <img src="<?php echo $plugin['thumbnail']; ?>" draggable="false"/>
 
                                 </div>
-                            </div>
+                                <div class="dig_addon_details">
+                                    <div class="dig_addon_name"><?php echo $plugin['name']; ?></div>
+                                    <div class="dig_addon_sep"></div>
+                                    <div class="dig_addon_btm_pnl">
 
-                            <div class="dig_addon_btn_con">
-                                <div class="dig_addon_btn">
-                                    <a target="_blank" href="https://wpnovin.com/product/digits-plugin-package-addons/">خرید باندل دیجیس با 60% تخفیف</a>
+                                        <div class="dig_addon_dsc">
+                                            <?php echo $plugin['desc']; ?>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="dig_addon_btn_con">
+                                    <?php
+                                    if (isset($plugin['allow_direct_install']) && $plugin['allow_direct_install'] == 1) {
+                                        echo '<div href="#" class="digits-addons-allow_direct_install digmodifyaddon">';
+                                    }
+                                    ?>
+                                    <input type="hidden" class="dig_addon_nounce"
+                                           value="<?php echo wp_create_nonce('dig_install_addon') ?>">
+                                    <input type="hidden" class="dig_plugin_slug"
+                                           value="<?php $basename = explode('/', $plugin['plugin']);
+                                           echo $basename[0]; ?>">
+                                    <div class="dig_addon_btn">
+                                        <?php
+                                        echo $plugin['price'];
+                                        ?>
+                                    </div>
+                                    <?php
+                                    if (isset($plugin['allow_direct_install']) && $plugin['allow_direct_install'] == 1) {
+                                        echo '</div>';
+                                    }
+                                    ?>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="dig-addon-item" data-plugin="digsociallogin/digsociallogin.php">
-                        <div class="dig-addon-par">
-                            <div class="dig_addon_img">
-                                <img src="https://digits.unitedover.com/wp-content/uploads/2019/08/add4-one-click-login-signup.png" draggable="false">
+                    </a>
 
-                            </div>
-                            <div class="dig_addon_details">
-                                <div class="dig_addon_name">افزونه One Click Login/Signup | ورود و عضویت با یک فرم مشترک</div>
-                                <div class="dig_addon_sep"></div>
-                                <div class="dig_addon_btm_pnl">
 
-                                    <div class="dig_addon_dsc">
-                                        <div class="c-message_kit__gutter">
-                                            <div class="c-message_kit__gutter__right" role="presentation" data-qa="message_content">
-                                                <div class="c-message_kit__blocks c-message_kit__blocks--rich_text">
-                                                    <div class="c-message__message_blocks c-message__message_blocks--rich_text" data-qa="message-text">
-                                                        <div class="p-block_kit_renderer" data-qa="block-kit-renderer">
-                                                            <div class="p-block_kit_renderer__block_wrapper p-block_kit_renderer__block_wrapper--first">
-                                                                <div class="p-rich_text_block" dir="auto">
-                                                                    <div class="p-rich_text_section">افزونه دیجیتس را از نوین وردپرس تهیه کرده و سپس به همراه افزونه One Click Login/Signup را نصب نمایید. حال دیگر نیاز به رمز و .... نخواهید داشت و کاربر...</div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+                    <?php
+                }
+
+                echo '</div>';
+            }
+            ?>
+
+            <div class="dig_admin_tab_grid_elem dig_admin_tab_grid_sec">
+                <?php
+                if (!empty($purchased_addons)) {
+                    echo '<div class="digits-addons-purchased">';
+
+                    $plugin_updates = get_plugin_updates();
+                    foreach ($purchased_addons as $key => $plugin) {
+
+
+                        ?>
+
+
+                        <div class="dig-addon-item dig-addon-item_purchased"
+                             data-plugin="<?php echo $plugin['plugin']; ?>">
+
+
+                            <div class="dig-addon-par">
+                                <div class="dig-addon_purchased_item">
+                                    <div class="dig_addon_img_act_img">
+                                        <div class="dig_addon_img">
+                                            <img src="<?php echo $plugin['thumbnail']; ?>" draggable="false"/>
                                         </div>
                                     </div>
-
-                                </div>
-                            </div>
-
-                            <div class="dig_addon_btn_con">
-                                <div class="dig_addon_btn">
-                                    <?php if(in_array('digoneclickls/digoneclickls.php', apply_filters('active_plugins', get_option('active_plugins')))) { ?>
-                                        <a href="?page=digits_settings&tab=digoneclickls">تنظیمات افزودنی</a>
-                                    <?php } else { ?>
-                                        <a target="_blank" href="https://wpnovin.com/product/one-click-login-signup-digits-wordpress-mobile-number-and-login/">خرید افزودنی از نوین وردپرس</a>
-                                    <?php } ?>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="dig-addon-item" data-plugin="digpagelock/digpagelock.php">
-                        <div class="dig-addon-par">
-                            <div class="dig_addon_img">
-                                <img src="https://digits.unitedover.com/wp-content/uploads/2019/08/add7-page-lock.png" draggable="false">
-
-                            </div>
-                            <div class="dig_addon_details">
-                                <div class="dig_addon_name">افزونه Forced Login Page Lock | اجبار لاگین برای مشاهده صفحات سایت </div>
-                                <div class="dig_addon_sep"></div>
-                                <div class="dig_addon_btm_pnl">
-
-                                    <div class="dig_addon_dsc">
-                                        <div class="c-message_kit__gutter">
-                                            <div class="c-message_kit__gutter__right" role="presentation" data-qa="message_content">
-                                                <div class="c-message_kit__blocks c-message_kit__blocks--rich_text">
-                                                    <div class="c-message__message_blocks c-message__message_blocks--rich_text" data-qa="message-text">
-                                                        <div class="p-block_kit_renderer" data-qa="block-kit-renderer">
-                                                            <div class="p-block_kit_renderer__block_wrapper p-block_kit_renderer__block_wrapper--first">
-                                                                <div class="p-rich_text_block" dir="auto">
-                                                                    <div class="p-rich_text_section">
-                                                                        با افزودنی لاگین اجباری دیجیتس می توانید انواع برگه ها، نوشته ها، محصولات ووکامرس و حتی صفحه تسویه حساب را نیز مسدود نمایید.
-                                                                        </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                    <div class="dig_addon_flex_name">
+                                        <div class="dig_addon_details">
+                                            <div class="dig_addon_name"><?php echo $plugin['name']; ?></div>
                                         </div>
                                     </div>
+                                    <div class="dig_addon_int_btn">
+                                        <input type="hidden" class="dig_addon_nounce"
+                                               value="<?php echo wp_create_nonce('dig_install_addon') ?>">
+                                        <input type="hidden" class="dig_plugin_slug"
+                                               value="<?php $basename = explode('/', $plugin['plugin']);
+                                               echo $basename[0]; ?>">
 
 
-                                </div>
-                            </div>
-
-                            <div class="dig_addon_btn_con">
-                                <div class="dig_addon_btn">
-                                    <?php if(in_array('digpagelock/digpagelock.php', apply_filters('active_plugins', get_option('active_plugins')))) { ?>
-                                        <a href="?page=digits_settings&tab=digpagelock">تنظیمات افزودنی</a>
-                                    <?php } else { ?>
-                                        <a target="_blank" href="https://wpnovin.com/product/forced-login-page-lock-digits-wordpress-mobile-number-and-login/">خرید افزودنی از نوین وردپرس</a>
-                                    <?php } ?>
+                                        <?php
+                                        if (is_plugin_active($plugin['plugin'])) {
+                                            $function_key = str_replace('-', '_', $key);
+                                            $addon_function = 'digits_addon_' . $function_key;
 
 
+                                            ?>
+                                            <div class="digmodifyaddon icon-group icon-group-dims"
+                                                 type="-1"></div>
+                                            <?php
+                                            if (function_exists($addon_function)) {
+                                                $addon_settings = call_user_func($addon_function);
+                                                ?>
+                                                <div class="dig_ngmc updatetabview icon-setting icon-setting-dims <?php echo $active_tab == $addon_settings ? 'dig-nav-tab-active' : ''; ?>"
+                                                     tab="<?php echo $addon_settings; ?>tab"></div>
+                                                <?php
+                                            }
+                                            ?>
+                                            <?php
+                                            if (isset($plugin_updates[$plugin['plugin']])) {
+                                                echo '<div class="digmodifyaddon icon-update icon-update-dims" type="10"></div>';
+                                            }
 
 
-
-
-
-
-
-
-
-
-
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="dig-addon-item" data-plugin="digfilter/digfilter.php">
-                        <div class="dig-addon-par">
-                            <div class="dig_addon_img">
-                                <img src="https://digits.unitedover.com/wp-content/uploads/2019/08/add5-email-filter.png" draggable="false">
-
-                            </div>
-                            <div class="dig_addon_details">
-                                <div class="dig_addon_name">افزودنی Email Filter | فیلتر و مسدود کردن ایمیل های ربات و مزاحم </div>
-                                <div class="dig_addon_sep"></div>
-                                <div class="dig_addon_btm_pnl">
-
-                                    <div class="dig_addon_dsc">
-                                        <div class="c-message_kit__gutter">
-                                            <div class="c-message_kit__gutter__right" role="presentation" data-qa="message_content">
-                                                <div class="c-message_kit__blocks c-message_kit__blocks--rich_text">
-                                                    <div class="c-message__message_blocks c-message__message_blocks--rich_text" data-qa="message-text">
-                                                        <div class="p-block_kit_renderer" data-qa="block-kit-renderer">
-                                                            <div class="p-block_kit_renderer__block_wrapper p-block_kit_renderer__block_wrapper--first">
-                                                                <div class="p-rich_text_block" dir="auto">
-                                                                    <div class="p-rich_text_section">
-                                                                        با این افزودنی افزونه دیجیتس می توانید جلوی ثبت نام ایمیل های فیک را گرفته و تنها از دامنه ایمیل های مشخص شده پشتیبانی کنید.
-                                                                        </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-
-                            <div class="dig_addon_btn_con">
-                                <div class="dig_addon_btn">
-                                    <?php if(in_array('digfilter/digfilter.php', apply_filters('active_plugins', get_option('active_plugins')))) { ?>
-                                        <a href="?page=digits_settings&tab=digfilter">تنظیمات افزودنی</a>
-                                    <?php } else { ?>
-                                        <a target="_blank" href="https://wpnovin.com/product/email-filter-digits-wordpress-mobile-number-and-login/">خرید افزودنی از نوین وردپرس</a>
-                                    <?php } ?>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="dig-addon-item" data-plugin="digadvlogic/digadvlogic.php">
-                        <div class="dig-addon-par">
-                            <div class="dig_addon_img">
-                                <img src="https://digits.unitedover.com/wp-content/uploads/2018/12/add3-advance-fields-and-logic-form-1.png" draggable="false">
-
-                            </div>
-                            <div class="dig_addon_details">
-                                <div class="dig_addon_name">افزونه Additional Fields & Logic Builder | ساخت فیلدهای شرطی</div>
-                                <div class="dig_addon_sep"></div>
-                                <div class="dig_addon_btm_pnl">
-
-                                    <div class="dig_addon_dsc">
-                                        <div class="c-message_kit__gutter">
-                                            <div class="c-message_kit__gutter__right" role="presentation" data-qa="message_content">
-                                                <div class="c-message_kit__blocks c-message_kit__blocks--rich_text">
-                                                    <div class="c-message__message_blocks c-message__message_blocks--rich_text" data-qa="message-text">
-                                                        <div class="p-block_kit_renderer" data-qa="block-kit-renderer">
-                                                            <div class="p-block_kit_renderer__block_wrapper p-block_kit_renderer__block_wrapper--first">
-                                                                <div class="p-rich_text_block" dir="auto">
-                                                                    <div class="p-rich_text_section">
-                                                                         این امکان را برای شما خواهد داد تا کاربران در هنگام تکمیل فیلدهای خاص، فیلد دیگری را برای کاربر نمایش بدهد یا اینکه فیلد دیگری پنهان شود.
-                                                                        </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-
-                            <div class="dig_addon_btn_con">
-                                <div class="dig_addon_btn">
-                                    <?php if(in_array('digadvlogic/digadvlogic.php', apply_filters('active_plugins', get_option('active_plugins')))) { ?>
-                                        <a href="?page=digits_settings&tab=digadvlogic">تنظیمات افزودنی</a>
-                                    <?php } else { ?>
-                                        <a target="_blank" href="https://wpnovin.com/product/additional-fields-logic-builder-digits-addon/">خرید افزودنی از نوین وردپرس</a>
-                                    <?php } ?>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="dig-addon-item" data-plugin="digrestapi/digrestapi.php">
-                        <div class="dig-addon-par">
-                            <div class="dig_addon_img">
-                                <img src="https://digits.unitedover.com/wp-content/uploads/2019/08/add8-rest-api.png" draggable="false">
-
-                            </div>
-                            <div class="dig_addon_details">
-                                <div class="dig_addon_name">Rest API | اتصال اپلیکیشن سایت به دیجیتس و استفاده از امکانات افزونه در اپ</div>
-                                <div class="dig_addon_sep"></div>
-                                <div class="dig_addon_btm_pnl">
-
-                                    <div class="dig_addon_dsc">
-                                        <div class="c-message_kit__gutter">
-                                            <div class="c-message_kit__gutter__right" role="presentation" data-qa="message_content">
-                                                <div class="c-message_kit__blocks c-message_kit__blocks--rich_text">
-                                                    <div class="c-message__message_blocks c-message__message_blocks--rich_text" data-qa="message-text">
-                                                        <div class="p-block_kit_renderer" data-qa="block-kit-renderer">
-                                                            <div class="p-block_kit_renderer__block_wrapper p-block_kit_renderer__block_wrapper--first">
-                                                                <div class="p-rich_text_block" dir="auto">
-                                                                    <div class="p-rich_text_section">
-                                                                         بعد از اتصال اپلیکیشن سایت به دیجیتس، دیگر کاربران مجبور نخواهند بود در اپ و سایت عضویت جداگانه ای داشته باشند.
-                                                                        </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-
-                            <div class="dig_addon_btn_con">
-                                <div class="dig_addon_btn">
-                                    <?php if(in_array('digrestapi/digrestapi.php', apply_filters('active_plugins', get_option('active_plugins')))) { ?>
-                                        <a href="?page=digits_settings&tab=digrestapi">تنظیمات افزودنی</a>
-                                    <?php } else { ?>
-                                        <a target="_blank" href="https://wpnovin.com/product/rest-api-digits-addons/">خرید افزودنی از نوین وردپرس</a>
-                                    <?php } ?>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="dig-addon-item" data-plugin="digapprove/digapprove.php">
-                        <div class="dig-addon-par">
-                            <div class="dig_addon_img">
-                                <img src="https://digits.unitedover.com/wp-content/uploads/2020/03/add11-account-approval-1.png" draggable="false">
-
-                            </div>
-                            <div class="dig_addon_details">
-                                <div class="dig_addon_name">افزودنی User Account Approval | تایید یا عدم تایید کاربران بعد از ثبت نام در دیجیتس</div>
-                                <div class="dig_addon_sep"></div>
-                                <div class="dig_addon_btm_pnl">
-
-                                    <div class="dig_addon_dsc">
-                                        <div class="c-message_kit__gutter">
-                                            <div class="c-message_kit__gutter__right" role="presentation" data-qa="message_content">
-                                                <div class="c-message_kit__blocks c-message_kit__blocks--rich_text">
-                                                    <div class="c-message__message_blocks c-message__message_blocks--rich_text" data-qa="message-text">
-                                                        <div class="p-block_kit_renderer" data-qa="block-kit-renderer">
-                                                            <div class="p-block_kit_renderer__block_wrapper p-block_kit_renderer__block_wrapper--first">
-                                                                <div class="p-rich_text_block" dir="auto">
-                                                                    <div class="p-rich_text_section">
-                                                                        به وسیله آن بتوانید کاربرانی که در سایت شما از طریق افزونه دیجیتس ثبت نام خود را انجام می دهند، مدیریت کامل تری داشته باشید
-                                                                        </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        } else {
+                                            echo '<div class="digmodifyaddon icon-upload icon-upload-dims" type="1"></div>';
+                                        }
+                                        ?>
                                     </div>
                                 </div>
-                            </div>
 
-                            <div class="dig_addon_btn_con">
-                                <div class="dig_addon_btn">
-                                    <?php if(in_array('digapprove/digapprove.php', apply_filters('active_plugins', get_option('active_plugins')))) { ?>
-                                        <a href="?page=digits_settings&tab=digapprove">تنظیمات افزودنی</a>
-                                    <?php } else { ?>
-                                        <a target="_blank" href="https://wpnovin.com/product/user-account-approval-digits-addons/">خرید افزودنی از نوین وردپرس</a>
-                                    <?php } ?>
-                                </div>
+
                             </div>
                         </div>
-                    </div>
+
+
+                        <?php
+
+
+                    }
+
+                    echo '</div>';
+                }
+                ?>
             </div>
         </div>
     </div>
@@ -1180,7 +1008,6 @@ function digit_addons($active_tab)
 
 
 function digit_activation_fields()
-
 {
     $plugin_version = digits_version();
 
@@ -1202,6 +1029,9 @@ function digit_activation()
     ?>
 
     <div class="digits_activation_wrapper">
+        <?php
+        wp_nonce_field('digits_setting_save');
+        ?>
         <input type="hidden" name="dig_license_type"
                value="<?php echo esc_attr($license_type); ?>"/>
         <?php

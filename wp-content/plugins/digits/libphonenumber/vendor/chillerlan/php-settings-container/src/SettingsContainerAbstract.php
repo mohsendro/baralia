@@ -33,18 +33,6 @@ abstract class SettingsContainerAbstract implements SettingsContainerInterface{
 	}
 
 	/**
-	 * @inheritdoc
-	 */
-	public function fromIterable(iterable $properties):SettingsContainerInterface{
-
-		foreach($properties as $key => $value){
-			$this->__set($key, $value);
-		}
-
-		return $this;
-	}
-
-	/**
 	 * calls a method with trait name as replacement constructor for each used trait
 	 * (remember pre-php5 classname constructors? yeah, basically this.)
 	 *
@@ -99,6 +87,13 @@ abstract class SettingsContainerAbstract implements SettingsContainerInterface{
 	}
 
 	/**
+	 * @inheritdoc
+	 */
+	public function __isset(string $property):bool{
+		return isset($this->{$property}) && !$this->isPrivate($property);
+	}
+
+	/**
 	 * @internal Checks if a property is private
 	 *
 	 * @param string $property
@@ -123,15 +118,27 @@ abstract class SettingsContainerAbstract implements SettingsContainerInterface{
 	/**
 	 * @inheritdoc
 	 */
-	public function __isset(string $property):bool{
-		return isset($this->{$property}) && !$this->isPrivate($property);
+	public function __toString():string{
+		return $this->toJSON();
 	}
 
 	/**
 	 * @inheritdoc
 	 */
-	public function __toString():string{
-		return $this->toJSON();
+	public function toArray():array{
+		return get_object_vars($this);
+	}
+
+	/**
+	 * @inheritdoc
+	 */
+	public function fromIterable(iterable $properties):SettingsContainerInterface{
+
+		foreach($properties as $key => $value){
+			$this->__set($key, $value);
+		}
+
+		return $this;
 	}
 
 	/**
@@ -158,15 +165,9 @@ abstract class SettingsContainerAbstract implements SettingsContainerInterface{
 	/**
 	 * @inheritdoc
 	 */
+	#[\ReturnTypeWillChange]
 	public function jsonSerialize(){
 		return $this->toArray();
-	}
-
-	/**
-	 * @inheritdoc
-	 */
-	public function toArray():array{
-		return get_object_vars($this);
 	}
 
 }

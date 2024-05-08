@@ -35,10 +35,6 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 	}
 ?>
 
-<?php
-	// var_dump($product);
-?>
-
 <div class="col-lg-<?php echo $column; ?> products columns-<?php echo esc_attr( wc_get_loop_prop( 'columns' ) ); ?>">
 	<div class="product-box" <?php wc_product_class( '', $product ); ?> >
 		<?php

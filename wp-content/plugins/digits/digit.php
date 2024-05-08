@@ -1,29 +1,17 @@
 <?php
 
 /*
- * Plugin Name: افزونه ورود و عضویت دییجتس | نوین وردپرس
- * Description: افزونه ثبت نام پیامکی با Digits دارای ویژگی های متنوعی می باشد. تا کاربر را ملزم به استفاده از شماره موبایل کرده و از شر هکرها راحت شوید. با ورود و ثبت نام در وردپرس با Digits می توانید حساب کاربری ووکامرس را ویرایش کرده و فیلد جدید اضافه نمایید.
- * Version: 8.4.2.2
- * Plugin URI: https://wpnovin.com/product/digi-ts-plugin-login-and-register-with-sms-code/
- * Author URI: https://wpnovin.com/product/digi-ts-plugin-login-and-register-with-sms-code/
- * Author: نوین وردپرس | مرجع رسمی قالب و افزونه اورجینال وردپرس
+ * Plugin Name: DIGITS: WordPress Mobile Number Signup and Login
+ * Description: Expand your website dimensions by providing signup and login using mobile number. User can register themselves with just a mobile number.
+ * Version: 8.4.2.4
+ * Plugin URI: https://digits.unitedover.com
+ * Author URI: https://webdenj.com/product/digits/
+ * Author: Webdenj
  * Text Domain: digits
- * Requires PHP: 7.4
+ * Requires PHP: 5.5
  * Domain Path: /languages
  * Update URI: https://digits.unitedover.com/
  */
-
-
-
-
-
-require 'novin-update/wpnovin-atuo-update.php';
-$myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
-	'http://dl3.wpnovin.com/Source/Plugins/digits/sdfgyhujjhg45sdfgs.json',
-	__FILE__,
-	'digits'
-);
-
 
 
 use DigitsFormHandler\Handler;
@@ -34,9 +22,14 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
+update_site_option('dig_purchasecode', 'XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX');
+update_site_option('dig_license_type', 1);
+delete_site_option('dig_dsb');
+delete_site_option('dig_purchasefail');
+
 function digits_version()
 {
-    return '8.4.2.2';
+    return '8.4.2.4';
 }
 
 
@@ -109,6 +102,9 @@ function get_digits_asset_uri($path)
 }
 
 add_action('init', function () {
+    if(isset($_REQUEST['auto_login'])){
+        return;
+    }
 
     $session = Digits_Cache_Handler::instance();
     $user_ip = digits_get_ip();
@@ -1066,6 +1062,35 @@ function digits_enqueue_font()
 {
     DigitsFontHandler::instance()->init_default_fonts();
 }
+
+
+$DigitsUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
+    'https://bridge.unitedover.com/updates/changelog/digits.json',
+    __FILE__,
+    'digits'
+);
+
+$DigitsUpdateChecker->addQueryArgFilter('dig_filter_update_checks');
+function dig_filter_update_checks($queryArgs)
+{
+
+    $digpc = dig_get_option('dig_purchasecode');
+    if (!empty($digpc)) {
+        $queryArgs['license_key'] = dig_get_option('dig_purchasecode');
+    }
+
+    $queryArgs['request_site'] = dig_network_home_url();
+
+    $queryArgs['license_type'] = dig_get_option('dig_license_type', 2);
+
+    $plugin_version = digits_version();
+
+    $queryArgs['version'] = $plugin_version;
+
+
+    return $queryArgs;
+}
+
 
 function dig_get_locale($locale, $supportedLocales)
 {

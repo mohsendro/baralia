@@ -22,11 +22,21 @@ if ( ! defined( 'ABSPATH' ) ) {
 woocommerce_breadcrumb();
 
 // If checkout registration is disabled and not logged in, the user cannot checkout.
-if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_required() && ! is_user_logged_in() ) {
-	echo esc_html( apply_filters( 'woocommerce_checkout_must_be_logged_in_message', __( 'You must be logged in to checkout.', 'woocommerce' ) ) );
-	return;
-}
-?>
+if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_required() && ! is_user_logged_in() ): ?>
+	<?php // echo esc_html( apply_filters( 'woocommerce_checkout_must_be_logged_in_message', __( 'You must be logged in to checkout.', 'woocommerce' ) ) ); ?>
+	<div class="content">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-12 col-md-6 m-auto">
+					<div class="auth-form shadow-xl rounded-3 mt-2 bg-white">
+						<?php echo do_shortcode('[df-form-login]'); ?> 
+					</div>
+				</div>
+			</div>
+        </div>
+    </div>	
+	<?php return; ?>
+<?php endif; ?>
 
 <div class="content">
 	<div class="container-fluid">

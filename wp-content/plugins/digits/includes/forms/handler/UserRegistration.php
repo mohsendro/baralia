@@ -332,6 +332,13 @@ class UserRegistration
         if (!empty($mobile)) {
             if ($skip_otp_verification == 0) {
 
+
+                if (dig_isWhatsAppEnabled()
+                    && empty($this->get('otp_step_1', false))
+                    && empty($this->get('signup_otp_mode', false))) {
+                    wp_send_json_success($this->show_html_step('otp_mode', null));
+                }
+
                 if ($this->is_otp_action($sub_action)) {
                     $data = array();
                     $request = $this->send_otp($sub_action, $countrycode, $mobile);
@@ -350,7 +357,8 @@ class UserRegistration
                 }
                 $this->check_errors($validation_error);
 
-                if (empty($otp)) {
+
+                if (empty($otp) && empty($this->get('otp_step_1', false))) {
                     wp_send_json_success($this->show_html_step('otp_section', null));
                 }
 
@@ -570,6 +578,14 @@ class UserRegistration
     public function render_section($action, $data = null)
     {
         $actions = [
+            'otp_mode' => [
+                'tabs' => [
+                    'otp' => array(
+                        'label' => __('Use OTP', 'digits'),
+                        'render' => 'render_otp_mode_selector'),
+                ],
+                'hide_tabs' => true,
+            ],
             'otp_section' => [
                 'tabs' => [
                     'otp' => array(
@@ -599,7 +615,10 @@ class UserRegistration
             ],
         ];
         $details = $actions[$action];
-        $change = $details['change'];
+        $change = false;
+        if (isset($details['change'])) {
+            $change = 'data-change="' . $details['change'] . '"';
+        }
         $tabs = $details['tabs'];
         $hide_tabs = !empty($details['hide_tabs']);
         $body_class = '';
@@ -620,8 +639,8 @@ class UserRegistration
                             $style = 'style="display:none;"';
                         }
                         ?>
-                        <div data-change="<?php echo $change; ?>" data-value="<?php echo $key; ?>"
-                             class="<?php echo implode(" ", $class); ?>" <?php echo $style; ?>>
+                        <div <?php echo $change; ?> data-value="<?php echo $key; ?>"
+                                                    class="<?php echo implode(" ", $class); ?>" <?php echo $style; ?>>
                             <?php echo $label; ?>
                         </div>
                         <?php
@@ -637,8 +656,8 @@ class UserRegistration
                         $class = array('digits-form_tab_body');
                         $render = $step_tab['render'];
                         ?>
-                        <div data-change="<?php echo $change; ?>"
-                             class="<?php echo implode(" ", $class); ?>">
+                        <div <?php echo $change; ?>
+                                class="<?php echo implode(" ", $class); ?>">
                             <?php
                             $this->$render($action, $data);
                             ?>
@@ -726,6 +745,13 @@ class UserRegistration
         update_user_meta($user_id, self::USER_VERIFY_EMAIL_KEY, $token);
         update_user_meta($user_id, self::USER_VERIFY_EMAIL_KEY_GEN_TIME, time());
         return $url;
+    }
+
+    public function render_otp_mode_selector()
+    {
+        $methods = array_keys($this->get_all_otp_actions());
+        Processor::instance()->otp_tab(0, $methods, 1, 'register');
+        echo '<input type="hidden" name="signup_otp_mode" value="1" />';
     }
 
     public function render_tab_optional_field($action, $data)

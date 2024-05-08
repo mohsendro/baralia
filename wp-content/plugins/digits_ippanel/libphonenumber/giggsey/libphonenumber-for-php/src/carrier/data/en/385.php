@@ -1,0 +1,2 @@
+<?php
+ return array ( 38590 => 'Tele2', 38591 => 'A1 Telekom', 38592 => 'A1 Telekom', 38595 => 'Tele2', 385970 => 'Hrvatski Telekom', 385975 => 'Telefocus', 385976 => 'Hrvatski Telekom', 385977 => 'Hrvatski Telekom', 385979 => 'Hrvatski Telekom', 38598 => 'Hrvatski Telekom', 38599 => 'Hrvatski Telekom', ); 

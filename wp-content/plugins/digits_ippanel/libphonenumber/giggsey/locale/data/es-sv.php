@@ -1,0 +1,2 @@
+<?php
+ return array ( 'AC' => 'Isla Ascensión', 'BA' => 'Bosnia-Herzegovina', 'CG' => 'República del Congo', 'CI' => 'Costa de Marfil', 'GG' => 'Guernesey', 'IC' => 'Islas Canarias', 'TA' => 'Tristán da Cunha', ); 

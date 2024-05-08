@@ -1,0 +1,2 @@
+<?php
+ if (!defined('ABSPATH')) { exit; } function digpagelock_is_rest_api_request() { if (empty($_SERVER['REQUEST_URI'])) { return false; } $rest_prefix = trailingslashit(rest_get_url_prefix()); return (false !== strpos($_SERVER['REQUEST_URI'], $rest_prefix)); } 

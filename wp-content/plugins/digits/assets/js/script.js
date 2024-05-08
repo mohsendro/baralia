@@ -297,6 +297,11 @@ jQuery(function ($) {
     jQuery(document).on('click', '.digits-form_otp_selector,.digits-form_resend_otp', function (e) {
         e.preventDefault();
         var $this = jQuery(this);
+
+        if($this.hasClass('digits_resend_disabled')){
+            return false;
+        }
+
         var type = $this.data('type');
         var form = $this.closest('form');
 
@@ -555,9 +560,10 @@ jQuery(function ($) {
         tab_view_container.find('.' + activeClass).removeClass(activeClass);
         var active_tab = tab_view_container.find('.digits-form_tab_body:eq(' + index + ')');
         active_tab.addClass(activeClass)
+
+        var form = $this.closest('form');
         if ($this.data('change')) {
             var change_elem = $this.data('change');
-            var form = $this.closest('form');
             var step_value = $this.data('value');
             var step_action_name = active_tab.find('.step_action_name');
             if (step_action_name.length) {

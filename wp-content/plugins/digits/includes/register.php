@@ -98,14 +98,14 @@ try {
 
             // Handle required fields
             $required_fields = apply_filters('woocommerce_save_account_details_required_fields', array(
-                'account_first_name' => __('First Name', 'digits'),
-                'account_display_name' => __('Display name', 'digits'),
-                'account_last_name' => __('Last Name', 'digits'),
+                'account_first_name' => __('First Name', 'woocommerce'),
+                'account_display_name' => __('Display name', 'woocommerce'),
+                'account_last_name' => __('Last Name', 'woocommerce'),
             ));
 
             foreach ($required_fields as $field_key => $field_name) {
                 if (empty($_POST[$field_key])) {
-                    wc_add_notice('<strong>' . esc_html($field_name) . '</strong> ' . __('is a required field.', 'digits'), 'error');
+                    wc_add_notice('<strong>' . esc_html($field_name) . '</strong> ' . __('is a required field.', 'woocommerce'), 'error');
                 }
             }
 
@@ -145,28 +145,28 @@ try {
             if ($account_email) {
                 $account_email = sanitize_email($account_email);
                 if (!is_email($account_email)) {
-                    wc_add_notice(__('Please provide a valid email address.', 'digits'), 'error');
+                    wc_add_notice(__('Please provide a valid email address.', 'woocommerce'), 'error');
                 } elseif (email_exists($account_email) && $account_email !== $current_user->user_email) {
-                    wc_add_notice(__('This email address is already registered.', 'digits'), 'error');
+                    wc_add_notice(__('This email address is already registered.', 'woocommerce'), 'error');
                 }
                 $user->user_email = $account_email;
             }
 
 
             if (!empty($pass_cur) && empty($pass1) && empty($pass2)) {
-                wc_add_notice(__('Please fill out all password fields.', 'digits'), 'error');
+                wc_add_notice(__('Please fill out all password fields.', 'woocommerce'), 'error');
                 $save_pass = false;
             } elseif (!empty($pass1) && empty($pass_cur)) {
-                wc_add_notice(__('Please enter your current password.', 'digits'), 'error');
+                wc_add_notice(__('Please enter your current password.', 'woocommerce'), 'error');
                 $save_pass = false;
             } elseif (!empty($pass1) && empty($pass2)) {
-                wc_add_notice(__('Please re-enter your password.', 'digits'), 'error');
+                wc_add_notice(__('Please re-enter your password.', 'woocommerce'), 'error');
                 $save_pass = false;
             } elseif ((!empty($pass1) || !empty($pass2)) && $pass1 !== $pass2) {
-                wc_add_notice(__('New passwords do not match.', 'digits'), 'error');
+                wc_add_notice(__('New passwords do not match.', 'woocommerce'), 'error');
                 $save_pass = false;
             } elseif (!empty($pass1) && !wp_check_password($pass_cur, $current_user->user_pass, $current_user->ID)) {
-                wc_add_notice(__('Your current password is incorrect.', 'digits'), 'error');
+                wc_add_notice(__('Your current password is incorrect.', 'woocommerce'), 'error');
                 $save_pass = false;
             }
 
@@ -696,7 +696,7 @@ try {
                 if ($validation_error->get_error_code()) {
                     $e = implode('<br />', $validation_error->get_error_messages());
 
-                    wc_add_notice('<strong>' . __('Error:', 'digits') . '</strong> ' . $e, 'error');
+                    wc_add_notice('<strong>' . __('Error:', 'woocommerce') . '</strong> ' . $e, 'error');
 
 
                 } else {

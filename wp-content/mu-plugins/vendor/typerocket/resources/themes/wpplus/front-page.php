@@ -95,7 +95,6 @@
             'featured' => true
         ]
     );
-    // var_dump( $featured_products);
 
     $contact_template = get_posts( 
         array(
@@ -283,7 +282,7 @@
                     <div class="about-us-title">
                         <div class="about-us-title">
                             <p>فروشگاه</p>
-                            <h4>هناس کالا</h4>
+                            <h4>بارالیا | Baralia</h4>
                             <div class="Dottedsquare"></div>
                         </div>
                     </div>

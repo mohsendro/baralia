@@ -65,4 +65,6 @@
             </div>
         </div>
     </div>
+
+    <?php dynamic_sidebar( 'blog-sidebar' ); ?>
 </div>

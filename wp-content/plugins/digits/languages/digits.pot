@@ -2,16 +2,17 @@
 msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
-"Project-Id-Version: افزونه ورود و عضویت دییجتس | نوین وردپرس\n"
-"POT-Creation-Date: 2023-12-28 17:00+0330\n"
-"PO-Revision-Date: 2023-12-28 17:00+0330\n"
+"Project-Id-Version: DIGITS: WordPress Mobile Number Signup and Login\n"
+"POT-Creation-Date: 2024-04-10 06:28-0700\n"
+"PO-Revision-Date: 2024-04-10 06:27-0700\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.7\n"
+"X-Generator: Poedit 2.2\n"
 "X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: digit.php\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
@@ -94,9 +95,9 @@ msgstr ""
 msgid "Page Builder"
 msgstr ""
 
-#: admin/editor/editor.php:211 admin/includes/functions.php:1385
-#: admin/includes/functions.php:1440 admin/includes/functions.php:1554
-#: admin/includes/functions.php:1854 admin/includes/functions.php:1907
+#: admin/editor/editor.php:211 admin/includes/functions.php:1386
+#: admin/includes/functions.php:1441 admin/includes/functions.php:1555
+#: admin/includes/functions.php:1855 admin/includes/functions.php:1908
 #: admin/settings.php:454 admin/settings.php:595
 #: includes/account/secure.php:110 includes/forms/admin.php:136
 msgid "Remove"
@@ -118,7 +119,7 @@ msgstr ""
 msgid "Cursor"
 msgstr ""
 
-#: admin/editor/editor.php:268 admin/includes/functions.php:1081
+#: admin/editor/editor.php:268 admin/includes/functions.php:1082
 #: admin/includes/tabs/signup.php:443 admin/settings.php:406
 msgid "Save"
 msgstr ""
@@ -169,7 +170,7 @@ msgstr ""
 msgid "API Settings"
 msgstr ""
 
-#: admin/includes/api_settings.php:97 admin/includes/functions.php:2147
+#: admin/includes/api_settings.php:97 admin/includes/functions.php:2148
 #: admin/includes/shortcodes.php:95
 #: includes/account/secure_account_disable.php:184
 #: includes/account/secure_account_setup.php:98
@@ -183,7 +184,7 @@ msgstr ""
 msgid "Continue"
 msgstr ""
 
-#: admin/includes/api_settings.php:99 admin/includes/functions.php:2150
+#: admin/includes/api_settings.php:99 admin/includes/functions.php:2151
 #: admin/includes/shortcodes.php:97 admin/includes/tabs/signup.php:444
 msgid "Back"
 msgstr ""
@@ -252,7 +253,7 @@ msgid "Whatsapp Number"
 msgstr ""
 
 #: admin/includes/api_settings.php:225 admin/includes/api_settings.php:491
-#: admin/includes/api_settings.php:503 admin/includes/gateway_list.php:1399
+#: admin/includes/api_settings.php:503 admin/includes/gateway_list.php:1400
 msgid "Access Key"
 msgstr ""
 
@@ -294,10 +295,10 @@ msgstr ""
 #: admin/includes/api_settings.php:547 admin/includes/api_settings.php:555
 #: admin/includes/api_settings.php:602 admin/includes/api_settings.php:651
 #: admin/includes/api_settings.php:661 admin/includes/api_settings.php:688
-#: admin/includes/gateway_list.php:1427 admin/includes/gateway_list.php:1476
-#: admin/includes/gateway_list.php:1583 admin/includes/gateway_list.php:1598
-#: admin/includes/gateway_list.php:1617 admin/includes/gateway_list.php:1632
-#: admin/includes/gateway_list.php:1648 admin/includes/gateway_list.php:1668
+#: admin/includes/gateway_list.php:1428 admin/includes/gateway_list.php:1477
+#: admin/includes/gateway_list.php:1584 admin/includes/gateway_list.php:1599
+#: admin/includes/gateway_list.php:1618 admin/includes/gateway_list.php:1633
+#: admin/includes/gateway_list.php:1649 admin/includes/gateway_list.php:1669
 msgid "Sender"
 msgstr ""
 
@@ -309,7 +310,7 @@ msgstr ""
 #: admin/includes/api_settings.php:592 admin/includes/api_settings.php:601
 #: admin/includes/api_settings.php:630 admin/includes/api_settings.php:670
 #: admin/includes/api_settings.php:687 admin/includes/api_settings.php:947
-#: admin/includes/api_settings.php:951 admin/includes/gateway_list.php:1660
+#: admin/includes/api_settings.php:951 admin/includes/gateway_list.php:1661
 msgid "API Key"
 msgstr ""
 
@@ -323,11 +324,12 @@ msgstr ""
 
 #: admin/includes/api_settings.php:251 admin/includes/api_settings.php:466
 #: admin/includes/api_settings.php:480 admin/includes/api_settings.php:538
-#: admin/includes/gateway_list.php:1449
+#: admin/includes/gateway_list.php:1450
 msgid "Template ID"
 msgstr ""
 
-#: admin/includes/api_settings.php:270 admin/includes/gateway_list.php:1414
+#: admin/includes/api_settings.php:270 admin/includes/gateway_list.php:1415
+#: admin/includes/gateway_list.php:1703
 msgid "API Token"
 msgstr ""
 
@@ -336,12 +338,12 @@ msgid "Base URL"
 msgstr ""
 
 #: admin/includes/api_settings.php:288 admin/includes/api_settings.php:298
-#: admin/includes/gateway_list.php:1487 admin/includes/gateway_list.php:1502
-#: admin/includes/gateway_list.php:1517 admin/includes/gateway_list.php:1532
-#: admin/includes/gateway_list.php:1567 admin/includes/gateway_list.php:1579
-#: admin/includes/gateway_list.php:1594 admin/includes/gateway_list.php:1609
-#: admin/includes/gateway_list.php:1628 admin/includes/gateway_list.php:1644
-#: admin/includes/gateway_list.php:1680 admin/includes/gateway_list.php:1691
+#: admin/includes/gateway_list.php:1488 admin/includes/gateway_list.php:1503
+#: admin/includes/gateway_list.php:1518 admin/includes/gateway_list.php:1533
+#: admin/includes/gateway_list.php:1568 admin/includes/gateway_list.php:1580
+#: admin/includes/gateway_list.php:1595 admin/includes/gateway_list.php:1610
+#: admin/includes/gateway_list.php:1629 admin/includes/gateway_list.php:1645
+#: admin/includes/gateway_list.php:1681 admin/includes/gateway_list.php:1692
 msgid "Access Token"
 msgstr ""
 
@@ -366,7 +368,7 @@ msgstr ""
 #: admin/includes/api_settings.php:529 admin/includes/api_settings.php:566
 #: admin/includes/api_settings.php:583 admin/includes/api_settings.php:593
 #: admin/includes/api_settings.php:619 admin/includes/api_settings.php:641
-#: admin/includes/api_settings.php:680 admin/includes/gateway_list.php:1415
+#: admin/includes/api_settings.php:680 admin/includes/gateway_list.php:1416
 msgid "From"
 msgstr ""
 
@@ -446,7 +448,8 @@ msgstr ""
 #: admin/includes/api_settings.php:610 admin/includes/api_settings.php:697
 #: admin/includes/api_settings.php:735 admin/includes/api_settings.php:883
 #: admin/includes/api_settings.php:924 admin/includes/api_settings.php:928
-#: admin/includes/gateway_functions.php:75 admin/includes/gateway_list.php:1555
+#: admin/includes/gateway_functions.php:75 admin/includes/gateway_list.php:1556
+#: admin/includes/gateway_list.php:1707
 msgid "Sender ID"
 msgstr ""
 
@@ -454,9 +457,9 @@ msgstr ""
 msgid "Instance ID"
 msgstr ""
 
-#: admin/includes/api_settings.php:375 admin/includes/functions.php:1410
-#: admin/includes/functions.php:1463 admin/includes/functions.php:1577
-#: admin/includes/functions.php:1878 admin/includes/functions.php:1930
+#: admin/includes/api_settings.php:375 admin/includes/functions.php:1411
+#: admin/includes/functions.php:1464 admin/includes/functions.php:1578
+#: admin/includes/functions.php:1879 admin/includes/functions.php:1931
 #: admin/includes/tabs/general.php:311 admin/includes/tabs/general.php:322
 #: admin/includes/tabs/general.php:331 admin/includes/tabs/general.php:342
 #: admin/includes/tabs/general.php:351 includes/forms/admin.php:159
@@ -493,7 +496,7 @@ msgid "Secret Access Key"
 msgstr ""
 
 #: admin/includes/api_settings.php:464 admin/includes/api_settings.php:478
-#: admin/includes/gateway_list.php:1445
+#: admin/includes/gateway_list.php:1446
 msgid "Region"
 msgstr ""
 
@@ -506,7 +509,7 @@ msgid "Application ID/Project ID"
 msgstr ""
 
 #: admin/includes/api_settings.php:492 admin/includes/api_settings.php:504
-#: admin/includes/gateway_list.php:1400
+#: admin/includes/gateway_list.php:1401
 msgid "Access Secret"
 msgstr ""
 
@@ -533,14 +536,14 @@ msgstr ""
 #: admin/includes/api_settings.php:546 admin/includes/api_settings.php:618
 #: admin/includes/api_settings.php:640 admin/includes/api_settings.php:650
 #: admin/includes/api_settings.php:660 admin/includes/api_settings.php:679
-#: admin/includes/gateway_list.php:1426 admin/includes/gateway_list.php:1472
-#: admin/includes/gateway_list.php:1551 admin/includes/tabs/2fa.php:198
-#: digit.php:2541 digit.php:2598
+#: admin/includes/gateway_list.php:1427 admin/includes/gateway_list.php:1473
+#: admin/includes/gateway_list.php:1552 admin/includes/tabs/2fa.php:198
+#: digit.php:2578 digit.php:2635
 #: includes/account/secure_account_disable.php:177
 #: includes/core/enqueue/enqueue_scripts.php:175 includes/forms.php:264
 #: includes/forms.php:430 includes/forms.php:659
 #: includes/forms/handler/process.php:76 includes/forms/handler/process.php:188
-#: includes/forms/handler/process.php:552 includes/forms/signup.php:337
+#: includes/forms/handler/process.php:557 includes/forms/signup.php:337
 #: includes/forms/signup.php:347 includes/woocommerce-registration.php:372
 #: includes/woocommerce-registration.php:385
 msgid "Password"
@@ -552,9 +555,9 @@ msgstr ""
 
 #: admin/includes/api_settings.php:591 admin/includes/api_settings.php:617
 #: admin/includes/api_settings.php:639 admin/includes/api_settings.php:678
-#: admin/includes/gateway_list.php:1425 admin/includes/gateway_list.php:1468
-#: admin/includes/gateway_list.php:1506 admin/includes/gateway_list.php:1547
-#: digit.php:1431 digit.php:2536 digit.php:2595 includes/forms.php:204
+#: admin/includes/gateway_list.php:1426 admin/includes/gateway_list.php:1469
+#: admin/includes/gateway_list.php:1507 admin/includes/gateway_list.php:1548
+#: digit.php:1468 digit.php:2573 digit.php:2632 includes/forms.php:204
 #: includes/forms.php:496 includes/forms.php:550 includes/forms/render.php:296
 #: includes/forms/render.php:459 includes/forms/signup.php:314
 #: includes/forms/signup.php:324 includes/process_user.php:77
@@ -567,7 +570,7 @@ msgstr ""
 
 #: admin/includes/api_settings.php:649 admin/includes/api_settings.php:659
 #: admin/includes/shortcodes.php:140 admin/includes/shortcodes.php:152
-#: admin/settings.php:765 digit.php:774 includes/forms.php:64
+#: admin/settings.php:765 digit.php:782 includes/forms.php:64
 #: includes/forms/handler/process.php:99 includes/forms/render.php:431
 msgid "Login"
 msgstr ""
@@ -609,8 +612,8 @@ msgstr ""
 msgid "Type"
 msgstr ""
 
-#: admin/includes/api_settings.php:840 admin/includes/functions.php:1328
-#: admin/includes/functions.php:1830
+#: admin/includes/api_settings.php:840 admin/includes/functions.php:1329
+#: admin/includes/functions.php:1831
 msgid "Modal"
 msgstr ""
 
@@ -669,11 +672,11 @@ msgid "Domain"
 msgstr ""
 
 #: admin/includes/api_settings.php:979
-#: admin/includes/tabs/authentication.php:118 digit.php:907 digit.php:2539
+#: admin/includes/tabs/authentication.php:118 digit.php:915 digit.php:2576
 #: includes/core/enqueue/enqueue_scripts.php:171 includes/edit_number.php:39
 #: includes/forms.php:68 includes/forms.php:75 includes/forms.php:412
-#: includes/forms/handler/UserRegistration.php:576
-#: includes/forms/handler/process.php:77 includes/forms/handler/process.php:558
+#: includes/forms/handler/UserRegistration.php:592
+#: includes/forms/handler/process.php:77 includes/forms/handler/process.php:563
 #: includes/plugins/bp.php:90 includes/plugins/bp.php:152
 #: includes/plugins/um.php:101 includes/plugins/um.php:167
 #: includes/wc_checkout.php:150 includes/woocommerce-registration.php:157
@@ -713,7 +716,7 @@ msgstr ""
 msgid "Click Here"
 msgstr ""
 
-#: admin/includes/custom_fields.php:13 digit.php:332 includes/register.php:103
+#: admin/includes/custom_fields.php:13 digit.php:340 includes/register.php:103
 msgid "Last Name"
 msgstr ""
 
@@ -791,7 +794,7 @@ msgid "Step Title"
 msgstr ""
 
 #: admin/includes/custom_fields.php:176 admin/includes/tabs/forms.php:241
-#: digit.php:1875 digit.php:1883 digit.php:2545
+#: digit.php:1912 digit.php:1920 digit.php:2582
 msgid "Captcha"
 msgstr ""
 
@@ -803,248 +806,248 @@ msgstr ""
 msgid "Date"
 msgstr ""
 
-#: admin/includes/functions.php:843
+#: admin/includes/functions.php:841
 msgid "Unexpected error occured while getting addons"
 msgstr ""
 
-#: admin/includes/functions.php:850 admin/settings.php:736
+#: admin/includes/functions.php:848 admin/settings.php:736
 msgid "All Addons"
 msgstr ""
 
-#: admin/includes/functions.php:1044
+#: admin/includes/functions.php:1045
 msgid "Type of Site?"
 msgstr ""
 
-#: admin/includes/functions.php:1048
+#: admin/includes/functions.php:1049
 msgid "Production Site"
 msgstr ""
 
-#: admin/includes/functions.php:1049
+#: admin/includes/functions.php:1050
 msgid "Testing Site"
 msgstr ""
 
-#: admin/includes/functions.php:1057
+#: admin/includes/functions.php:1058
 msgid "Purchase code"
 msgstr ""
 
-#: admin/includes/functions.php:1065 admin/includes/tabs/dashboard.php:57
+#: admin/includes/functions.php:1066 admin/includes/tabs/dashboard.php:57
 #: admin/obw/obw.php:528
 msgid "Purchase Code"
 msgstr ""
 
-#: admin/includes/functions.php:1068
+#: admin/includes/functions.php:1069
 msgid "DEREGISTER"
 msgstr ""
 
-#: admin/includes/functions.php:1092
+#: admin/includes/functions.php:1093
 msgid "Please activate your plugin to receive updates"
 msgstr ""
 
-#: admin/includes/functions.php:1104
+#: admin/includes/functions.php:1105
 msgid ""
 "If you want to use same purchase code on your production site then please "
 "click the below button to request for it. Our team will take less than 12 "
 "hours to respond to your request, and will notify via email."
 msgstr ""
 
-#: admin/includes/functions.php:1109
+#: admin/includes/functions.php:1110
 msgid ""
 "If you want to use same purchase code on your testing site then please click "
 "the below button to request for it. Our team will take less than 12 hours to "
 "respond to your request, and will notify via email."
 msgstr ""
 
-#: admin/includes/functions.php:1119
+#: admin/includes/functions.php:1120
 msgid "Request Production Site Addition"
 msgstr ""
 
-#: admin/includes/functions.php:1124
+#: admin/includes/functions.php:1125
 msgid "Request Testing Site Addition"
 msgstr ""
 
-#: admin/includes/functions.php:1136 admin/includes/functions.php:2177
-#: admin/includes/functions.php:2187
+#: admin/includes/functions.php:1137 admin/includes/functions.php:2178
+#: admin/includes/functions.php:2188
 msgid "CUSTOM"
 msgstr ""
 
-#: admin/includes/functions.php:1250
+#: admin/includes/functions.php:1251
 msgid "Preset"
 msgstr ""
 
-#: admin/includes/functions.php:1257 admin/includes/functions.php:1382
-#: admin/includes/functions.php:1437 admin/includes/functions.php:1551
-#: admin/includes/functions.php:1851 admin/includes/functions.php:1904
+#: admin/includes/functions.php:1258 admin/includes/functions.php:1383
+#: admin/includes/functions.php:1438 admin/includes/functions.php:1552
+#: admin/includes/functions.php:1852 admin/includes/functions.php:1905
 #: admin/settings.php:453 admin/settings.php:594 includes/forms/admin.php:133
 msgid "Select"
 msgstr ""
 
-#: admin/includes/functions.php:1285
+#: admin/includes/functions.php:1286
 msgid "Form Type"
 msgstr ""
 
-#: admin/includes/functions.php:1288 admin/includes/functions.php:1370
+#: admin/includes/functions.php:1289 admin/includes/functions.php:1371
 msgid "Page"
 msgstr ""
 
-#: admin/includes/functions.php:1375 includes/forms/admin.php:93
+#: admin/includes/functions.php:1376 includes/forms/admin.php:93
 #: includes/forms/admin.php:100
 msgid "Logo"
 msgstr ""
 
-#: admin/includes/functions.php:1419
+#: admin/includes/functions.php:1420
 msgid "Login Page Left Background Color"
 msgstr ""
 
-#: admin/includes/functions.php:1430
+#: admin/includes/functions.php:1431
 msgid "Login Page Left Image"
 msgstr ""
 
-#: admin/includes/functions.php:1474 admin/includes/functions.php:1941
+#: admin/includes/functions.php:1475 admin/includes/functions.php:1942
 msgid "Login Page Left Background Size"
 msgstr ""
 
-#: admin/includes/functions.php:1492 admin/includes/functions.php:1959
+#: admin/includes/functions.php:1493 admin/includes/functions.php:1960
 msgid "Login Page Left Background Position"
 msgstr ""
 
-#: admin/includes/functions.php:1511
+#: admin/includes/functions.php:1512
 msgid "Login Page Footer"
 msgstr ""
 
-#: admin/includes/functions.php:1523
+#: admin/includes/functions.php:1524
 msgid "Login Page Footer Text Color"
 msgstr ""
 
-#: admin/includes/functions.php:1534
+#: admin/includes/functions.php:1535
 msgid "Login Page Background Color"
 msgstr ""
 
-#: admin/includes/functions.php:1544
+#: admin/includes/functions.php:1545
 msgid "Login Page Background Image"
 msgstr ""
 
-#: admin/includes/functions.php:1586
+#: admin/includes/functions.php:1587
 msgid "Login Box Background Color"
 msgstr ""
 
-#: admin/includes/functions.php:1595
+#: admin/includes/functions.php:1596
 msgid "Login Box Shadow"
 msgstr ""
 
-#: admin/includes/functions.php:1599 admin/includes/functions.php:1992
+#: admin/includes/functions.php:1600 admin/includes/functions.php:1993
 msgid "X"
 msgstr ""
 
-#: admin/includes/functions.php:1607 admin/includes/functions.php:2000
+#: admin/includes/functions.php:1608 admin/includes/functions.php:2001
 msgid "Y"
 msgstr ""
 
-#: admin/includes/functions.php:1615 admin/includes/functions.php:2009
+#: admin/includes/functions.php:1616 admin/includes/functions.php:2010
 msgid "Blur"
 msgstr ""
 
-#: admin/includes/functions.php:1623 admin/includes/functions.php:2019
+#: admin/includes/functions.php:1624 admin/includes/functions.php:2020
 msgid "Spread"
 msgstr ""
 
-#: admin/includes/functions.php:1637
+#: admin/includes/functions.php:1638
 msgid "Login Box Shadow Color"
 msgstr ""
 
-#: admin/includes/functions.php:1644
+#: admin/includes/functions.php:1645
 msgid "Login Box Radius"
 msgstr ""
 
-#: admin/includes/functions.php:1657 admin/includes/functions.php:2055
+#: admin/includes/functions.php:1658 admin/includes/functions.php:2056
 msgid "Text and Button Color"
 msgstr ""
 
-#: admin/includes/functions.php:1658 admin/includes/functions.php:2056
+#: admin/includes/functions.php:1659 admin/includes/functions.php:2057
 msgid "Text Color"
 msgstr ""
 
-#: admin/includes/functions.php:1667 admin/includes/functions.php:2065
+#: admin/includes/functions.php:1668 admin/includes/functions.php:2066
 msgid "Button Font Color"
 msgstr ""
 
-#: admin/includes/functions.php:1674
+#: admin/includes/functions.php:1675
 msgid "Back/Cancel Button Color"
 msgstr ""
 
-#: admin/includes/functions.php:1683 admin/includes/functions.php:2074
+#: admin/includes/functions.php:1684 admin/includes/functions.php:2075
 msgid "Input Background Color"
 msgstr ""
 
-#: admin/includes/functions.php:1690 admin/includes/functions.php:2081
+#: admin/includes/functions.php:1691 admin/includes/functions.php:2082
 msgid "Input Border Color"
 msgstr ""
 
-#: admin/includes/functions.php:1697 admin/includes/functions.php:2089
+#: admin/includes/functions.php:1698 admin/includes/functions.php:2090
 msgid "Input Text Color"
 msgstr ""
 
-#: admin/includes/functions.php:1704 admin/includes/functions.php:2097
+#: admin/includes/functions.php:1705 admin/includes/functions.php:2098
 msgid "Button Border Color"
 msgstr ""
 
-#: admin/includes/functions.php:1712 admin/includes/functions.php:2105
+#: admin/includes/functions.php:1713 admin/includes/functions.php:2106
 #: includes/forms/admin.php:106
 msgid "Button Text Color"
 msgstr ""
 
-#: admin/includes/functions.php:1720 admin/includes/functions.php:2114
+#: admin/includes/functions.php:1721 admin/includes/functions.php:2115
 msgid "Signup Button Color"
 msgstr ""
 
-#: admin/includes/functions.php:1728 admin/includes/functions.php:2122
+#: admin/includes/functions.php:1729 admin/includes/functions.php:2123
 msgid "Signup Button Border Color"
 msgstr ""
 
-#: admin/includes/functions.php:1737 admin/includes/functions.php:2131
+#: admin/includes/functions.php:1738 admin/includes/functions.php:2132
 msgid "Signup Button Text Color"
 msgstr ""
 
-#: admin/includes/functions.php:1833
+#: admin/includes/functions.php:1834
 msgid "Modal Overlay Color"
 msgstr ""
 
-#: admin/includes/functions.php:1844
+#: admin/includes/functions.php:1845
 msgid "Login Modal Background Image"
 msgstr ""
 
-#: admin/includes/functions.php:1888
+#: admin/includes/functions.php:1889
 msgid "Login Box Left Background Color"
 msgstr ""
 
-#: admin/includes/functions.php:1897
+#: admin/includes/functions.php:1898
 msgid "Login Box Left Image"
 msgstr ""
 
-#: admin/includes/functions.php:1978
+#: admin/includes/functions.php:1979
 msgid "Login Modal Background Color"
 msgstr ""
 
-#: admin/includes/functions.php:1987
+#: admin/includes/functions.php:1988
 msgid "Login Modal Shadow"
 msgstr ""
 
-#: admin/includes/functions.php:2032
+#: admin/includes/functions.php:2033
 msgid "Login Modal Shadow Color"
 msgstr ""
 
-#: admin/includes/functions.php:2040
+#: admin/includes/functions.php:2041
 msgid "Login Modal Radius"
 msgstr ""
 
-#: admin/includes/functions.php:2170
+#: admin/includes/functions.php:2171
 msgid "PRESET LIBRARY"
 msgstr ""
 
-#: admin/includes/functions.php:2172 admin/includes/tabs/general.php:513
+#: admin/includes/functions.php:2173 admin/includes/tabs/general.php:513
 msgid "CLOSE"
 msgstr ""
 
-#: admin/includes/functions.php:2296
+#: admin/includes/functions.php:2297
 msgid "Digits Native"
 msgstr ""
 
@@ -1052,47 +1055,47 @@ msgstr ""
 msgid "Alphabetical Order"
 msgstr ""
 
-#: admin/includes/gateway_list.php:1401
+#: admin/includes/gateway_list.php:1402
 msgid "Region (Optional)"
 msgstr ""
 
-#: admin/includes/gateway_list.php:1402
+#: admin/includes/gateway_list.php:1403
 msgid "API Version (Optional)"
 msgstr ""
 
-#: admin/includes/gateway_list.php:1403 admin/includes/gateway_list.php:1453
+#: admin/includes/gateway_list.php:1404 admin/includes/gateway_list.php:1454
 msgid "Sign Name"
 msgstr ""
 
-#: admin/includes/gateway_list.php:1404
+#: admin/includes/gateway_list.php:1405
 msgid "Template Code"
 msgstr ""
 
-#: admin/includes/gateway_list.php:1437
+#: admin/includes/gateway_list.php:1438
 msgid "Secret ID"
 msgstr ""
 
-#: admin/includes/gateway_list.php:1441 admin/includes/tabs/recaptcha.php:33
+#: admin/includes/gateway_list.php:1442 admin/includes/tabs/recaptcha.php:33
 msgid "Secret Key"
 msgstr ""
 
-#: admin/includes/gateway_list.php:1457
+#: admin/includes/gateway_list.php:1458
 msgid "SMS SDK App ID"
 msgstr ""
 
-#: admin/includes/gateway_list.php:1491
+#: admin/includes/gateway_list.php:1492
 msgid "Campaign ID"
 msgstr ""
 
-#: admin/includes/gateway_list.php:1521 admin/includes/gateway_list.php:1536
+#: admin/includes/gateway_list.php:1522 admin/includes/gateway_list.php:1537
 msgid "Account ID"
 msgstr ""
 
-#: admin/includes/gateway_list.php:1613
+#: admin/includes/gateway_list.php:1614
 msgid "Account Number"
 msgstr ""
 
-#: admin/includes/gateway_list.php:1664
+#: admin/includes/gateway_list.php:1665
 msgid "API Login"
 msgstr ""
 
@@ -1580,11 +1583,11 @@ msgid "WhatsApp"
 msgstr ""
 
 #: admin/includes/tabs/general.php:34 admin/includes/tabs/general.php:232
-#: admin/includes/tabs/logs.php:134 digit.php:1429 digit.php:2537
-#: digit.php:2596 includes/core/enqueue/enqueue_scripts.php:186
+#: admin/includes/tabs/logs.php:134 digit.php:1466 digit.php:2574
+#: digit.php:2633 includes/core/enqueue/enqueue_scripts.php:186
 #: includes/core/enqueue/enqueue_scripts.php:266 includes/forms.php:202
 #: includes/forms.php:377 includes/forms.php:493 includes/forms.php:607
-#: includes/forms/admin.php:87 includes/forms/handler/UserRegistration.php:585
+#: includes/forms/admin.php:87 includes/forms/handler/UserRegistration.php:601
 #: includes/forms/handler/process.php:56 includes/merge_wc_billing.php:18
 #: includes/process_user.php:74 includes/woocommerce-registration.php:191
 #: includes/woocommerce-registration.php:1385
@@ -1665,8 +1668,8 @@ msgstr ""
 msgid "Mobile Number and Email"
 msgstr ""
 
-#: admin/includes/tabs/general.php:229 digit.php:896 digit.php:898
-#: digit.php:1427 digit.php:2538 digit.php:2597
+#: admin/includes/tabs/general.php:229 digit.php:904 digit.php:906
+#: digit.php:1464 digit.php:2575 digit.php:2634
 #: includes/core/enqueue/enqueue_scripts.php:166
 #: includes/core/enqueue/enqueue_scripts.php:267 includes/edit_number.php:30
 #: includes/forms.php:200 includes/forms.php:374 includes/forms.php:491
@@ -1910,12 +1913,12 @@ msgstr ""
 msgid "Block login for users with unverified email"
 msgstr ""
 
-#: admin/includes/tabs/signup.php:192 admin/settings.php:550 digit.php:2625
+#: admin/includes/tabs/signup.php:192 admin/settings.php:550 digit.php:2662
 #: includes/core/enqueue/enqueue_scripts.php:273
 msgid "Required"
 msgstr ""
 
-#: admin/includes/tabs/signup.php:195 admin/settings.php:549 digit.php:2623
+#: admin/includes/tabs/signup.php:195 admin/settings.php:549 digit.php:2660
 #: includes/core/enqueue/enqueue_scripts.php:187 includes/forms.php:580
 #: includes/forms.php:604 includes/woocommerce-registration.php:1369
 msgid "Optional"
@@ -2459,33 +2462,33 @@ msgstr ""
 msgid "ADDONS"
 msgstr ""
 
-#: digit.php:77
+#: digit.php:82
 msgid "View changelog"
 msgstr ""
 
-#: digit.php:142
+#: digit.php:150
 msgid "+ Add User"
 msgstr ""
 
-#: digit.php:146
+#: digit.php:154
 msgid "Add new user"
 msgstr ""
 
-#: digit.php:313
+#: digit.php:321
 msgid "Create New Customer"
 msgstr ""
 
-#: digit.php:324 digit.php:338
+#: digit.php:332 digit.php:346
 msgid "Create Customer"
 msgstr ""
 
-#: digit.php:329 includes/forms.php:531 includes/forms/signup.php:291
+#: digit.php:337 includes/forms.php:531 includes/forms/signup.php:291
 #: includes/forms/signup.php:301 includes/register.php:101
 #: includes/woocommerce-registration.php:1303
 msgid "First Name"
 msgstr ""
 
-#: digit.php:335 digit.php:1425 includes/core/enqueue/enqueue_scripts.php:89
+#: digit.php:343 digit.php:1462 includes/core/enqueue/enqueue_scripts.php:89
 #: includes/forms.php:198 includes/forms.php:371 includes/forms.php:488
 #: includes/forms.php:600 includes/process_user.php:70
 #: includes/woocommerce-registration.php:356
@@ -2494,19 +2497,19 @@ msgstr ""
 msgid "Email/Mobile Number"
 msgstr ""
 
-#: digit.php:337 digit.php:1466 includes/forms/render.php:28
+#: digit.php:345 digit.php:1503 includes/forms/render.php:28
 msgid "Cancel"
 msgstr ""
 
-#: digit.php:354
+#: digit.php:362
 msgid "Enter all fields!"
 msgstr ""
 
-#: digit.php:355
+#: digit.php:363
 msgid "Invalid Email or mobile number!"
 msgstr ""
 
-#: digit.php:356 includes/account/setup_account_security.php:579
+#: digit.php:364 includes/account/setup_account_security.php:579
 #: includes/core/enqueue/enqueue_scripts.php:188
 #: includes/core/enqueue/enqueue_scripts.php:254 includes/core/phandler.php:29
 #: includes/forms/handler/UserActionHandler.php:46 includes/login.php:151
@@ -2526,62 +2529,62 @@ msgstr ""
 msgid "Error"
 msgstr ""
 
-#: digit.php:357
+#: digit.php:365
 msgid "Email/Mobile number has already registered"
 msgstr ""
 
-#: digit.php:358
+#: digit.php:366
 msgid "User registered successfully"
 msgstr ""
 
-#: digit.php:543
+#: digit.php:551
 msgid "Settings"
 msgstr ""
 
-#: digit.php:688 digit.php:1281 includes/core/enqueue/enqueue_scripts.php:263
+#: digit.php:696 digit.php:1318 includes/core/enqueue/enqueue_scripts.php:263
 msgid "Log In"
 msgstr ""
 
-#: digit.php:994
+#: digit.php:1002
 msgid ""
 "<div><p><b>Fatal Error</b>: Digits requires curl to work correctly. </p></"
 "div>"
 msgstr ""
 
-#: digit.php:1381
+#: digit.php:1418
 msgid "BACK"
 msgstr ""
 
-#: digit.php:1703 includes/forms/handler/DigitsFormHandler.php:219
+#: digit.php:1740 includes/forms/handler/DigitsFormHandler.php:219
 #: includes/forms/handler/DigitsFormHandler.php:1426
 msgid "Please verify captcha!"
 msgstr ""
 
-#: digit.php:1738
+#: digit.php:1775
 msgid "Please fill all the required details!"
 msgstr ""
 
-#: digit.php:1747
+#: digit.php:1784
 msgid "Please enter a valid Captcha!"
 msgstr ""
 
-#: digit.php:1753
+#: digit.php:1790
 msgid "Please accept terms and condition!"
 msgstr ""
 
-#: digit.php:1767 digit.php:1770 digit.php:1780 digit.php:1785
+#: digit.php:1804 digit.php:1807 digit.php:1817 digit.php:1822
 msgid "Please select a valid option!"
 msgstr ""
 
-#: digit.php:2150 digit.php:2189 includes/core/enqueue/enqueue_scripts.php:274
+#: digit.php:2187 digit.php:2226 includes/core/enqueue/enqueue_scripts.php:274
 msgid "(select)"
 msgstr ""
 
-#: digit.php:2152 digit.php:2192
+#: digit.php:2189 digit.php:2229
 msgid "Nothing"
 msgstr ""
 
-#: digit.php:2594
+#: digit.php:2631
 msgid "Name"
 msgstr ""
 
@@ -2712,7 +2715,7 @@ msgstr ""
 #: includes/account/setup_account_security.php:100
 #: includes/forms/handler/UserRegistration.php:142
 #: includes/forms/handler/UserRegistration.php:145
-#: includes/forms/handler/UserRegistration.php:497
+#: includes/forms/handler/UserRegistration.php:505
 #: includes/process_user.php:165 includes/process_user.php:169
 #: includes/register.php:414 includes/register.php:418
 #: includes/woocommerce-registration.php:501
@@ -2781,7 +2784,7 @@ msgid "You will be able to use the same device for login in future"
 msgstr ""
 
 #: includes/account/setup_account_security.php:364
-#: includes/forms/handler/process.php:513
+#: includes/forms/handler/process.php:518
 msgid "Use Phone"
 msgstr ""
 
@@ -2790,7 +2793,7 @@ msgid "Device Registered"
 msgstr ""
 
 #: includes/account/setup_account_security.php:387
-#: includes/forms/handler/process.php:482
+#: includes/forms/handler/process.php:487
 msgid "Scan the QR code with your phone"
 msgstr ""
 
@@ -2869,8 +2872,8 @@ msgstr ""
 
 #: includes/account/setup_account_security.php:646
 #: includes/forms/handler/DigitsFormHandler.php:1538
-#: includes/forms/handler/UserRegistration.php:349
-#: includes/forms/handler/UserRegistration.php:359
+#: includes/forms/handler/UserRegistration.php:356
+#: includes/forms/handler/UserRegistration.php:367
 #: includes/process_user.php:149 includes/process_user.php:158
 msgid "Please enter a valid OTP!"
 msgstr ""
@@ -3008,7 +3011,7 @@ msgid "Username/Mobile Number"
 msgstr ""
 
 #: includes/core/enqueue/enqueue_scripts.php:172 includes/forms.php:70
-#: includes/forms.php:77 includes/forms/handler/process.php:345
+#: includes/forms.php:77 includes/forms/handler/process.php:349
 #: includes/plugins/bp.php:164 includes/plugins/um.php:109
 #: includes/plugins/um.php:155 includes/woocommerce-registration.php:1261
 #: includes/woocommerce-registration.php:1418
@@ -10879,7 +10882,7 @@ msgid "Unknown error occurred, please try again!"
 msgstr ""
 
 #: includes/forms/handler/DigitsFormHandler.php:425
-#: includes/forms/handler/UserRegistration.php:470
+#: includes/forms/handler/UserRegistration.php:478
 msgid "Please enter all the details!"
 msgstr ""
 
@@ -10995,7 +10998,7 @@ msgid "Error, while sending verification email! Please try again later"
 msgstr ""
 
 #: includes/forms/handler/UserActionHandler.php:61
-#: includes/forms/handler/UserRegistration.php:445
+#: includes/forms/handler/UserRegistration.php:453
 msgid ""
 "Please check your email for the verification link to verify the account."
 msgstr ""
@@ -11070,7 +11073,7 @@ msgstr ""
 
 #: includes/forms/handler/UserRegistration.php:149
 #: includes/forms/handler/UserRegistration.php:176
-#: includes/forms/handler/UserRegistration.php:502 includes/login.php:380
+#: includes/forms/handler/UserRegistration.php:510 includes/login.php:380
 #: includes/login.php:385 includes/process_user.php:426
 #: includes/register.php:678
 msgid "Email is already in use!"
@@ -11078,7 +11081,7 @@ msgstr ""
 
 #: includes/forms/handler/UserRegistration.php:158
 #: includes/forms/handler/UserRegistration.php:162
-#: includes/forms/handler/UserRegistration.php:483
+#: includes/forms/handler/UserRegistration.php:491
 #: includes/process_user.php:146 includes/process_user.php:155
 #: includes/register.php:404 includes/register.php:408
 #: includes/register.php:424 includes/woocommerce-registration.php:498
@@ -11093,8 +11096,8 @@ msgstr ""
 #: includes/forms/handler/UserRegistration.php:184
 #: includes/forms/handler/UserRegistration.php:186
 #: includes/forms/handler/UserRegistration.php:279
-#: includes/forms/handler/UserRegistration.php:487
-#: includes/forms/handler/UserRegistration.php:489 includes/wp.php:366
+#: includes/forms/handler/UserRegistration.php:495
+#: includes/forms/handler/UserRegistration.php:497 includes/wp.php:366
 msgid "Mobile Number is already in use!"
 msgstr ""
 
@@ -11106,35 +11109,39 @@ msgid "Error while generating username!"
 msgstr ""
 
 #: includes/forms/handler/UserRegistration.php:314
-#: includes/forms/handler/UserRegistration.php:507 includes/login.php:359
+#: includes/forms/handler/UserRegistration.php:515 includes/login.php:359
 #: includes/process_user.php:309 includes/register.php:461
 #: includes/woocommerce-registration.php:650 includes/wp.php:284
 msgid "Username is already in use!"
 msgstr ""
 
-#: includes/forms/handler/UserRegistration.php:440
+#: includes/forms/handler/UserRegistration.php:448
 #: includes/process_user.php:519
 msgid "Registration Successful, Redirecting.."
 msgstr ""
 
-#: includes/forms/handler/UserRegistration.php:594
+#: includes/forms/handler/UserRegistration.php:584
+msgid "Use OTP"
+msgstr ""
+
+#: includes/forms/handler/UserRegistration.php:610
 #: includes/woocommerce-registration.php:203
 msgid "Phone"
 msgstr ""
 
-#: includes/forms/handler/UserRegistration.php:735
+#: includes/forms/handler/UserRegistration.php:761
 msgid "Add Email (Optional)"
 msgstr ""
 
-#: includes/forms/handler/UserRegistration.php:738
+#: includes/forms/handler/UserRegistration.php:764
 msgid "Add Phone (Optional)"
 msgstr ""
 
-#: includes/forms/handler/UserRegistration.php:764
+#: includes/forms/handler/UserRegistration.php:790
 msgid "Skip for now"
 msgstr ""
 
-#: includes/forms/handler/UserRegistration.php:786
+#: includes/forms/handler/UserRegistration.php:812
 msgid "Verify Phone"
 msgstr ""
 
@@ -11154,7 +11161,7 @@ msgstr ""
 msgid "2FA App"
 msgstr ""
 
-#: includes/forms/handler/process.php:45 includes/forms/handler/process.php:397
+#: includes/forms/handler/process.php:45 includes/forms/handler/process.php:402
 msgid "2FA Code"
 msgstr ""
 
@@ -11193,52 +11200,52 @@ msgstr ""
 msgid "<span>Send Passcode on</span> %s"
 msgstr ""
 
-#: includes/forms/handler/process.php:383
+#: includes/forms/handler/process.php:388
 #, php-format
 msgid "%s, %s or %s Passcode"
 msgstr ""
 
-#: includes/forms/handler/process.php:385
+#: includes/forms/handler/process.php:390
 #, php-format
 msgid "%s or %s Passcode"
 msgstr ""
 
-#: includes/forms/handler/process.php:387
-#: includes/forms/handler/process.php:399
+#: includes/forms/handler/process.php:392
+#: includes/forms/handler/process.php:404
 #, php-format
 msgid "%s Passcode"
 msgstr ""
 
-#: includes/forms/handler/process.php:421
+#: includes/forms/handler/process.php:426
 msgid "Please use your device's authentication or security key"
 msgstr ""
 
-#: includes/forms/handler/process.php:423
+#: includes/forms/handler/process.php:428
 msgid "Please use your device's authentication"
 msgstr ""
 
-#: includes/forms/handler/process.php:425
+#: includes/forms/handler/process.php:430
 msgid "Please use your security key"
 msgstr ""
 
-#: includes/forms/handler/process.php:459
+#: includes/forms/handler/process.php:464
 msgid "Login with your Phone's Fingerprint or Face ID"
 msgstr ""
 
-#: includes/forms/handler/process.php:511
+#: includes/forms/handler/process.php:516
 msgid "Use Other Phone"
 msgstr ""
 
-#: includes/forms/handler/process.php:620
+#: includes/forms/handler/process.php:625
 #: includes/woocommerce-registration.php:1536
 msgid "New Password"
 msgstr ""
 
-#: includes/forms/handler/process.php:671
+#: includes/forms/handler/process.php:676
 msgid "Please type the verification code shown in your authentication app"
 msgstr ""
 
-#: includes/forms/handler/process.php:675
+#: includes/forms/handler/process.php:680
 msgid "Please type the verification code sent to"
 msgstr ""
 
@@ -11519,11 +11526,13 @@ msgstr ""
 msgid "Someone has requested a password reset for the following account:"
 msgstr ""
 
+#. translators: %s: Site name.
 #: includes/wcs.php:166
 #, php-format
 msgid "Site Name: %s"
 msgstr ""
 
+#. translators: %s: User login.
 #: includes/wcs.php:168
 #, php-format
 msgid "Username: %s"
@@ -11537,6 +11546,7 @@ msgstr ""
 msgid "To reset your password, visit the following address:"
 msgstr ""
 
+#. translators: Password reset notification email subject. %s: Site title.
 #: includes/wcs.php:176
 #, php-format
 msgid "[%s] Password Reset"
@@ -11801,23 +11811,23 @@ msgid "There is no changelog available."
 msgstr ""
 
 #. Plugin Name of the plugin/theme
-msgid "افزونه ورود و عضویت دییجتس | نوین وردپرس"
+msgid "DIGITS: WordPress Mobile Number Signup and Login"
 msgstr ""
 
 #. Plugin URI of the plugin/theme
-#. Author URI of the plugin/theme
-msgid ""
-"https://wpnovin.com/product/digi-ts-plugin-login-and-register-with-sms-code/"
+msgid "https://digits.unitedover.com"
 msgstr ""
 
 #. Description of the plugin/theme
 msgid ""
-"افزونه ثبت نام پیامکی با Digits دارای ویژگی های متنوعی می باشد. تا کاربر را "
-"ملزم به استفاده از شماره موبایل کرده و از شر هکرها راحت شوید. با ورود و ثبت "
-"نام در وردپرس با Digits می توانید حساب کاربری ووکامرس را ویرایش کرده و فیلد "
-"جدید اضافه نمایید."
+"Expand your website dimensions by providing signup and login using mobile "
+"number. User can register themselves with just a mobile number."
 msgstr ""
 
 #. Author of the plugin/theme
-msgid "نوین وردپرس | مرجع رسمی قالب و افزونه اورجینال وردپرس"
+msgid "UnitedOver"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://www.unitedover.com/"
 msgstr ""

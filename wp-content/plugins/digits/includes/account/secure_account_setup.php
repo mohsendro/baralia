@@ -124,6 +124,7 @@ final class SecureAccountSetup
             'password' => array('label' => __('Use Password', 'digits')),
             'email_otp' => array('label' => __('Use Email', 'digits')),
             'sms_otp' => array('label' => __('Use SMS', 'digits')),
+            'whatsapp_otp' => array('label' => __('Use WhatsApp ', 'digits')),
             '2fa_app' => array('label' => __('2FA App (Google Auth, Authy, etc)', 'digits')),
             'platform' => array('label' => __('Use Device', 'digits')),
             'cross-platform' => array('label' => __('Use Security Key', 'digits')),

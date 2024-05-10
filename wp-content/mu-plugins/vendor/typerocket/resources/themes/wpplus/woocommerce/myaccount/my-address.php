@@ -37,49 +37,38 @@ if ( ! wc_ship_to_billing_address_only() && wc_shipping_enabled() ) {
 		$customer_id
 	);
 }
-
-$oldcol = 1;
-$col    = 1;
 ?>
 
 <p>
 	<?php echo apply_filters( 'woocommerce_my_account_my_address_description', esc_html__( 'The following addresses will be used on the checkout page by default.', 'woocommerce' ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 </p>
 
-<?php if ( ! wc_ship_to_billing_address_only() && wc_shipping_enabled() ) : ?>
-	<div class="u-columns woocommerce-Addresses col2-set addresses">
-<?php endif; ?>
-
 <?php foreach ( $get_addresses as $name => $address_title ) : ?>
-	<?php
-		$address = wc_get_account_formatted_address( $name );
-		$col     = $col * -1;
-		$oldcol  = $oldcol * -1;
-	?>
+	<?php $address = wc_get_account_formatted_address( $name ); ?>
 
-	<div class="u-column<?php echo $col < 0 ? 1 : 2; ?> col-<?php echo $oldcol < 0 ? 1 : 2; ?> woocommerce-Address">
-		<header class="woocommerce-Address-title title">
-			<h3><?php echo esc_html( $address_title ); ?></h3>
-			<a href="<?php echo esc_url( wc_get_endpoint_url( 'edit-address', $name ) ); ?>" class="edit"><?php echo $address ? esc_html__( 'Edit', 'woocommerce' ) : esc_html__( 'Add', 'woocommerce' ); ?></a>
-		</header>
-		<address>
-			<?php
-				echo $address ? wp_kses_post( $address ) : esc_html_e( 'You have not set up this type of address yet.', 'woocommerce' );
+	<section class="woocommerce-customer-details">
+		<h4 class="woocommerce-column__title mt-4"><?php echo esc_html( $address_title ); ?></h4>	
+		<div class="text-right">
+			<a href="<?php echo esc_url( wc_get_endpoint_url( 'edit-address', $name ) ); ?>" class="btn main-color-two-bg shadow-none rounded-0">
+				<?php echo $address ? esc_html__( 'Edit', 'woocommerce' ) : esc_html__( 'Add', 'woocommerce' ); ?>
+			</a>
+		</div>
+		<div class="table-custom slider-parent">
+			<div class="table-responsive">
+				<address>
+					<?php
+						echo $address ? wp_kses_post( $address ) : esc_html_e( 'You have not set up this type of address yet.', 'woocommerce' );
 
-				/**
-				 * Used to output content after core address fields.
-				 *
-				 * @param string $name Address type.
-				 * @since 8.7.0
-				 */
-				do_action( 'woocommerce_my_account_after_my_address', $name );
-			?>
-		</address>
-	</div>
-
+						/**
+						 * Used to output content after core address fields.
+						 *
+						 * @param string $name Address type.
+						 * @since 8.7.0
+						 */
+						do_action( 'woocommerce_my_account_after_my_address', $name );
+					?>
+				</address>
+			</div>
+		</div>
+	</section>
 <?php endforeach; ?>
-
-<?php if ( ! wc_ship_to_billing_address_only() && wc_shipping_enabled() ) : ?>
-	</div>
-	<?php
-endif;

@@ -3407,10 +3407,10 @@ a.underlined:after {
 }
 
 .read-more-target {
-    display: none;
+    /* display: none;
     visibility: hidden;
     opacity: 0;
-    max-height: 0;
+    max-height: 0; */
     font-size: 0;
     transition: .25s ease;
     -webkit-transition: .25s ease;

@@ -18,15 +18,15 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
-
-global $post, $product;
-
 ?>
-<?php if ( $product->is_on_sale() ) : ?>
 
-	<?php echo apply_filters( 'woocommerce_sale_flash', '<span class="onsale">' . esc_html__( 'Sale!', 'woocommerce' ) . '</span>', $post, $product ); ?>
+<?php global $post, $product; ?>
 
-	<?php
-endif;
+<?php if ( $product->is_on_sale() ) : ?>	
+	<div class="product-box-price-discount">
+		<span class="d-block badge main-color-three-bg text-white font-14 rounded-0"><?php echo apply_filters( 'woocommerce_sale_flash', esc_html__( 'Sale!', 'woocommerce' ), $post, $product ); ?></span>
+	</div>
+<?php endif; ?>
 
+<?php
 /* Omit closing PHP tag at the end of PHP files to avoid "headers already sent" issues. */

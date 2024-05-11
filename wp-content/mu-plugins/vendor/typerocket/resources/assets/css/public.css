@@ -3,6 +3,37 @@
     margin-top: 25px;
 }
 
+.woocommerce-product-attributes-item {
+    display: flex;
+    gap: 10px;
+}
+
+.product-desc-tab-content table tr th {
+    display: block;
+    padding: 14px 18px 12px;
+    font-size: 13px;
+    line-height: 1.692;
+    color: #4d4d4d;
+    min-height: 47px;
+    position: relative;
+    margin-bottom: 15px;
+    background: #ddd;
+    font-weight: bold;
+    font-size: 14px !important;
+}
+
+.product-desc-tab-content table tr td {
+    display: block;
+    padding: 14px 18px 12px;
+    font-size: 13px;
+    line-height: 1.692;
+    color: #4d4d4d;
+    min-height: 47px;
+    position: relative;
+    margin-bottom: 15px;
+    background-color: #f1f1f1;
+}
+
 /* Digits */
 body.dig_hideccode {
     font-size: 14px !important;

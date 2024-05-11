@@ -143,3 +143,555 @@ if ( ! comments_open() ) {
 
 	<div class="clear"></div>
 </div>
+
+
+
+
+
+
+
+
+
+
+<div class="tab-pane show fade product-comment-content" id="productComment-pane">
+	<div class="comment-form">
+		<h6 class="font-26 mb-2 title-font title-line-bottom">نظرت در مورد این محصول
+			چیه؟</h6>
+		<p class="font-14 text-muted mt-2">برای ثبت نظر، از طریق دکمه افزودن
+			دیدگاه جدید
+			نمایید. اگر این محصول را قبلا خریده باشید، نظر شما به عنوان خریدار
+			ثبت خواهد
+			شد.</p>
+		<form action="">
+			<div class="row gy-4">
+				<div class="col-md-4">
+					<div class="product-rateing position-sticky top-0">
+						<div class="row gy-2 align-items-center">
+							<div class="number">
+								<h4 class="fw-light">متوسط امتیاز ها</h4>
+								<h2>3.00</h2>
+								<div class="star">
+									<i class="bi bi-star-fill"></i>
+									<i class="bi bi-star-fill"></i>
+									<i class="bi bi-star-fill"></i>
+									<i class="bi bi-star-fill"></i>
+									<i class="bi bi-star"></i>
+								</div>
+							</div>
+							<div class="prog-rating">
+								<div class="item w-100 mb-2">
+									<div class="d-flex align-items-center flex-wrap">
+										<span class="font-14">5 ستاره</span>
+										<div class="progress flex-grow-1 mx-2"
+											style="height: 7px;">
+											<div aria-valuemax="100" aria-valuemin="0"
+												aria-valuenow="25" class="progress-bar"
+												role="progressbar"
+												style="width: 25%"></div>
+										</div>
+										<span class="font-14">5</span>
+									</div>
+								</div>
+								<div class="item w-100 mb-2">
+									<div class="d-flex align-items-center flex-wrap">
+										<span class="font-14">4 ستاره</span>
+										<div class="progress flex-grow-1 mx-2"
+											style="height: 7px;">
+											<div aria-valuemax="100" aria-valuemin="0"
+												aria-valuenow="60" class="progress-bar"
+												role="progressbar"
+												style="width: 60%"></div>
+										</div>
+										<span class="font-14">17</span>
+									</div>
+								</div>
+								<div class="item w-100 mb-2">
+									<div class="d-flex align-items-center flex-wrap">
+										<span class="font-14">3 ستاره</span>
+										<div class="progress flex-grow-1 mx-2"
+											style="height: 7px;">
+											<div aria-valuemax="100" aria-valuemin="0"
+												aria-valuenow="78" class="progress-bar"
+												role="progressbar"
+												style="width: 78%"></div>
+										</div>
+										<span class="font-14">85</span>
+									</div>
+								</div>
+								<div class="item w-100 mb-2">
+									<div class="d-flex align-items-center flex-wrap">
+										<span class="font-14">2 ستاره</span>
+										<div class="progress flex-grow-1 mx-2"
+											style="height: 7px;">
+											<div aria-valuemax="100" aria-valuemin="0"
+												aria-valuenow="4" class="progress-bar"
+												role="progressbar"
+												style="width: 4%"></div>
+										</div>
+										<span class="font-14">3</span>
+									</div>
+								</div>
+								<div class="item w-100">
+									<div class="d-flex align-items-center flex-wrap">
+										<span class="font-14">1 ستاره</span>
+										<div class="progress flex-grow-1 mx-2"
+											style="height: 7px;">
+											<div aria-valuemax="100" aria-valuemin="0"
+												aria-valuenow="82" class="progress-bar"
+												role="progressbar"
+												style="width: 82%"></div>
+										</div>
+										<span class="font-14">652</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-8">
+					<div class="row">
+						<div class="col-sm-6">
+							<div class="form-floating mb-3 form-group">
+								<input class="form-control" id="floatingInputEmail1"
+									placeholder="ایمیل خود را وارد کنید"
+									type="email">
+								<label for="floatingInputEmail1">ایمیل خود را وارد
+									کنید</label>
+							</div>
+						</div>
+						<div class="col-sm-6">
+							<div class="form-floating mb-3 form-group">
+								<input class="form-control" id="floatingInputName"
+									placeholder="نام خود را وارد کنید"
+									type="text">
+								<label for="floatingInputName">نام خود را وارد کنید</label>
+							</div>
+						</div>
+						<div class="col-12">
+							<div class="form-group form-check">
+								<input class="form-check-input" id="rememberComment"
+									type="checkbox">
+								<label class="form-check-label d-block"
+									for="rememberComment">
+									ذخیره
+									نام، ایمیل و وبسایت من در مرورگر برای زمانی که دوباره
+									دیدگاهی می‌نویسم.
+								</label>
+							</div>
+						</div>
+						<div class="col-12">
+							<div class="form-group">
+								<label class="my-3" for="commentRating">امتیاز شما</label>
+								<fieldset class="rating" id="commentRating">
+									<input id="star5" name="rating" required type="radio"
+										value="5"/>
+									<label for="star5">5 stars</label>
+									<input id="star4" name="rating" required type="radio"
+										value="4"/>
+									<label for="star4">4 stars</label>
+									<input id="star3" name="rating" required type="radio"
+										value="3"/>
+									<label for="star3">3 stars</label>
+									<input id="star2" name="rating" required type="radio"
+										value="2"/>
+									<label for="star2">2 stars</label>
+									<input id="star1" name="rating" required type="radio"
+										value="1"/>
+									<label for="star1">1 star</label>
+								</fieldset>
+							</div>
+						</div>
+						<div class="col-12">
+							<div class="form-floating">
+							<textarea class="form-control"
+									id="floatingTextarea2"
+									placeholder="Leave a comment here"
+									style="height: 150px"></textarea>
+								<label for="floatingTextarea2">متن نظر!</label>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group mt-3">
+								<label class="text-success mb-2 fw-bold font-16"
+									for="tags-pos">نقاط
+									قوت</label>
+								<input class="commentTags form-control" id="tags-pos"
+									name="tags-pos"
+									placeholder="با کلید اینتر اضافه کنید">
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group mt-3">
+								<label class="text-danger fw-bold mb-2 font-16"
+									for="tags-neg">نقاط
+									ضعف</label>
+								<input class="commentTags form-control" id="tags-neg"
+									name="tags-neg"
+									placeholder="با کلید اینتر اضافه کنید">
+							</div>
+						</div>
+						<div class="col-12">
+							<button type="submit" class="btn main-color-two-bg px-5 btn-lg rounded-0 border-0">ثبت نظر</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+	<div class="box_filter mt-5 pb-3">
+		<div class="row align-items-end">
+			<div class="col-md-4 bf1">
+				<h4 class="title-font title-line-bottom">نظرات کاربران</h4>
+			</div>
+			<div class="col-md-8 bf2">
+				<ul class="list-inline text-end mb-0">
+					<li class="list-inline-item title-font">مرتب سازی بر اساس :</li>
+					<li class="list-inline-item"><a href="#">نظر خریداران</a></li>
+					<li class="list-inline-item"><a class="active_custom" href="#">مفیدترین
+						نظرات</a>
+					</li>
+					<li class="list-inline-item"><a href="#">جدیدترین نظرات</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div class="box_users_comment mt-3 p-4">
+		<div class="row">
+			<div class="col-lg-3">
+				<div class="box_message_light">
+					<svg class="bi bi-cart3" fill="currentColor" height="16"
+						viewBox="0 0 16 16" width="16"
+						xmlns="http://www.w3.org/2000/svg">
+						<path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"></path>
+					</svg>
+					خریدار این محصول
+				</div>
+				<div class="box_shopping mt-lg-5 mt-3">
+					<span>خریداری شده از :</span>
+					<p>
+						<i class="bi bi-shop"></i>
+						<a href="#">اسمارت الکترونیک</a>
+					</p>
+				</div>
+				<div class="box_message_dislike mt-2">
+					<i class="bi bi-hand-thumbs-down"></i>
+					خرید این محصول را توصیه نمی
+					کنم
+				</div>
+			</div>
+			<div class="col-lg-9 pr-5" style="margin-top:-10px">
+				<div class="box_comment_header mt-4 mt-lg-0">
+					<span class="span1">نخرید</span>
+					<br>
+					<span class="span2">توسط مسلم ابراهیمی در تاریخ ۳۰ شهریور ۱۳۹۷
+				</span>
+				</div>
+				<div class="border-bottom mt-3"></div>
+				<div class="row mt-4">
+					<div class="col-md-6 evaluation-positive">
+						<ul class="list-inline">
+							<span>نقاط قوت</span>
+							<li class="list-inline-item ml-3">هیچی</li>
+						</ul>
+					</div>
+					<div class="col-md-6 evaluation-negative">
+						<ul class="list-inline">
+							<span>نقاط ضعف</span>
+							<li class="list-inline-item ml-3">کیفیت صدا , موقع زنگ اصلا
+								صدا
+								نمیره
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="row mt-4">
+					<div class="col-md-12">
+						<p class="box_text_comment">
+							دوستان سلام من این رو خریدم اصلا خوب نیست صدا نمیره اونایی
+							که
+							میگن خوبه
+							همشون
+							فروشنده این بسته هستن با اکانت هایی که ساختن میام الکی نظر
+							میدن
+							نخرید به خدا
+							نخرید اصلا خوب نیست
+						</p>
+					</div>
+				</div>
+				<div class="row justify-content-end">
+					<div class="col-12">
+						<div class="comments_likes">
+						<span class="mr-4 mt-1">
+							ایا این نظر برایتان مفید بود ؟
+						</span>
+							<a class="btn btn-like btn-like-like mt-1 mt-md-0 ms-2"
+							href="#"><i
+									class="bi bi-hand-thumbs-up"></i> 70</a>
+							<a class="btn btn-like btn-like-dislike mt-1 mt-md-0"
+							href="#"> <i
+									class="bi bi-hand-thumbs-down"></i> 7</a>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="box_users_comment mt-3 p-4">
+		<div class="row">
+			<div class="col-lg-3">
+				<div class="box_message_light">
+					<svg class="bi bi-cart3" fill="currentColor" height="16"
+						viewBox="0 0 16 16" width="16"
+						xmlns="http://www.w3.org/2000/svg">
+						<path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"></path>
+					</svg>
+					خریدار این محصول
+				</div>
+				<div class="box_shopping mt-lg-5 mt-3">
+					<span>خریداری شده از :</span>
+					<p>
+						<i class="bi bi-shop"></i>
+						<a href="#">اسمارت الکترونیک</a>
+					</p>
+				</div>
+				<div class="box_message_dislike mt-2">
+					<i class="bi bi-hand-thumbs-down"></i>
+					خرید این محصول را توصیه نمی
+					کنم
+				</div>
+			</div>
+			<div class="col-lg-9 pr-5" style="margin-top:-10px">
+				<div class="box_comment_header mt-4 mt-lg-0">
+					<span class="span1">نخرید</span>
+					<br>
+					<span class="span2">توسط مسلم ابراهیمی در تاریخ ۳۰ شهریور ۱۳۹۷
+				</span>
+				</div>
+				<div class="border-bottom mt-3"></div>
+				<div class="row mt-4">
+					<div class="col-md-6 evaluation-positive">
+						<ul class="list-inline">
+							<span>نقاط قوت</span>
+							<li class="list-inline-item ml-3">هیچی</li>
+						</ul>
+					</div>
+					<div class="col-md-6 evaluation-negative">
+						<ul class="list-inline">
+							<span>نقاط ضعف</span>
+							<li class="list-inline-item ml-3">کیفیت صدا , موقع زنگ اصلا
+								صدا
+								نمیره
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="row mt-4">
+					<div class="col-md-12">
+						<p class="box_text_comment">
+							دوستان سلام من این رو خریدم اصلا خوب نیست صدا نمیره اونایی
+							که
+							میگن خوبه
+							همشون
+							فروشنده این بسته هستن با اکانت هایی که ساختن میام الکی نظر
+							میدن
+							نخرید به خدا
+							نخرید اصلا خوب نیست
+						</p>
+					</div>
+				</div>
+				<div class="row justify-content-end">
+					<div class="col-12">
+						<div class="comments_likes">
+						<span class="mr-4 mt-1">
+							ایا این نظر برایتان مفید بود ؟
+						</span>
+							<a class="btn btn-like btn-like-like mt-1 mt-md-0 ms-2"
+							href="#"><i
+									class="bi bi-hand-thumbs-up"></i> 70</a>
+							<a class="btn btn-like btn-like-dislike mt-1 mt-md-0"
+							href="#"> <i
+									class="bi bi-hand-thumbs-down"></i> 7</a>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="text-center">
+			<a class="btn-flat lg dark" href="">بارگذاری کامنت ها</a>
+		</div>
+	</div>
+</div>
+
+<div aria-labelledby="#productAnswer" class="tab-pane show fade" id="productAnswer-pane" role="tabpanel">
+	<h4 class="title-font title-line-bottom">پرسش و پاسخ</h4>
+	<span class="fw-bold d-block mt-2 text-muted font-12">پرسش خود را در مورد محصول مطرحنمایید</span>
+
+	<div class="box_questions mt-4">
+		<form>
+			<div class="form-group">
+				<textarea class="form-control"
+						placeholder="هر سوالی در مورد این محصول به ذهنتان میرسید بپرسید!"
+						rows="7"></textarea>
+				<button class="btn main-color-three-bg mt-3 btn-lg rounded-0"
+						type="submit">ثبت پرسش
+				</button>
+			</div>
+		</form>
+
+		<div class="box_filter mt-5 pb-3">
+			<div class="row align-items-end">
+				<div class="col-md-4 bf1">
+					<h4 class="title-font title-line-bottom">پرسش های کاربران</h4>
+				</div>
+				<div class="col-md-8 bf2">
+					<ul class="list-inline text-end mb-0">
+						<li class="list-inline-item title-font">مرتب سازی بر اساس :</li>
+						<li class="list-inline-item"><a href="#">نظر خریداران</a></li>
+						<li class="list-inline-item"><a class="active_custom" href="#">مفیدترین
+							نظرات</a>
+						</li>
+						<li class="list-inline-item"><a href="#">جدیدترین نظرات</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="box_questions mt-4">
+			<div class="row bs-qu">
+				<div class="col-lg-2 bq1 text-center">
+					<i class="bi bi-question-circle-fill"></i>
+					<br>
+					<span class="span1">پرسش</span>
+					<br>
+					<span class="span2">فرزاد عباسقلی زاده</span>
+				</div>
+				<div class="col-lg-10 bq2">
+					<p>سلام چطوری دو گوشی همزمان پخش میکنه ؟ </p>
+
+					<div class="row bq-footer">
+						<div class="col-md-5 col-6 my-flex-align-end">
+					<span class="date"> ۱۶ مهر ۱۳۹۷
+					</span>
+						</div>
+						<div class="col-md-7 col-6 text-end pe-0">
+							<a class="d-none d-sm-block" href="#">
+								<span class="link-info">به این پرسش پاسخ دهید (۱ پاسخ)</span>
+							</a><a class="d-sm-none d-block" href="#">پاسخ</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row bs-qu">
+				<div class="col-lg-2 bq1 text-center">
+					<i class="bi bi-chat-dots-fill"></i>
+					<br>
+					<span class="span1">پاسخ</span>
+					<br>
+					<span class="span2">حسین زارع</span>
+				</div>
+				<div class="col-lg-10 bq2 bg-transparent">
+					<p>حوه راه اندازی: (خیلی دربارش پرسیده بودند): اول: بلوتوث گوشی خود
+						را
+						خاموش کنید.
+						دوم: لطفا
+						کلید های چند منظوره در هر دو هدفون را همزمان فشار دهید
+					</p>
+					<div class="row align-items-center bq-footer">
+						<div class="col-lg-5 col-12 my-flex-align-end">
+					<span class="date">۲۲ مهر ۱۳۹۷
+					</span>
+						</div>
+						<div class="col-lg-7 col-12 text-start p-0 ">
+							<div class="comments_likes">
+											<span class="mr-4 mt-1">
+												ایا این نظر برایتان مفید بود ؟
+											</span>
+								<a class="btn btn-like btn-like-like mt-1 mt-md-0 ms-2"
+								href="#"><i
+										class="bi bi-hand-thumbs-up"></i> 70</a>
+								<a class="btn btn-like btn-like-dislike mt-1 mt-md-0"
+								href="#">
+									<i class="bi bi-hand-thumbs-down"></i> 7</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="box_questions mt-4">
+			<div class="row bs-qu">
+				<div class="col-lg-2 bq1 text-center">
+					<i class="bi bi-question-circle-fill"></i>
+					<br>
+					<span class="span1">پرسش</span>
+					<br>
+					<span class="span2">فرزاد عباسقلی زاده</span>
+				</div>
+				<div class="col-lg-10 bq2">
+					<p>سلام چطوری دو گوشی همزمان پخش میکنه ؟ </p>
+
+					<div class="row bq-footer">
+						<div class="col-md-5 col-6 my-flex-align-end">
+					<span class="date"> ۱۶ مهر ۱۳۹۷
+					</span>
+						</div>
+						<div class="col-md-7 col-6 text-end pe-0">
+							<a class="d-none d-sm-block" href="#">
+								<span class="link-info">به این پرسش پاسخ دهید (۱ پاسخ)</span>
+							</a><a class="d-sm-none d-block" href="#">پاسخ</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row bs-qu">
+				<div class="col-lg-2 bq1 text-center">
+					<i class="bi bi-chat-dots-fill"></i>
+					<br>
+					<span class="span1">پاسخ</span>
+					<br>
+					<span class="span2">حسین زارع</span>
+				</div>
+				<div class="col-lg-10 bq2 bg-transparent">
+					<p>حوه راه اندازی: (خیلی دربارش پرسیده بودند): اول: بلوتوث گوشی خود
+						را
+						خاموش کنید.
+						دوم: لطفا
+						کلید های چند منظوره در هر دو هدفون را همزمان فشار دهید
+					</p>
+					<div class="row align-items-center bq-footer">
+						<div class="col-lg-5 col-12 my-flex-align-end">
+					<span class="date">۲۲ مهر ۱۳۹۷
+					</span>
+						</div>
+						<div class="col-lg-7 col-12 text-start p-0 ">
+							<div class="comments_likes">
+											<span class="mr-4 mt-1">
+												ایا این نظر برایتان مفید بود ؟
+											</span>
+								<a class="btn btn-like btn-like-like mt-1 mt-md-0 ms-2"
+								href="#"><i
+										class="bi bi-hand-thumbs-up"></i> 70</a>
+								<a class="btn btn-like btn-like-dislike mt-1 mt-md-0"
+								href="#">
+									<i class="bi bi-hand-thumbs-down"></i> 7</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="container mt-4">
+			<div class="text-center">
+				<a class="btn-flat lg dark" href="">بارگذاری کامنت ها</a>
+			</div>
+		</div>
+
+	</div>
+</div>

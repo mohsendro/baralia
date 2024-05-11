@@ -19,6 +19,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+global $product;
+
 /**
  * Filter tabs and allow third parties to add their own.
  *
@@ -29,28 +31,78 @@ if ( ! defined( 'ABSPATH' ) ) {
 $product_tabs = apply_filters( 'woocommerce_product_tabs', array() );
 
 if ( ! empty( $product_tabs ) ) : ?>
-
 	<div class="woocommerce-tabs wc-tabs-wrapper">
-		<ul class="tabs wc-tabs" role="tablist">
-			<?php foreach ( $product_tabs as $key => $product_tab ) : ?>
-				<li class="<?php echo esc_attr( $key ); ?>_tab" id="tab-title-<?php echo esc_attr( $key ); ?>" role="tab" aria-controls="tab-<?php echo esc_attr( $key ); ?>">
-					<a href="#tab-<?php echo esc_attr( $key ); ?>">
-						<?php echo wp_kses_post( apply_filters( 'woocommerce_product_' . $key . '_tab_title', $product_tab['title'], $key ) ); ?>
-					</a>
-				</li>
-			<?php endforeach; ?>
-		</ul>
-		<?php foreach ( $product_tabs as $key => $product_tab ) : ?>
-			<div class="woocommerce-Tabs-panel woocommerce-Tabs-panel--<?php echo esc_attr( $key ); ?> panel entry-content wc-tab" id="tab-<?php echo esc_attr( $key ); ?>" role="tabpanel" aria-labelledby="tab-title-<?php echo esc_attr( $key ); ?>">
-				<?php
-				if ( isset( $product_tab['callback'] ) ) {
-					call_user_func( $product_tab['callback'], $key, $product_tab );
-				}
-				?>
+		<div class="product-desc-tab">
+			<ul class="nav" id="productTab" role="tablist">
+				<?php $i == 0; ?>
+				<?php foreach ( $product_tabs as $key => $product_tab ) : ?>
+					<?php 
+						if( $i == 0 ) {
+							$active_tab = 'active';
+						} else {
+							$active_tab = '';
+						}
+					?>
+					<li class="nav-item <?php echo esc_attr( $key ); ?>_tab" id="tab-title-<?php echo esc_attr( $key ); ?>" role="tab" aria-controls="tab-<?php echo esc_attr( $key ); ?>">
+						<button
+							aria-selected="true" 
+							class="<?php echo $active_tab; ?> d-flex waves-effect waves-light"
+							data-bs-target="#tab-<?php echo esc_attr( $key ); ?>" 
+							data-bs-toggle="tab" 
+							role="button"
+							type="button">
+							<?php echo wp_kses_post( apply_filters( 'woocommerce_product_' . $key . '_tab_title', $product_tab['title'], $key ) ); ?>
+							<?php if( $key == 'reviews' ): ?>
+								<span class="badge main-color-two-bg rounded-0 ms-2"><?php echo $product->get_review_count(); ?></span>
+							<?php endif; ?>
+						</button>
+					</li>
+					<?php $i++; ?>
+				<?php endforeach; ?>
+			</ul>
+		</div>
+
+		<div class="content-box">
+			<div class="container-fluid">
+				<div class="product-descs" id="prodesc">
+					<div class="product-desc">
+						<div class="product-desc-tab-content">
+							<div class="tab-content" id="productTabContent">
+								<?php $j == 0; ?>
+								<?php foreach ( $product_tabs as $key => $product_tab ) : ?>
+									<?php 
+										if( $j == 0 ) {
+											$active_pane = 'show active';
+										} else {
+											$active_pane = '';
+										}
+									?>
+									<div class="tab-pane <?php echo $active_pane; ?> fade" id="tab-<?php echo esc_attr( $key ); ?>" aria-labelledby="tab-title-<?php echo esc_attr( $key ); ?>">
+										<div class="product-desc-content">
+											<?php
+												if ( isset( $product_tab['callback'] ) ) {
+													call_user_func( $product_tab['callback'], $key, $product_tab );
+												}
+											?>	
+										</div>	
+									</div>	
+									<?php $j++; ?>
+								<?php endforeach; ?>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
-		<?php endforeach; ?>
+		</div>
 
 		<?php do_action( 'woocommerce_product_after_tabs' ); ?>
 	</div>
-
 <?php endif; ?>
+
+
+
+
+
+
+
+

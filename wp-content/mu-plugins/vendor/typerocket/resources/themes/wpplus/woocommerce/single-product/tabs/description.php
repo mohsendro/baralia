@@ -20,11 +20,10 @@ defined( 'ABSPATH' ) || exit;
 global $post;
 
 $heading = apply_filters( 'woocommerce_product_description_heading', __( 'Description', 'woocommerce' ) );
-
 ?>
 
 <?php if ( $heading ) : ?>
-	<h2><?php echo esc_html( $heading ); ?></h2>
+	<h6 class="font-22 mb-2 title-font title-line-bottom"><?php echo esc_html( $heading ); ?></h6>
 <?php endif; ?>
 
 <?php the_content(); ?>

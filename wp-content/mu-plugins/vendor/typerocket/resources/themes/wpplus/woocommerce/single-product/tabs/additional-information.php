@@ -24,7 +24,7 @@ $heading = apply_filters( 'woocommerce_product_additional_information_heading', 
 ?>
 
 <?php if ( $heading ) : ?>
-	<h2><?php echo esc_html( $heading ); ?></h2>
+	<h6 class="font-22 mb-2 title-font title-line-bottom"><?php echo esc_html( $heading ); ?></h6>
 <?php endif; ?>
 
 <?php do_action( 'woocommerce_product_additional_information', $product ); ?>

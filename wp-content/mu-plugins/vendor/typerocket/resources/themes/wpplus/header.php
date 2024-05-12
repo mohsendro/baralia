@@ -66,11 +66,11 @@
                             <div class="min-cart">
                                 <div class="mini-cart-title d-flex align-items-center justify-content-between">
                                     <div class="mini-cart-counter"><span><?php echo count(WC()->cart->get_cart()); ?></span> کالا</div>
-                                    <div class="mini-cart-title-link">
-                                        <a class="main-color-three-color fw-bold" href="<?php echo wc_get_cart_url(); ?>">
+                                    <!-- <div class="mini-cart-title-link">
+                                        <a class="main-color-three-color fw-bold" href="<?php //echo wc_get_cart_url(); ?>">
                                             مشاهده سبد خرید<i class="bi bi-chevron-left font-14 ms-2"></i>
                                         </a>
-                                    </div>
+                                    </div> -->
                                 </div>
                                 <?php woocommerce_mini_cart(); //wc_get_template('cart/mini-cart.php');?>
                                 <div class="mini-cart-action">

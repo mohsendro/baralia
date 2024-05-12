@@ -113,59 +113,21 @@ if ( post_password_required() ) {
 
 										<div class="product-meta-feature-items mb-4">
 											<h5 class="title font-16 mb-2">اطلاعات محصول</h5>
-											<ul class="navbar-nav">
-												<li class="nav item"><span>نوع:</span><strong>با</strong></li>
-												<li class="nav item"><span>نوع:</span><strong>با</strong></li>
-												<li class="nav item"><span>نوع:</span><strong>با</strong></li>
-												<li class="nav item"><span>نوع:</span><strong>با</strong></li>
-												<li class="nav item"><span>نوع:</span><strong>با</strong></li>
-											</ul>
+											<?php wc_get_template( 'single-product/meta.php' ); ?>
 										</div>
-
-										<div class="product-meta-feature-items mb-4">
-											<h5 class="title font-16 mb-2">توضیح کوتاه</h5>
-											<p class="text-muted text-justify"></p>
-										</div>
-										
 									</div>
 									<div class="col-lg-5">
 										<div class="product-meta-info">
-											<div class="product-meta-info-title border-0 product-meta-info-item d-flex align-items-center justify-content-between">
-												<h5>فروشنده</h5>
-												<a class="main-color-two-color fw-bold" href="">3 فروشنده دیگر</a>
-											</div>
-											<div class="d-flex product-meta-info-item">
-												<div>
-													<i class="bi bi-shop"></i>
-												</div>
-												<div class="text-start ms-3">
-													<h6 class="fw-bold text-muted-2 font-16">رستا گالری</h6>
-													<div class="d-flex align-items-center mt-2">
-														<p class="font-12 mb-0">
-															<span class="text-success ms-1 fw-bold">89.6%</span>
-															<span class="text-muted">رضایت از کالا</span>
-														</p>
-														<p class="ps-1 mb-0 ms-1 border-start font-12">
-															<span class="text-muted">عملکرد</span>
-															<span class="text-success fw-bold">عالی</span>
-														</p>
-													</div>
-												</div>
-											</div>
-											<div class="product-meta-rating product-meta-info-item">
-												<div class="d-flex align-items-center">
-													<div class="count-comment text-muted">16 دیدگاه</div>
-													<div class="count-rating">
-														<span>(17) 4.5</span>
-														<i class="bi bi-star-fill"></i>
-													</div>
-												</div>
-											</div>
+											<?php wc_get_template( 'loop/price.php' ); ?>
+											
 											<div class="product-meta-garanty product-meta-info-item justify-content-start">
 												<i class="bi bi-shield-check"></i>
 												<span class="text-muted"> گارانتی اصالت و سلامت فیزیکی کالا
 												</span>
 											</div>
+
+
+
 											<div class="product-meta-price d-flex">
 												<div class="d-flex align-items-center">
 													<p class="mb-0 old-price font-16">1,500,000 تومان </p>
@@ -173,6 +135,7 @@ if ( post_password_required() ) {
 												</div>
 												<h6 class="title-font new-price">1,200,000 تومان</h6>
 											</div>
+
 											<div class="d-flex justify-content-between flex-wrap">
 												<div class="product-meta-counter w-50">
 													<div class="counter">
@@ -187,11 +150,12 @@ if ( post_password_required() ) {
 													</div>
 												</div>
 											</div>
-
 										</div>
-										<div class="product-meta-count text-muted">
-											<span><span class="title-font">14</span> عدد در انبار</span>
-										</div>
+										<?php if( $product->get_manage_stock() ): ?>
+											<div class="product-meta-count text-muted">
+												<span><span class="title-font"><?php echo $product->get_stock_quantity(); ?></span> عدد در انبار</span>
+											</div>
+										<?php endif; ?>
 									</div>
 								</div>
 							</div>
@@ -199,10 +163,10 @@ if ( post_password_required() ) {
 								/**
 								 * Hook: woocommerce_single_product_summary.
 								 *
-								 * @hooked woocommerce_template_single_title - 5
-								 * @hooked woocommerce_template_single_rating - 10
+								 * @hooked woocommerce_template_single_title - 5   ***********
+								 * @hooked woocommerce_template_single_rating - 10 
 								 * @hooked woocommerce_template_single_price - 10
-								 * @hooked woocommerce_template_single_excerpt - 20
+								 * @hooked woocommerce_template_single_excerpt - 20 ***********
 								 * @hooked woocommerce_template_single_add_to_cart - 30
 								 * @hooked woocommerce_template_single_meta - 40
 								 * @hooked woocommerce_template_single_sharing - 50

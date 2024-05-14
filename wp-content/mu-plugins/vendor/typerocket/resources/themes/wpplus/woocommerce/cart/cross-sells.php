@@ -16,15 +16,12 @@
  */
 
 defined( 'ABSPATH' ) || exit;
+?>
 
-if ( $cross_sells ) : ?>
-
+<?php if ( $cross_sells && ! $cross_sells ) : ?>
 	<div class="cross-sells">
-		<?php
-		$heading = apply_filters( 'woocommerce_product_cross_sells_products_heading', __( 'You may be interested in&hellip;', 'woocommerce' ) );
-
-		if ( $heading ) :
-			?>
+		<?php $heading = apply_filters( 'woocommerce_product_cross_sells_products_heading', __( 'You may be interested in&hellip;', 'woocommerce' ) ); ?>
+		<?php if ( $heading ) : ?>
 			<h2><?php echo esc_html( $heading ); ?></h2>
 		<?php endif; ?>
 
@@ -34,9 +31,7 @@ if ( $cross_sells ) : ?>
 
 				<?php
 					$post_object = get_post( $cross_sell->get_id() );
-
 					setup_postdata( $GLOBALS['post'] =& $post_object ); // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited, Squiz.PHP.DisallowMultipleAssignments.Found
-
 					wc_get_template_part( 'content', 'product' );
 				?>
 
@@ -45,7 +40,6 @@ if ( $cross_sells ) : ?>
 		<?php woocommerce_product_loop_end(); ?>
 
 	</div>
-	<?php
-endif;
+<?php endif; ?>
 
-wp_reset_postdata();
+<?php wp_reset_postdata(); ?>

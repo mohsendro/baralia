@@ -118,38 +118,54 @@ if ( post_password_required() ) {
 									</div>
 									<div class="col-lg-5">
 										<div class="product-meta-info">
-											<?php wc_get_template( 'loop/price.php' ); ?>
-											
-											<div class="product-meta-garanty product-meta-info-item justify-content-start">
+											<div class="product-meta-garanty product-meta-info-item justify-content-start mb-3">
 												<i class="bi bi-shield-check"></i>
 												<span class="text-muted"> گارانتی اصالت و سلامت فیزیکی کالا
 												</span>
 											</div>
 
+											<?php
+												// $product_type = $product->get_type();
+												// if( $product_type == 'simple' ) {
 
+												// 	wc_get_template( 'single-product/add-to-cart/simple.php' );
 
-											<div class="product-meta-price d-flex">
-												<div class="d-flex align-items-center">
-													<p class="mb-0 old-price font-16">1,500,000 تومان </p>
-													<span class="badge main-color-two-bg ms-2 rounded-0">23%</span>
-												</div>
-												<h6 class="title-font new-price">1,200,000 تومان</h6>
-											</div>
+												// } elseif( $product_type == 'variable' ) {
 
-											<div class="d-flex justify-content-between flex-wrap">
-												<div class="product-meta-counter w-50">
-													<div class="counter">
-														<input class="counter" name="count" type="text" value="1">
-													</div>
-												</div>
-												<div class="product-meta-add w-50">
-													<div class="d-flex justify-content-center">
-														<a class="btn w-100 border-0 main-color-three-bg rounded-0" href=""><i
-																class="bi bi-basket text-white font-20 me-1"></i>خرید
-															کالا</a>
-													</div>
-												</div>
-											</div>
+												// 	wc_get_template( 'single-product/add-to-cart/variable.php' );
+
+												// } elseif( $product_type == 'grouped' ) {
+
+												// 	wc_get_template( 'single-product/add-to-cart/grouped.php' );
+
+												// } elseif( $product_type == 'external' ) {
+
+												// 	wc_get_template( 'single-product/add-to-cart/external.php' );
+
+												// } else {
+
+												// 	wc_get_template( 'single-product/add-to-cart/simple.php' );
+
+												// }
+											?>
+
+											<!-- <div class="d-flex justify-content-between flex-wrap"> -->
+												<?php
+													/**
+													 * Hook: woocommerce_single_product_summary.
+													 *
+													 * @hooked woocommerce_template_single_title - 5   ***********
+													 * @hooked woocommerce_template_single_rating - 10 
+													 * @hooked woocommerce_template_single_price - 10
+													 * @hooked woocommerce_template_single_excerpt - 20 ***********
+													 * @hooked woocommerce_template_single_add_to_cart - 30
+													 * @hooked woocommerce_template_single_meta - 40
+													 * @hooked woocommerce_template_single_sharing - 50
+													 * @hooked WC_Structured_Data::generate_product_data() - 60
+													 */
+													do_action( 'woocommerce_single_product_summary' );
+												?>
+											<!-- </div> -->
 										</div>
 										<?php if( $product->get_manage_stock() ): ?>
 											<div class="product-meta-count text-muted">
@@ -159,21 +175,6 @@ if ( post_password_required() ) {
 									</div>
 								</div>
 							</div>
-							<?php
-								/**
-								 * Hook: woocommerce_single_product_summary.
-								 *
-								 * @hooked woocommerce_template_single_title - 5   ***********
-								 * @hooked woocommerce_template_single_rating - 10 
-								 * @hooked woocommerce_template_single_price - 10
-								 * @hooked woocommerce_template_single_excerpt - 20 ***********
-								 * @hooked woocommerce_template_single_add_to_cart - 30
-								 * @hooked woocommerce_template_single_meta - 40
-								 * @hooked woocommerce_template_single_sharing - 50
-								 * @hooked WC_Structured_Data::generate_product_data() - 60
-								 */
-								do_action( 'woocommerce_single_product_summary' );
-							?>
 						</div>
 					</div>
 				</div>

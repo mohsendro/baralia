@@ -16,16 +16,19 @@
  */
 
 defined( 'ABSPATH' ) || exit;
+?>
 
-global $product;
+<?php
+	global $product;
 
-$attribute_keys  = array_keys( $attributes );
-$variations_json = wp_json_encode( $available_variations );
-$variations_attr = function_exists( 'wc_esc_json' ) ? wc_esc_json( $variations_json ) : _wp_specialchars( $variations_json, ENT_QUOTES, 'UTF-8', true );
+	$attribute_keys  = array_keys( $attributes );
+	$variations_json = wp_json_encode( $available_variations );
+	$variations_attr = function_exists( 'wc_esc_json' ) ? wc_esc_json( $variations_json ) : _wp_specialchars( $variations_json, ENT_QUOTES, 'UTF-8', true );
+?>
 
-do_action( 'woocommerce_before_add_to_cart_form' ); ?>
+<?php do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 
-<form class="variations_form cart" action="<?php echo esc_url( apply_filters( 'woocommerce_add_to_cart_form_action', $product->get_permalink() ) ); ?>" method="post" enctype='multipart/form-data' data-product_id="<?php echo absint( $product->get_id() ); ?>" data-product_variations="<?php echo $variations_attr; // WPCS: XSS ok. ?>">
+<form class="variations_form cart w-100" action="<?php echo esc_url( apply_filters( 'woocommerce_add_to_cart_form_action', $product->get_permalink() ) ); ?>" method="post" enctype='multipart/form-data' data-product_id="<?php echo absint( $product->get_id() ); ?>" data-product_variations="<?php echo $variations_attr; // WPCS: XSS ok. ?>">
 	<?php do_action( 'woocommerce_before_variations_form' ); ?>
 
 	<?php if ( empty( $available_variations ) && false !== $available_variations ) : ?>
@@ -56,7 +59,7 @@ do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 		</table>
 		<?php do_action( 'woocommerce_after_variations_table' ); ?>
 
-		<div class="single_variation_wrap">
+		<div class="single_variation_wrap w-100">
 			<?php
 				/**
 				 * Hook: woocommerce_before_single_variation.
@@ -83,5 +86,4 @@ do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 	<?php do_action( 'woocommerce_after_variations_form' ); ?>
 </form>
 
-<?php
-do_action( 'woocommerce_after_add_to_cart_form' );
+<?php do_action( 'woocommerce_after_add_to_cart_form' ); ?>

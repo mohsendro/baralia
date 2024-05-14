@@ -135,7 +135,7 @@ woocommerce_breadcrumb();
                                                                                 *
                                                                                 * @since 2.1.0
                                                                                 */
-                                                                                echo wp_kses_post( apply_filters( 'woocommerce_cart_item_name', sprintf( '<a href="%s">%s</a>', esc_url( $product_permalink ), $_product->get_name() ), $cart_item, $cart_item_key ) );
+                                                                                echo wp_kses_post( apply_filters( 'woocommerce_cart_item_name', sprintf( '<a style="font-size: 1.25rem;" href="%s">%s</a>', esc_url( $product_permalink ), $_product->get_name() ), $cart_item, $cart_item_key ) );
                                                                             }
 
                                                                             do_action( 'woocommerce_after_cart_item_name', $cart_item, $cart_item_key );
@@ -166,7 +166,18 @@ woocommerce_breadcrumb();
                                                                             $min_quantity = 0;
                                                                             $max_quantity = $_product->get_max_purchase_quantity();
                                                                         }
+                                                                    ?>
 
+                                                                    <input
+                                                                        type="text"
+                                                                        class="counter input-text qty text"
+                                                                        name="count<?php  ; ?>"
+                                                                        min="<?php echo $min_quantity; ?>"
+                                                                        max="<?php echo $max_quantity; ?>"
+                                                                        value="<?php echo $cart_item['quantity']; ?>"
+                                                                    />
+                                                                                                                                       
+                                                                    <?php
                                                                         $product_quantity = woocommerce_quantity_input(
                                                                             array(
                                                                                 'input_name'   => "cart[{$cart_item_key}][qty]",
@@ -178,7 +189,10 @@ woocommerce_breadcrumb();
                                                                             $_product,
                                                                             false
                                                                         );
+                                                                    ?>
 
+                                                                        
+                                                                    <?php
                                                                         echo apply_filters( 'woocommerce_cart_item_quantity', $product_quantity, $cart_item_key, $cart_item ); // PHPCS: XSS ok.
                                                                     ?>
                                                                 </td>

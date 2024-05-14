@@ -11,24 +11,49 @@ defined( 'ABSPATH' ) || exit;
 
 global $product;
 ?>
-<div class="woocommerce-variation-add-to-cart variations_button">
+<div class="woocommerce-variation-add-to-cart variations_button w-100 d-flex justify-content-between flex-wrap">
 	<?php do_action( 'woocommerce_before_add_to_cart_button' ); ?>
 
+	<?php do_action( 'woocommerce_before_add_to_cart_quantity' ); ?>
+
 	<?php
-	do_action( 'woocommerce_before_add_to_cart_quantity' );
-
-	woocommerce_quantity_input(
-		array(
-			'min_value'   => apply_filters( 'woocommerce_quantity_input_min', $product->get_min_purchase_quantity(), $product ),
-			'max_value'   => apply_filters( 'woocommerce_quantity_input_max', $product->get_max_purchase_quantity(), $product ),
-			'input_value' => isset( $_POST['quantity'] ) ? wc_stock_amount( wp_unslash( $_POST['quantity'] ) ) : $product->get_min_purchase_quantity(), // WPCS: CSRF ok, input var ok.
-		)
-	);
-
-	do_action( 'woocommerce_after_add_to_cart_quantity' );
+		// woocommerce_quantity_input(
+		// 	array(
+		// 		'min_value'   => apply_filters( 'woocommerce_quantity_input_min', $product->get_min_purchase_quantity(), $product ),
+		// 		'max_value'   => apply_filters( 'woocommerce_quantity_input_max', $product->get_max_purchase_quantity(), $product ),
+		// 		'input_value' => isset( $_POST['quantity'] ) ? wc_stock_amount( wp_unslash( $_POST['quantity'] ) ) : $product->get_min_purchase_quantity(), // WPCS: CSRF ok, input var ok.
+		// 	)
+		// );
 	?>
 
-	<button type="submit" class="single_add_to_cart_button button alt<?php echo esc_attr( wc_wp_theme_get_element_class_name( 'button' ) ? ' ' . wc_wp_theme_get_element_class_name( 'button' ) : '' ); ?>"><?php echo esc_html( $product->single_add_to_cart_text() ); ?></button>
+	<div class="product-meta-counter w-50">
+		<div class="counter">
+			<input
+				class="counter" 
+				name="count" 
+				type="text" 
+				min="<?php echo apply_filters( 'woocommerce_quantity_input_min', $product->get_min_purchase_quantity(), $product ); ?>"
+				max="<?php echo apply_filters( 'woocommerce_quantity_input_max', $product->get_max_purchase_quantity(), $product ); ?>"
+				value="<?php echo isset( $_POST['quantity'] ) ? wc_stock_amount( wp_unslash( $_POST['quantity'] ) ) : $product->get_min_purchase_quantity(); ?>"
+			/>
+		</div>
+	</div>
+
+	<?php do_action( 'woocommerce_after_add_to_cart_quantity' ); ?>
+
+	<div class="product-meta-add w-50">
+			<div class="d-flex justify-content-center">
+				<button
+					type="submit"
+					name="add-to-cart"
+					value="<?php echo esc_attr( $product->get_id() ); ?>"
+					class="btn w-100 border-0 main-color-three-bg rounded-0 single_add_to_cart_button button alt<?php echo esc_attr( wc_wp_theme_get_element_class_name( 'button' ) ? ' ' . wc_wp_theme_get_element_class_name( 'button' ) : '' ); ?>">
+					<i class="bi bi-basket text-white font-20 me-1"></i>
+					<?php // echo esc_html( $product->single_add_to_cart_text() ); ?>
+					خرید کالا
+				</button>
+			</div>
+		</div>
 
 	<?php do_action( 'woocommerce_after_add_to_cart_button' ); ?>
 

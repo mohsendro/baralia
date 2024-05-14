@@ -25,6 +25,12 @@ function wpplus_woocommerce_loaded_action() {
     remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20 );
     remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20 );
     remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_title', 5 );
+    remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_rating', 10 );
+    remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 10 );
+    remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20 );
+    // remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 30 );
+    remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
+    remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_sharing', 50 );
     remove_action( 'woocommerce_before_shop_loop', 'woocommerce_output_all_notices', 10 );
 
 }
@@ -53,6 +59,19 @@ add_filter('pre_get_posts', 'wpplus_filter_search_to_products');
 
 
 // Change the woocommerce_form_field HTML Structure
+/**
+ *  Remove fields from the checkout page.
+ * 
+ * @param array $fields The current fields.
+ * 
+ * @return array The updated fields.
+ */
+function wpturbo_my_checkout_fields_remover( array $fields ): array {
+	unset( $fields['billing']['billing_country'] );
+	return $fields;
+}
+add_filter( 'woocommerce_checkout_fields', 'wpturbo_my_checkout_fields_remover' );
+
 function change_html_structure_form_field_text( $field, $key, $args, $value ) {
 
     $field = "<div class='col-12'>";
@@ -86,7 +105,7 @@ function change_html_structure_form_field_select( $field, $key, $args, $value ) 
 
 }
 
-add_filter( 'woocommerce_form_field_select', 'change_html_structure_form_field_select', 10, 4 );
+add_filter( 'woocommerce_form_field_select_output', 'change_html_structure_form_field_select', 10, 4 );
 add_filter( 'woocommerce_form_field_text', 'change_html_structure_form_field_text', 10, 4 );
 add_filter( 'woocommerce_form_field_tel', 'change_html_structure_form_field_text', 10, 4 );
 add_filter( 'woocommerce_form_field_email', 'change_html_structure_form_field_text', 10, 4 );

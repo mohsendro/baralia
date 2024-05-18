@@ -70,13 +70,26 @@ function wpturbo_my_checkout_fields_remover( array $fields ): array {
 	unset( $fields['billing']['billing_country'] );
 	return $fields;
 }
-add_filter( 'woocommerce_checkout_fields', 'wpturbo_my_checkout_fields_remover' );
+// add_filter( 'woocommerce_checkout_fields', 'wpturbo_my_checkout_fields_remover' );
 
 function change_html_structure_form_field_text( $field, $key, $args, $value ) {
 
     $field = "<div class='col-12'>";
     $field .= "<div class='comment-item mb-3'>";
     $field .= "<input type='". esc_attr( $args['type'] ) ."' name='". esc_attr( $key ) ."' class='form-control' id='". esc_attr( $key ) ."' placeholder='". esc_attr( $args['placeholder'] ) ."' value='". esc_attr( $value ) ."' autocomplete='given-name'>";
+    $field .= "<label for='". esc_attr( $key ) ."' class='form-label label-float fw-bold'>" . esc_html( $args['label'] );
+    $field .= "</label>";
+    $field .= "</div>";
+    $field .= "</div>";
+    return $field;
+
+}
+
+function change_html_structure_form_field_textarea( $field, $key, $args, $value ) {
+
+    $field = "<div class='col-12'>";
+    $field .= "<div class='comment-item mb-3'>";
+    $field .= "<textarea rows='10' type='". esc_attr( $args['type'] ) ."' name='". esc_attr( $key ) ."' class='form-control' id='". esc_attr( $key ) ."' placeholder='". esc_attr( $args['placeholder'] ) ."' value='". esc_attr( $value ) ."' autocomplete='given-name'></textarea>";
     $field .= "<label for='". esc_attr( $key ) ."' class='form-label label-float fw-bold'>" . esc_html( $args['label'] );
     $field .= "</label>";
     $field .= "</div>";
@@ -107,5 +120,6 @@ function change_html_structure_form_field_select( $field, $key, $args, $value ) 
 
 add_filter( 'woocommerce_form_field_select_output', 'change_html_structure_form_field_select', 10, 4 );
 add_filter( 'woocommerce_form_field_text', 'change_html_structure_form_field_text', 10, 4 );
+add_filter( 'woocommerce_form_field_textarea', 'change_html_structure_form_field_textarea', 10, 4 );
 add_filter( 'woocommerce_form_field_tel', 'change_html_structure_form_field_text', 10, 4 );
 add_filter( 'woocommerce_form_field_email', 'change_html_structure_form_field_text', 10, 4 );

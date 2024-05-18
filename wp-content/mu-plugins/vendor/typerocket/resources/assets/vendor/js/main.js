@@ -35,6 +35,13 @@ $(function () {
         buttonup_class: "btn-counter waves-effect waves-light"
     });
 
+    $("input[data-name='count']").TouchSpin({
+        min: 1,
+        max: '1000000000000000',
+        buttondown_class: "btn-counter waves-effect waves-light",
+        buttonup_class: "btn-counter waves-effect waves-light"
+    });
+
     ///انتخاب گر رنگ
     $(".category-sort .form-checks .form-check").click(function () {
         $(".category-sort .form-checks .form-check").removeClass("active");

@@ -18,11 +18,12 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
+?>
 
-woocommerce_breadcrumb();
+<?php woocommerce_breadcrumb(); ?>
 
-// If checkout registration is disabled and not logged in, the user cannot checkout.
-if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_required() && ! is_user_logged_in() ): ?>
+<?php // If checkout registration is disabled and not logged in, the user cannot checkout. ?>
+<?php if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_required() && ! is_user_logged_in() ): ?>
 	<?php // echo esc_html( apply_filters( 'woocommerce_checkout_must_be_logged_in_message', __( 'You must be logged in to checkout.', 'woocommerce' ) ) ); ?>
 	<div class="content">
 		<div class="container-fluid">
@@ -82,8 +83,8 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
 					<?php endif; ?>
 
 					<?php do_action( 'woocommerce_checkout_before_order_review_heading' ); ?>
-					<h2 class="title-font title-line-bottom main-color-one-color mt-4 mb-4 h4">جزئیات <span class="main-color-three-color">
-						<?php esc_html_e( 'Your order', 'woocommerce' ); ?> </span>
+					<h2 class="title-font title-line-bottom main-color-one-color mt-4 mb-4 h4">جزئیات
+						<span class="main-color-three-color"> <?php esc_html_e( 'Your order', 'woocommerce' ); ?> </span>
 					</h2>
 					
 					<?php do_action( 'woocommerce_checkout_before_order_review' ); ?>

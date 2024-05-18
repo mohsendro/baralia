@@ -171,24 +171,26 @@ woocommerce_breadcrumb();
                                                                     <input
                                                                         type="text"
                                                                         class="counter input-text qty text"
-                                                                        name="count<?php  ; ?>"
+                                                                        id=""
+                                                                        data-name="count"
+                                                                        name="<?php echo 'cart['. $cart_item['key'] .'][qty]' ; ?>"
                                                                         min="<?php echo $min_quantity; ?>"
                                                                         max="<?php echo $max_quantity; ?>"
                                                                         value="<?php echo $cart_item['quantity']; ?>"
                                                                     />
                                                                                                                                        
                                                                     <?php
-                                                                        $product_quantity = woocommerce_quantity_input(
-                                                                            array(
-                                                                                'input_name'   => "cart[{$cart_item_key}][qty]",
-                                                                                'input_value'  => $cart_item['quantity'],
-                                                                                'max_value'    => $max_quantity,
-                                                                                'min_value'    => $min_quantity,
-                                                                                // 'product_name' => $product_name,
-                                                                            ),
-                                                                            $_product,
-                                                                            false
-                                                                        );
+                                                                        // $product_quantity = woocommerce_quantity_input(
+                                                                        //     array(
+                                                                        //         'input_name'   => "count cart[{$cart_item_key}][qty]",
+                                                                        //         'input_value'  => $cart_item['quantity'],
+                                                                        //         'max_value'    => $max_quantity,
+                                                                        //         'min_value'    => $min_quantity,
+                                                                        //         // 'product_name' => $product_name,
+                                                                        //     ),
+                                                                        //     $_product,
+                                                                        //     false
+                                                                        // );
                                                                     ?>
 
                                                                         
